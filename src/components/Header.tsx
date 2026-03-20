@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -18,10 +19,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-primary rounded flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-lg">W</span>
-          </div>
-          <span className="font-heading font-bold text-xl text-foreground tracking-tight">WoodCraft</span>
+          <img src={logo} alt="Infinity - Strong | Reliable | Beautiful" className="h-12 w-auto" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">
