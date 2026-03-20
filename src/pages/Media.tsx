@@ -74,9 +74,9 @@ const Media = () => {
           <h2 className="font-heading font-bold text-center mb-10 text-3xl">Video Gallery</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "TV Commercial", src: "/videos/media-video-1.mp4" },
-              { title: "Manufacturing Process", src: "/videos/media-video-2.mp4" },
-              { title: "Product Showcase", src: "/videos/video-3.mp4" },
+              { title: "Inside the factory", description: "A quick look at how we build premium quality", src: "/videos/media-video-1.mp4" },
+              { title: "Manufacturing Process", description: "Watch our latest manufacturing process video", src: "/videos/media-video-2.mp4" },
+              { title: "Product Showcase", description: "Watch our latest product showcase video", src: "/videos/video-3.mp4" },
             ].map((video, i) => (
               <div key={i} className="bg-card rounded-lg overflow-hidden border border-border">
                 <div className="aspect-video overflow-hidden">
@@ -84,7 +84,7 @@ const Media = () => {
                 </div>
                 <div className="p-4">
                   <h3 className="font-heading font-semibold">{video.title}</h3>
-                  <p className="text-muted-foreground text-sm mt-1">Watch our latest {video.title.toLowerCase()} video</p>
+                  <p className="text-muted-foreground text-sm mt-1">{video.description}</p>
                 </div>
               </div>
             ))}
