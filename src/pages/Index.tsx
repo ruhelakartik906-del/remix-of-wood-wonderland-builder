@@ -329,16 +329,13 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-10">Infinity Goods Video</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: "Behind the Scenes: Process", desc: "Watch how our high-quality wood panels are made with precision." },
-              { title: "Factory Tour: State-of-the-Art", desc: "Explore our world-class manufacturing facility and European machinery." },
-              { title: "Product Showcase: HDHMR Boards", desc: "See why architects and designers choose our premium engineered boards." },
+              { title: "Behind the Scenes: Process", desc: "Watch how our high-quality wood panels are made with precision.", src: "/videos/video-1.mp4" },
+              { title: "Factory Tour: State-of-the-Art", desc: "Explore our world-class manufacturing facility and European machinery.", src: "/videos/video-2.mp4" },
+              { title: "Product Showcase: HDHMR Boards", desc: "See why architects and designers choose our premium engineered boards.", src: "/videos/video-3.mp4" },
             ].map((video, i) => (
               <div key={i} className="group bg-card rounded-xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300">
-                <div className="aspect-[16/10] bg-muted flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-foreground/10" />
-                  <div className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center z-10 group-hover:scale-110 transition-transform">
-                    <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[18px] border-l-primary-foreground border-b-[10px] border-b-transparent ml-1" />
-                  </div>
+                <div className="aspect-[16/10] overflow-hidden">
+                  <video src={video.src} controls className="w-full h-full object-cover" preload="metadata" />
                 </div>
                 <div className="p-6">
                   <h3 className="font-heading font-semibold mb-2 group-hover:text-primary transition-colors">{video.title}</h3>
