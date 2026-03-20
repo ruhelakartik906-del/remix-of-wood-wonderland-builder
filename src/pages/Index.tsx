@@ -203,7 +203,7 @@ const Index = () => {
       {/* Applications Gallery */}
       <section className="section-padding">
         <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-4">Infinite Possibilities</h2>
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-4">Infinity Possibilities</h2>
           <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">Our boards transform every space — from kitchens to exteriors</p>
           <Tabs defaultValue="Kitchen" className="w-full">
             <TabsList className="mx-auto flex w-fit mb-8">
