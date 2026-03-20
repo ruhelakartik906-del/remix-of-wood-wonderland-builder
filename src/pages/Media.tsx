@@ -71,21 +71,23 @@ const Media = () => {
       {/* Videos */}
       <section className="section-padding section-alt">
         <div className="container mx-auto">
-          <h2 className="font-heading font-bold text-center mb-10 text-3xl">Video Gallery </h2>
+          <h2 className="font-heading font-bold text-center mb-10 text-3xl">Video Gallery</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {["TV Commercial", "Manufacturing Process", "Product Showcase"].map((title, i) =>
-            <div key={i} className="bg-card rounded-lg overflow-hidden border border-border">
-                <div className="aspect-video bg-foreground/10 flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center cursor-pointer hover:bg-primary transition-colors">
-                    <Play size={28} className="text-primary-foreground ml-1" fill="currentColor" />
-                  </div>
+            {[
+              { title: "TV Commercial", src: "/videos/media-video-1.mp4" },
+              { title: "Manufacturing Process", src: "/videos/media-video-2.mp4" },
+              { title: "Product Showcase", src: "/videos/video-3.mp4" },
+            ].map((video, i) => (
+              <div key={i} className="bg-card rounded-lg overflow-hidden border border-border">
+                <div className="aspect-video overflow-hidden">
+                  <video src={video.src} controls className="w-full h-full object-cover" preload="metadata" />
                 </div>
                 <div className="p-4">
-                  <h3 className="font-heading font-semibold">{title}</h3>
-                  <p className="text-muted-foreground text-sm mt-1">Watch our latest {title.toLowerCase()} video</p>
+                  <h3 className="font-heading font-semibold">{video.title}</h3>
+                  <p className="text-muted-foreground text-sm mt-1">Watch our latest {video.title.toLowerCase()} video</p>
                 </div>
               </div>
-            )}
+            ))}
           </div>
         </div>
       </section>
