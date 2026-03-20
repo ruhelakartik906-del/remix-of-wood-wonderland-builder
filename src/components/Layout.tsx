@@ -1,13 +1,12 @@
 import { ReactNode } from "react";
 import Header from "./Header";
-import DeliveryCheck from "./DeliveryCheck";
 import Footer from "./Footer";
 import WhatsAppButton from "./WhatsAppButton";
 
 const Layout = ({ children }: { children: ReactNode }) => (
   <div className="min-h-screen flex flex-col">
     <Header />
-    <DeliveryCheck />
+    <div className="h-[1px] bg-white/80" />
     <main className="flex-1">{children}</main>
     <Footer />
     <WhatsAppButton />

@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Leaf, Bug, Hammer, ChevronLeft, ChevronRight, Quote, Factory, Users, Award, MapPin, Check, X, Newspaper } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import Layout from "@/components/Layout";
-import hero1 from "@/assets/hero-1.jpg";
-import hero2 from "@/assets/hero-2.jpg";
 import factory from "@/assets/factory.jpg";
 import factoryWide from "@/assets/factory-wide.jpg";
 import mdfBoard from "@/assets/mdf-board.jpg";
@@ -24,8 +22,9 @@ import news2 from "@/assets/news-2.jpg";
 import news3 from "@/assets/news-3.jpg";
 
 const heroSlides = [
-  { image: hero1, title: "Premium Wood Panels for Modern Spaces", subtitle: "Engineered for strength, designed for beauty" },
-  { image: hero2, title: "Transform Your Interiors with Quality", subtitle: "Trusted by architects and designers worldwide" },
+  { video: "https://videos.pexels.com/video-files/5608536/5608536-uhd_2560_1440_25fps.mp4", title: "Premium Wood Panels for Modern Spaces", subtitle: "Engineered for strength, designed for beauty" },
+  { video: "https://videos.pexels.com/video-files/4992585/4992585-uhd_2560_1440_25fps.mp4", title: "Transform Your Interiors with Quality", subtitle: "Trusted by architects and designers worldwide" },
+  { video: "https://videos.pexels.com/video-files/6373610/6373610-uhd_2560_1440_25fps.mp4", title: "Crafted for Modern Living", subtitle: "From factory floor to your dream space" },
 ];
 
 const products = [
@@ -110,7 +109,14 @@ const Index = () => {
       <section className="relative h-[70vh] md:h-[85vh] overflow-hidden">
         {heroSlides.map((slide, i) => (
           <div key={i} className={`absolute inset-0 transition-opacity duration-1000 ${i === currentSlide ? "opacity-100" : "opacity-0"}`}>
-            <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
+            <video
+              src={slide.video}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+            />
             <div className="absolute inset-0 bg-foreground/60" />
           </div>
         ))}
