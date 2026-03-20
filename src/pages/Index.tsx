@@ -109,7 +109,14 @@ const Index = () => {
       <section className="relative h-[70vh] md:h-[85vh] overflow-hidden">
         {heroSlides.map((slide, i) => (
           <div key={i} className={`absolute inset-0 transition-opacity duration-1000 ${i === currentSlide ? "opacity-100" : "opacity-0"}`}>
-            <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
+            <video
+              src={slide.video}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+            />
             <div className="absolute inset-0 bg-foreground/60" />
           </div>
         ))}
