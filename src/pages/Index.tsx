@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, Leaf, Bug, Hammer, ChevronLeft, ChevronRight, Quote, Factory, Users, Award, MapPin, Check, X, Newspaper } from "lucide-react";
+import { ArrowRight, Shield, Leaf, Bug, Hammer, ChevronLeft, ChevronRight, Quote, Factory, Users, Award, MapPin, Check, X, Newspaper, Play } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import Layout from "@/components/Layout";
-import hero1 from "@/assets/hero-1.jpg";
-import hero2 from "@/assets/hero-2.jpg";
 import factory from "@/assets/factory.jpg";
 import factoryWide from "@/assets/factory-wide.jpg";
 import mdfBoard from "@/assets/mdf-board.jpg";
@@ -24,8 +22,9 @@ import news2 from "@/assets/news-2.jpg";
 import news3 from "@/assets/news-3.jpg";
 
 const heroSlides = [
-  { image: hero1, title: "Premium Wood Panels for Modern Spaces", subtitle: "Engineered for strength, designed for beauty" },
-  { image: hero2, title: "Transform Your Interiors with Quality", subtitle: "Trusted by architects and designers worldwide" },
+  { video: "https://videos.pexels.com/video-files/4058800/4058800-hd_1920_1080_24fps.mp4", title: "Premium Wood Panels for Modern Spaces", subtitle: "Engineered for strength, designed for beauty" },
+  { video: "https://videos.pexels.com/video-files/29466032/12684261_1920_1080_60fps.mp4", title: "Transform Your Interiors with Quality", subtitle: "Trusted by architects and designers worldwide" },
+  { video: "https://videos.pexels.com/video-files/3773488/3773488-hd_1920_1080_30fps.mp4", title: "Crafting Tomorrow's Spaces Today", subtitle: "Sustainable, durable, and beautifully engineered" },
 ];
 
 const products = [
