@@ -22,7 +22,7 @@ const About = () =>
 <Layout>
     <section className="relative h-48 md:h-64 bg-primary flex items-center">
       <div className="container mx-auto px-4">
-        <h1 className="text-3xl md:text-5xl font-heading font-bold text-primary-foreground">About Us</h1>
+        <h1 className="text-3xl font-heading font-bold text-primary-foreground text-center md:text-6xl">About Us</h1>
         <p className="text-primary-foreground/80 mt-2 text-center">Our journey of crafting excellence</p>
       </div>
     </section>
