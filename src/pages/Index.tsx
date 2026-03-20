@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, Leaf, Bug, Hammer, ChevronLeft, ChevronRight, Quote, Factory, Users, Award, MapPin, Check, X, Newspaper } from "lucide-react";
+import { ArrowRight, Shield, Leaf, Bug, Hammer, ChevronLeft, ChevronRight, Quote, Factory, Users, Award, MapPin, Check, X, Newspaper, Play } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import Layout from "@/components/Layout";
-import hero1 from "@/assets/hero-1.jpg";
-import hero2 from "@/assets/hero-2.jpg";
 import factory from "@/assets/factory.jpg";
 import factoryWide from "@/assets/factory-wide.jpg";
 import mdfBoard from "@/assets/mdf-board.jpg";
@@ -24,8 +22,9 @@ import news2 from "@/assets/news-2.jpg";
 import news3 from "@/assets/news-3.jpg";
 
 const heroSlides = [
-  { image: hero1, title: "Premium Wood Panels for Modern Spaces", subtitle: "Engineered for strength, designed for beauty" },
-  { image: hero2, title: "Transform Your Interiors with Quality", subtitle: "Trusted by architects and designers worldwide" },
+  { video: "https://videos.pexels.com/video-files/4058800/4058800-hd_1920_1080_24fps.mp4", title: "Premium Wood Panels for Modern Spaces", subtitle: "Engineered for strength, designed for beauty" },
+  { video: "https://videos.pexels.com/video-files/29466032/12684261_1920_1080_60fps.mp4", title: "Transform Your Interiors with Quality", subtitle: "Trusted by architects and designers worldwide" },
+  { video: "https://videos.pexels.com/video-files/3773488/3773488-hd_1920_1080_30fps.mp4", title: "Crafting Tomorrow's Spaces Today", subtitle: "Sustainable, durable, and beautifully engineered" },
 ];
 
 const products = [
@@ -107,32 +106,39 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative h-[70vh] md:h-[85vh] overflow-hidden">
+      <section className="relative h-[50vh] md:h-[55vh] overflow-hidden">
         {heroSlides.map((slide, i) => (
           <div key={i} className={`absolute inset-0 transition-opacity duration-1000 ${i === currentSlide ? "opacity-100" : "opacity-0"}`}>
-            <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
+            <video
+              src={slide.video}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+            />
             <div className="absolute inset-0 bg-foreground/60" />
           </div>
         ))}
-        <div className="relative z-10 h-full flex items-center">
+        <div className="relative z-10 h-full flex items-end pb-12">
           <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-6xl font-heading font-bold text-primary-foreground max-w-3xl leading-tight animate-fade-in">
+            <h1 className="text-2xl md:text-4xl font-heading font-bold text-primary-foreground max-w-2xl leading-tight animate-fade-in">
               {heroSlides[currentSlide].title}
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/80 mt-4 max-w-xl animate-fade-in">
+            <p className="text-sm md:text-base text-primary-foreground/80 mt-2 max-w-lg animate-fade-in">
               {heroSlides[currentSlide].subtitle}
             </p>
             <Link
               to="/products"
-              className="inline-flex items-center gap-2 mt-8 bg-primary text-primary-foreground px-8 py-3.5 rounded font-semibold hover:bg-accent transition-colors animate-fade-in"
+              className="inline-flex items-center gap-2 mt-5 bg-primary text-primary-foreground px-6 py-2.5 rounded font-semibold text-sm hover:bg-accent transition-colors animate-fade-in"
             >
-              Explore Products <ArrowRight size={18} />
+              Explore Products <ArrowRight size={16} />
             </Link>
           </div>
         </div>
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
           {heroSlides.map((_, i) => (
-            <button key={i} onClick={() => setCurrentSlide(i)} className={`w-3 h-3 rounded-full transition-colors ${i === currentSlide ? "bg-primary-foreground" : "bg-primary-foreground/40"}`} />
+            <button key={i} onClick={() => setCurrentSlide(i)} className={`w-2.5 h-2.5 rounded-full transition-colors ${i === currentSlide ? "bg-primary-foreground" : "bg-primary-foreground/40"}`} />
           ))}
         </div>
       </section>
@@ -318,6 +324,31 @@ const Index = () => {
               <button onClick={() => setCurrentTestimonial((t) => (t + 1) % testimonials.length)} className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors">
                 <ChevronRight size={18} />
               </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Manufacturing Process */}
+      <section className="section-padding section-alt">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-4">Our Manufacturing Process</h2>
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">Watch how our world-class facility transforms raw materials into premium engineered wood panels</p>
+          <div className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-border relative group">
+            <div className="aspect-video">
+              <video
+                src="https://videos.pexels.com/video-files/35881632/15217850_2560_1440_60fps.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-foreground/30 flex items-center justify-center group-hover:bg-foreground/40 transition-colors">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/90 flex items-center justify-center shadow-lg">
+                  <Play size={32} className="text-primary-foreground ml-1" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
