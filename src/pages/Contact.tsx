@@ -16,8 +16,8 @@ const Contact = () => {
     <Layout>
       <section className="relative h-48 md:h-64 bg-primary flex items-center">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-5xl font-heading font-bold text-primary-foreground">Contact Us</h1>
-          <p className="text-primary-foreground/80 mt-2">Get in touch with our team</p>
+          <h1 className="text-3xl font-heading font-bold text-primary-foreground text-center md:text-6xl">Contact Us</h1>
+          <p className="text-primary-foreground/80 mt-2 text-center">Get in touch with our team</p>
         </div>
       </section>
 
