@@ -104,8 +104,8 @@ const Index = () => {
       </section>
 
       {/* Scrolling Marquee */}
-      <div className="container mx-auto">
-        <div className="py-3 overflow-hidden rounded-b-lg bg-secondary-foreground font-medium">
+      <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+        <div className="py-3 overflow-hidden bg-secondary-foreground font-medium">
           <div className="animate-[marquee_20s_linear_infinite] whitespace-nowrap flex gap-16">
             {[...Array(4)].map((_, i) =>
             <span key={i} className="text-primary-foreground font-heading font-semibold text-sm md:text-base tracking-widest uppercase">

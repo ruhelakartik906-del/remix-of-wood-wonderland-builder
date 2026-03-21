@@ -22,7 +22,7 @@ const Header = () => {
           <img src={logo} alt="Infinity - Strong | Reliable | Beautiful" className="h-12 w-auto" />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-1 bg-secondary">
+        <nav className="hidden md:flex items-center gap-1">
           {navItems.map((item) =>
           <Link
             key={item.path}
