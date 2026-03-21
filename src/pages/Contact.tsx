@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Phone, Mail, MapPin, Building2, Factory, Send } from "lucide-react";
 import Layout from "@/components/Layout";
+import pageHeaderBg from "@/assets/page-header-bg.jpg";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", product: "", message: "" });
