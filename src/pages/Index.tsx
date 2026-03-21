@@ -387,6 +387,26 @@ const Index = () => {
           )}
         </div>
       </section>
+
+      {/* Get in Touch Form */}
+      <section className="py-16 md:py-20" style={{ backgroundColor: '#e6e6e6' }}>
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-10" style={{ color: '#333' }}>Get in Touch</h2>
+          <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
+            <div className="grid sm:grid-cols-2 gap-5">
+              <input type="text" placeholder="Name" className="w-full px-5 py-3.5 rounded-md bg-white border-0 text-sm outline-none focus:ring-2 focus:ring-primary/40 shadow-sm" />
+              <input type="tel" placeholder="Phone" className="w-full px-5 py-3.5 rounded-md bg-white border-0 text-sm outline-none focus:ring-2 focus:ring-primary/40 shadow-sm" />
+              <input type="email" placeholder="Email Address" className="w-full px-5 py-3.5 rounded-md bg-white border-0 text-sm outline-none focus:ring-2 focus:ring-primary/40 shadow-sm" />
+              <input type="text" placeholder="City" className="w-full px-5 py-3.5 rounded-md bg-white border-0 text-sm outline-none focus:ring-2 focus:ring-primary/40 shadow-sm" />
+            </div>
+            <div className="text-center pt-2">
+              <button type="submit" className="px-10 py-3 rounded-md text-white font-semibold text-sm tracking-wide hover:opacity-90 transition-opacity" style={{ backgroundColor: '#444' }}>
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
     </Layout>);
 
 };
