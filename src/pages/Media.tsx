@@ -78,18 +78,10 @@ const Media = () => {
         <div className="container mx-auto">
           <h2 className="font-heading font-bold text-center mb-10 text-3xl">Video Gallery</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { title: "Inside the factory", description: "A quick look at how we build premium quality", src: "/videos/media-video-1.mp4" },
-              { title: "Manufacturing Process", description: "Watch our latest manufacturing process video", src: "/videos/media-video-2.mp4" },
-              { title: "Product Showcase", description: "Watch our latest product showcase video", src: "/videos/video-3.mp4" },
-            ].map((video, i) => (
-              <div key={i} className="bg-card rounded-lg overflow-hidden border border-border">
-                <div className="aspect-video overflow-hidden">
-                  <video src={video.src} controls className="w-full h-full object-cover" preload="metadata" />
-                </div>
-                <div className="p-4">
-                  <h3 className="font-heading font-semibold">{video.title}</h3>
-                  <p className="text-muted-foreground text-sm mt-1">{video.description}</p>
+            {["/videos/media-video-1.mp4", "/videos/media-video-2.mp4", "/videos/video-3.mp4"].map((src, i) => (
+              <div key={i} className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="aspect-[9/16]">
+                  <video src={src} controls className="w-full h-full object-cover" preload="metadata" />
                 </div>
               </div>
             ))}
