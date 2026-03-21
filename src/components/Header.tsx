@@ -16,18 +16,18 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className="sticky top-0 z-50 bg-[#e9e9e9] border-b border-[#d0d0d0] mb-5">
-      <div className="container mx-auto flex items-center justify-between h-11 px-4">
-        <Link to="/" className="flex items-center gap-2 shrink-0">
-          <img src={logo} alt="Infinity - Strong | Reliable | Beautiful" className="h-8 w-auto" />
+    <header className="sticky top-0 z-50 bg-[#e9e9e9] border-b border-[#d0d0d0]">
+      <div className="container mx-auto relative flex items-center h-16 px-4">
+        <Link to="/" className="flex items-center gap-2">
+          <img src={logo} alt="Infinity - Strong | Reliable | Beautiful" className="h-12 w-auto" />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-0.5">
+        <nav className="hidden md:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
           {navItems.map((item) =>
           <Link
             key={item.path}
             to={item.path}
-            className={`px-3.5 py-1.5 text-xs font-medium rounded transition-colors ${
+            className={`px-4 py-2 text-sm font-medium rounded transition-colors ${
             location.pathname === item.path ?
             "text-primary bg-primary/10" :
             "text-muted-foreground hover:text-primary hover:bg-primary/5"}`
@@ -39,11 +39,11 @@ const Header = () => {
         </nav>
 
         <button
-          className="md:hidden p-1.5 text-foreground"
+          className="md:hidden p-2 text-foreground"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu">
           
-          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
