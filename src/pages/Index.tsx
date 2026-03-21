@@ -25,7 +25,7 @@ import news3 from "@/assets/news-3.jpg";
 
 const heroSlides = [
 { image: hero1, title: "Premium Wood Panels for Modern Spaces", subtitle: "Engineered for strength, designed for beauty" },
-{ image: hero2, title: "Transform Your Interiors with Quality", subtitle: "Trusted by architects and designers worldwide" }];
+{ image: hero2, title: "Transform Your Interiors\nwith Quality", subtitle: "Trusted by architects and designers worldwide" }];
 
 
 const products = [
