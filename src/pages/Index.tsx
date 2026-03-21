@@ -292,14 +292,14 @@ const Index = () => {
       </section>
 
       {/* Video Showcase */}
-      <section className="section-padding">
+      <section className="section-padding pb-10">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-10">Infinity Goods Video</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {["/videos/video-1.mp4", "/videos/video-2.mp4", "/videos/video-3.mp4"].map((src, i) =>
-            <div key={i} className="rounded-xl overflow-hidden border border-border shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="aspect-[4/3]">
-                  <video src={src} controls className="w-full h-full object-cover" preload="metadata" />
+            <div key={i} className="overflow-hidden rounded-xl border border-border shadow-lg transition-all duration-300 hover:shadow-xl">
+                <div className="aspect-[4/3] w-full">
+                  <video src={src} controls className="block h-full w-full object-cover" preload="metadata" />
                 </div>
               </div>
             )}
