@@ -59,7 +59,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-heading font-semibold">Head Office</h3>
-                    <p className="text-muted-foreground text-sm">123 Industrial Area, Sector 5, New Delhi, India - 110001</p>
+                    <p className="text-muted-foreground text-sm">E-503, Dilbagh Rose Garden, Fazalganj,<br />Kanpur, Uttar Pradesh - 208012</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
