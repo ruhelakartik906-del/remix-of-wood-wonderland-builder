@@ -111,20 +111,20 @@ const Index = () => {
         {heroSlides.map((slide, i) => (
           <div key={i} className={`absolute inset-0 transition-opacity duration-1000 ${i === currentSlide ? "opacity-100" : "opacity-0"}`}>
             <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-foreground/60" />
+            <div className="absolute inset-0 bg-foreground/10" />
           </div>
         ))}
-        <div className="relative z-10 h-full flex items-center">
+        <div className="relative z-10 h-full flex items-end pb-16 md:pb-20">
           <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-6xl font-heading font-bold text-primary-foreground max-w-3xl leading-tight animate-fade-in">
+            <h1 className="text-3xl md:text-5xl font-heading font-bold text-primary-foreground max-w-2xl leading-tight animate-fade-in drop-shadow-lg">
               {heroSlides[currentSlide].title}
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/80 mt-4 max-w-xl animate-fade-in">
+            <p className="text-base md:text-lg text-primary-foreground/90 mt-3 max-w-xl animate-fade-in drop-shadow-md">
               {heroSlides[currentSlide].subtitle}
             </p>
             <Link
               to="/products"
-              className="inline-flex items-center gap-2 mt-8 bg-primary text-primary-foreground px-8 py-3.5 rounded font-semibold hover:bg-accent transition-colors animate-fade-in"
+              className="inline-flex items-center gap-2 mt-6 bg-primary text-primary-foreground px-8 py-3.5 rounded font-semibold hover:bg-accent transition-colors animate-fade-in"
             >
               Explore Products <ArrowRight size={18} />
             </Link>
