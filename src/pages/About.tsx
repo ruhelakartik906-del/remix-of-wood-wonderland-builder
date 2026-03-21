@@ -1,7 +1,7 @@
 import { Award, Target, Eye } from "lucide-react";
 import Layout from "@/components/Layout";
 import factory from "@/assets/factory.jpg";
-import aboutHero from "@/assets/about-hero.jpg";
+import pageHeaderBg from "@/assets/page-header-bg-2.jpg";
 
 const milestones = [
 { year: "2005", title: "Company Founded", desc: "Established with a vision to revolutionize the engineered wood industry in India." },
@@ -22,11 +22,13 @@ const certifications = [
 const About = () =>
 <Layout>
     <section className="relative h-48 md:h-64 flex items-center overflow-hidden">
-      <img src={aboutHero} alt="" className="absolute inset-0 w-full h-full object-cover blur-[5px] scale-105" />
-      <div className="absolute inset-0 bg-foreground/40" />
+      <div className="absolute inset-0">
+        <img src={pageHeaderBg} alt="" className="w-full h-full object-cover" style={{ filter: 'blur(2px)' }} />
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
       <div className="container mx-auto px-4 relative z-10">
-        <h1 className="text-3xl font-heading font-bold text-primary-foreground text-center md:text-6xl">About Us</h1>
-        <p className="text-primary-foreground/80 mt-2 text-center">Our journey of crafting excellence</p>
+        <h1 className="text-3xl font-heading font-bold text-white text-center md:text-6xl">About Us</h1>
+        <p className="text-white/80 mt-2 text-center">Our journey of crafting excellence</p>
       </div>
     </section>
 
