@@ -122,8 +122,8 @@ const Index = () => {
       </section>
 
       {/* Scrolling Marquee */}
-      <div className="container mx-auto mt-5">
-        <div className="py-3 overflow-hidden rounded-lg bg-secondary-foreground">
+      <div className="container mx-auto">
+        <div className="py-3 overflow-hidden rounded-b-lg bg-secondary-foreground font-medium">
           <div className="animate-[marquee_20s_linear_infinite] whitespace-nowrap flex gap-16">
             {[...Array(4)].map((_, i) =>
             <span key={i} className="text-primary-foreground font-heading font-semibold text-sm md:text-base tracking-widest uppercase">
@@ -314,10 +314,18 @@ const Index = () => {
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-10">Infinity Goods Video</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            {["/videos/video-1.mp4", "/videos/video-2.mp4", "/videos/video-3.mp4"].map((src, i) =>
-            <div key={i} className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="aspect-video">
-                  <video src={src} controls className="w-full h-full object-cover" preload="metadata" />
+            {[
+            { title: "Behind the Scenes: Process", desc: "Watch how our high-quality wood panels are made with precision.", src: "/videos/video-1.mp4" },
+            { title: "Factory Tour: State-of-the-Art", desc: "Explore our world-class manufacturing facility and European machinery.", src: "/videos/video-2.mp4" },
+            { title: "Product Showcase: HDHMR Boards", desc: "See why architects and designers choose our premium engineered boards.", src: "/videos/video-3.mp4" }].
+            map((video, i) =>
+            <div key={i} className="group bg-card rounded-xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300">
+                <div className="aspect-[16/10] overflow-hidden">
+                  <video src={video.src} controls className="w-full h-full object-cover" preload="metadata" />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-heading font-semibold mb-2 group-hover:text-primary transition-colors">{video.title}</h3>
+                  <p className="text-muted-foreground text-sm">{video.desc}</p>
                 </div>
               </div>
             )}
