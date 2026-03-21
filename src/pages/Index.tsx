@@ -116,7 +116,7 @@ const Index = () => {
         )}
         <div className="relative z-10 h-full flex items-center">
           <div className="container mx-auto px-4">
-            <h1 className="text-4xl font-heading font-bold text-primary-foreground max-w-3xl leading-tight animate-fade-in md:text-3xl">
+            <h1 className="text-4xl font-heading font-bold text-primary-foreground max-w-3xl leading-tight animate-fade-in md:text-3xl whitespace-pre-line">
               {heroSlides[currentSlide].title}
             </h1>
             <p className="text-lg text-primary-foreground/80 mt-4 max-w-xl animate-fade-in md:text-base">
