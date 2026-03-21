@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import pageBanner from "@/assets/page-banner.jpg";
 import Layout from "@/components/Layout";
 import mdfBoard from "@/assets/mdf-board.jpg";
 import hdhmrBoard from "@/assets/hdhmr-board.jpg";
@@ -16,10 +15,8 @@ const products = [
 
 const Products = () =>
 <Layout>
-    <section className="relative h-48 md:h-64 flex items-center overflow-hidden">
-      <img src={pageBanner} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ filter: "blur(2px)" }} />
-      <div className="absolute inset-0 bg-primary/60" />
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="relative h-48 md:h-64 bg-primary flex items-center">
+      <div className="container mx-auto px-4">
         <h1 className="text-3xl font-heading font-bold text-primary-foreground text-center md:text-6xl">Our Products</h1>
         <p className="text-primary-foreground/80 mt-2 text-center">Premium engineered wood panels for every application</p>
       </div>
