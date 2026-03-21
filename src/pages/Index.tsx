@@ -108,31 +108,15 @@ const Index = () => {
     <Layout>
       {/* Hero */}
       <section className="relative h-[70vh] md:h-[85vh] overflow-hidden">
+        <Link to="/products" className="absolute inset-0 z-10" aria-label="Explore Products" />
         {heroSlides.map((slide, i) =>
         <div key={i} className={`absolute inset-0 transition-opacity duration-1000 ${i === currentSlide ? "opacity-100" : "opacity-0"}`}>
             <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-foreground/60" />
           </div>
         )}
-        <div className="relative z-10 h-full flex items-center">
-          <div className="container mx-auto px-4">
-            <h1 className="text-4xl font-heading font-bold text-primary-foreground max-w-3xl leading-tight animate-fade-in md:text-3xl whitespace-pre-line">
-              {heroSlides[currentSlide].title}
-            </h1>
-            <p className="text-lg text-primary-foreground/80 mt-4 max-w-xl animate-fade-in md:text-base">
-              {heroSlides[currentSlide].subtitle}
-            </p>
-            <Link
-              to="/products"
-              className="inline-flex items-center gap-2 mt-8 bg-primary text-primary-foreground px-8 py-3.5 rounded font-semibold hover:bg-accent transition-colors animate-fade-in text-xs">
-              
-              Explore Products <ArrowRight size={18} />
-            </Link>
-          </div>
-        </div>
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
           {heroSlides.map((_, i) =>
-          <button key={i} onClick={() => setCurrentSlide(i)} className={`w-3 h-3 rounded-full transition-colors ${i === currentSlide ? "bg-primary-foreground" : "bg-primary-foreground/40"}`} />
+          <button key={i} onClick={(e) => { e.preventDefault(); setCurrentSlide(i); }} className={`w-3 h-3 rounded-full transition-colors ${i === currentSlide ? "bg-primary-foreground" : "bg-primary-foreground/40"}`} />
           )}
         </div>
       </section>
