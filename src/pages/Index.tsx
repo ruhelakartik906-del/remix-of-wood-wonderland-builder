@@ -387,6 +387,22 @@ const Index = () => {
           )}
         </div>
       </section>
+
+      {/* Get in Touch */}
+      <section className="py-16 px-4 bg-muted">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-10">Get in Touch</h2>
+          <form onSubmit={(e) => e.preventDefault()} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <input type="text" placeholder="Name" className="w-full px-4 py-3 rounded-lg bg-white border-0 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30" />
+            <input type="tel" placeholder="Phone" className="w-full px-4 py-3 rounded-lg bg-white border-0 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30" />
+            <input type="email" placeholder="Email Address" className="w-full px-4 py-3 rounded-lg bg-white border-0 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30" />
+            <input type="text" placeholder="City" className="w-full px-4 py-3 rounded-lg bg-white border-0 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30" />
+          </form>
+          <div className="text-center">
+            <button type="submit" className="px-10 py-3 bg-foreground text-background rounded-full font-semibold text-sm hover:opacity-90 transition-opacity">Submit</button>
+          </div>
+        </div>
+      </section>
     </Layout>);
 
 };
