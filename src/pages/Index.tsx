@@ -152,7 +152,7 @@ const Index = () => {
       <section className="section-padding">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <img src={factory} alt="Manufacturing facility" className="rounded-lg shadow-lg w-full h-80 object-cover" />
+            <img src={factory} alt="Manufacturing facility" className="rounded-lg shadow-lg w-full h-80 object-cover object-center" />
             <div>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Crafting Excellence Since 2005</h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
