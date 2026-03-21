@@ -111,7 +111,7 @@ const Index = () => {
         <Link to="/products" className="absolute inset-0 z-10" aria-label="Explore Products" />
         {heroSlides.map((slide, i) =>
         <div key={i} className={`absolute inset-0 transition-opacity duration-1000 ${i === currentSlide ? "opacity-100" : "opacity-0"}`}>
-            <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
+            <img src={slide.image} alt={slide.title} className="w-full h-full object-contain object-top" />
           </div>
         )}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
