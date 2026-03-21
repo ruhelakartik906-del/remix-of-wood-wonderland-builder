@@ -32,7 +32,7 @@ const products = [
   { name: "MDF Board", image: mdfBoard, slug: "mdf-board", desc: "Medium Density Fibreboard for smooth finishes and versatile applications", features: ["Smooth surface finish", "Easy to paint & laminate", "Eco-friendly manufacturing"] },
   { name: "HDHMR Board", image: hdhmrBoard, slug: "hdhmr-board", desc: "High Density High Moisture Resistant boards for demanding environments", features: ["Superior moisture resistance", "Ultra-high density core", "Kitchen & bathroom ready"] },
   { name: "Particle Board", image: particleBoard, slug: "particle-board", desc: "Cost-effective solution for furniture and interior fit-outs", features: ["Uniform structure", "Budget-friendly option", "Laminate-ready surface"] },
-  { name: "Frame Guard Board", image: frameguardBoard, slug: "frame-guard-board", desc: "Protective boards engineered specifically for door frames", features: ["Dimensional stability", "Enhanced termite protection", "Long-lasting durability"] },
+  { name: "Flame Guard Board", image: frameguardBoard, slug: "flame-guard-board", desc: "Protective boards engineered specifically for door frames", features: ["Dimensional stability", "Enhanced termite protection", "Long-lasting durability"] },
 ];
 
 const features = [
