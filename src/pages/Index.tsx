@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Leaf, Bug, Hammer, ChevronLeft, ChevronRight, Quote, Factory, Users, Award, MapPin, Check, X, Newspaper } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import Layout from "@/components/Layout";
-import hero1 from "@/assets/hero-1.jpg";
-import hero2 from "@/assets/hero-2.jpg";
+import heroBanner from "@/assets/hero-banner.png";
 import factory from "@/assets/factory.jpg";
 import factoryWide from "@/assets/factory-wide.jpg";
 import mdfBoard from "@/assets/mdf-board.jpg";
@@ -23,9 +22,6 @@ import news1 from "@/assets/news-1.jpg";
 import news2 from "@/assets/news-2.jpg";
 import news3 from "@/assets/news-3.jpg";
 
-const heroSlides = [
-{ image: hero1, title: "Premium Wood Panels for \nModern Spaces", subtitle: "Engineered for strength, designed for beauty" },
-{ image: hero2, title: "Transform Your Interiors\nwith Quality", subtitle: "Trusted by architects and designers worldwide" }];
 
 
 const products = [
@@ -96,29 +92,13 @@ const newsItems = [
 const certLogos = ["ISO 9001:2015", "ISI Certified", "Green Building Council", "FSC Certified", "CARB Compliant", "E1 Standard"];
 
 const Index = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => setCurrentSlide((s) => (s + 1) % heroSlides.length), 5000);
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <Layout>
-      {/* Hero */}
-      <section className="relative h-[70vh] md:h-[85vh] overflow-hidden">
-        <Link to="/products" className="absolute inset-0 z-10" aria-label="Explore Products" />
-        {heroSlides.map((slide, i) =>
-        <div key={i} className={`absolute inset-0 transition-opacity duration-1000 ${i === currentSlide ? "opacity-100" : "opacity-0"}`}>
-            <img src={slide.image} alt={slide.title} className="w-full h-full object-contain object-top" />
-          </div>
-        )}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-          {heroSlides.map((_, i) =>
-          <button key={i} onClick={(e) => {e.preventDefault();setCurrentSlide(i);}} className={`w-3 h-3 rounded-full transition-colors ${i === currentSlide ? "bg-primary-foreground" : "bg-primary-foreground/40"}`} />
-          )}
-        </div>
+      {/* Hero Banner */}
+      <section className="w-full">
+        <img src={heroBanner} alt="Infinity Goods - Har ghar ke liye" className="w-full h-auto block" />
       </section>
 
       {/* Scrolling Marquee */}
