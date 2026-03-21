@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Play } from "lucide-react";
 import Layout from "@/components/Layout";
+import pageHeaderBg from "@/assets/page-header-bg-2.jpg";
 import factory from "@/assets/factory.jpg";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
