@@ -49,7 +49,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-heading font-semibold">Email</h3>
-                    <p className="text-muted-foreground text-sm">info@woodcraft.com</p>
+                    <p className="text-muted-foreground text-sm">Info@infinityboards.in</p>
                     <p className="text-muted-foreground text-sm">​</p>
                   </div>
                 </div>
@@ -59,7 +59,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-heading font-semibold">Head Office</h3>
-                    <p className="text-muted-foreground text-sm">123 Industrial Area, Sector 5, New Delhi, India - 110001</p>
+                    <p className="text-muted-foreground text-sm">E-503, Dilbagh Rose Garden, Fazalganj,<br />Kanpur, Uttar Pradesh - 208012</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -67,8 +67,8 @@ const Contact = () => {
                     <Factory size={20} className="text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-heading font-semibold">Factory Address</h3>
-                    <p className="text-muted-foreground text-sm">Plot 45-47, RIICO Industrial Area, Bhiwadi, Rajasthan - 301019</p>
+                    <h3 className="font-heading font-semibold">Manufacturing Unit:</h3>
+                    <p className="text-muted-foreground text-sm">Village Pardhana, Tehsil Israna,<br />Panipat, Haryana - 132107</p>
                   </div>
                 </div>
               </div>
