@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Phone, Mail, MapPin, Building2, Factory, Send } from "lucide-react";
+import pageBanner from "@/assets/page-banner.jpg";
 import Layout from "@/components/Layout";
 
 const Contact = () => {

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import pageBanner from "@/assets/page-banner.jpg";
 import Layout from "@/components/Layout";
 import mdfBoard from "@/assets/mdf-board.jpg";
 import hdhmrBoard from "@/assets/hdhmr-board.jpg";
