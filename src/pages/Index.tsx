@@ -296,18 +296,10 @@ const Index = () => {
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-10">Infinity Goods Video</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-            { title: "Behind the Scenes: Process", desc: "Watch how our high-quality wood panels are made with precision.", src: "/videos/video-1.mp4" },
-            { title: "Factory Tour: State-of-the-Art", desc: "Explore our world-class manufacturing facility and European machinery.", src: "/videos/video-2.mp4" },
-            { title: "Product Showcase: HDHMR Boards", desc: "See why architects and designers choose our premium engineered boards.", src: "/videos/video-3.mp4" }].
-            map((video, i) =>
-            <div key={i} className="group bg-card rounded-xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300">
-                <div className="aspect-[16/10] overflow-hidden">
-                  <video src={video.src} controls className="w-full h-full object-cover" preload="metadata" />
-                </div>
-                <div className="p-6">
-                  <h3 className="font-heading font-semibold mb-2 group-hover:text-primary transition-colors">{video.title}</h3>
-                  <p className="text-muted-foreground text-sm">{video.desc}</p>
+            {["/videos/video-1.mp4", "/videos/video-2.mp4", "/videos/video-3.mp4"].map((src, i) =>
+            <div key={i} className="rounded-xl overflow-hidden border border-border shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="aspect-[4/3]">
+                  <video src={src} controls className="w-full h-full object-cover" preload="metadata" />
                 </div>
               </div>
             )}
