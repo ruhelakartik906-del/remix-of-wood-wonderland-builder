@@ -323,7 +323,7 @@ const Index = () => {
           <button className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
             <ChevronLeft size={18} className="text-foreground" />
           </button>
-          <div className="flex animate-[marquee_25s_linear_infinite] gap-8 px-8">
+          <div className="flex animate-[marquee_25s_linear_infinite] gap-8 w-[90%] mx-auto">
             {[...partnerLogos, ...partnerLogos].map((logo, i) =>
               <div key={i} className="shrink-0 w-48 h-28 bg-white rounded-lg shadow-md flex items-center justify-center p-4">
                 <img src={logo.image} alt={logo.name} className="max-w-full max-h-full object-contain" />
