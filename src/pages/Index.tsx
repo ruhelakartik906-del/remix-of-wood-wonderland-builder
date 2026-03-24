@@ -21,7 +21,23 @@ import appExterior from "@/assets/app-exterior.jpg";
 import news1 from "@/assets/news-1.jpg";
 import news2 from "@/assets/news-2.jpg";
 import news3 from "@/assets/news-3.jpg";
+import partnerOyo from "@/assets/partner-oyo.webp";
+import partnerDlf from "@/assets/partner-dlf.jpg";
+import partnerEmaar from "@/assets/partner-emaar.jpg";
+import partnerGodrej from "@/assets/partner-godrej.jpg";
+import partnerIndiabulls from "@/assets/partner-indiabulls.jpg";
+import partnerLemontree from "@/assets/partner-lemontree.jpg";
+import partnerTata from "@/assets/partner-tata.jpg";
 
+const partnerLogos = [
+  { name: "OYO", image: partnerOyo },
+  { name: "DLF", image: partnerDlf },
+  { name: "EMAAR", image: partnerEmaar },
+  { name: "Godrej Properties", image: partnerGodrej },
+  { name: "Indiabulls", image: partnerIndiabulls },
+  { name: "Lemon Tree Hotels", image: partnerLemontree },
+  { name: "TATA Housing", image: partnerTata },
+];
 
 
 const products = [
