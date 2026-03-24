@@ -87,13 +87,18 @@ const stats = [
 { icon: Award, value: "10M+", label: "Sq. Ft. Produced" }];
 
 
-const newsItems = [
-{ image: news1, title: "WoodCraft Featured in Design Magazine", date: "March 15, 2026", excerpt: "Our premium HDHMR boards were highlighted as the top choice for modern kitchen designs." },
-{ image: news2, title: "Exhibition at IndiaWood 2026", date: "February 28, 2026", excerpt: "WoodCraft showcased its latest innovations at India's largest wood industry trade fair." },
-{ image: news3, title: "Sustainability Milestone Achieved", date: "January 10, 2026", excerpt: "We've planted over 100,000 trees as part of our green initiative commitment." }];
-
-
-const certLogos = ["ISO 9001:2015", "ISI Certified", "Green Building Council", "FSC Certified", "CARB Compliant", "E1 Standard"];
+const partnerLogos = [
+  { name: "OYO", image: partnerOyo },
+  { name: "DLF", image: partnerDlf },
+  { name: "EMAAR", image: partnerEmaar },
+  { name: "Godrej Properties", image: partnerGodrej },
+  { name: "Indiabulls", image: partnerIndiabulls },
+  { name: "Lemon Tree Hotels", image: partnerLemontree },
+  { name: "Tata Housing", image: partnerTata },
+  { name: "OYO", image: partnerOyo },
+  { name: "DLF", image: partnerDlf },
+  { name: "EMAAR", image: partnerEmaar },
+];
 
 const Index = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
