@@ -307,32 +307,59 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Latest from Media */}
-      <section className="section-padding pt-10">
-        <div className="container mx-auto">
-          <div className="flex items-center justify-between mb-10">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold">Latest from Media</h2>
-            <Link to="/media" className="hidden md:inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
-              View All <ArrowRight size={16} />
-            </Link>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {newsItems.map((item, i) =>
-            <div key={i} className="group bg-card rounded-xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300">
-                <div className="aspect-[16/10] overflow-hidden">
-                  <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                </div>
-                <div className="p-6">
-                  <p className="text-xs text-muted-foreground mb-2 flex items-center gap-1"><Newspaper size={12} /> {item.date}</p>
-                  <h3 className="font-heading font-semibold mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.excerpt}</p>
-                </div>
+      {/* Our Clients / Partners */}
+      <section className="py-14 bg-background mb-[30px]">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-10">Our Clients &amp; Partners</h2>
+          <div className="relative group">
+            {/* Left Arrow */}
+            <button
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-card border border-border shadow-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-primary hover:text-primary-foreground hover:border-primary"
+              onClick={() => {
+                const el = document.getElementById('clients-track');
+                if (el) el.scrollBy({ left: -300, behavior: 'smooth' });
+              }}
+              aria-label="Scroll left"
+            >
+              <ChevronLeft size={18} />
+            </button>
+            {/* Right Arrow */}
+            <button
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-card border border-border shadow-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-primary hover:text-primary-foreground hover:border-primary"
+              onClick={() => {
+                const el = document.getElementById('clients-track');
+                if (el) el.scrollBy({ left: 300, behavior: 'smooth' });
+              }}
+              aria-label="Scroll right"
+            >
+              <ChevronRight size={18} />
+            </button>
+
+            <div id="clients-track" className="overflow-hidden">
+              <div className="flex gap-6 animate-[marquee_30s_linear_infinite] hover:[animation-play-state:paused]">
+                {[...Array(2)].flatMap((_, setIdx) =>
+                  [
+                    { icon: Shield, label: "Eco-Certified Wood" },
+                    { icon: Leaf, label: "Sustainable Source" },
+                    { icon: Award, label: "ISO 9001" },
+                    { icon: Factory, label: "Green Building Member" },
+                    { icon: Award, label: "FSC Certified" },
+                    { icon: Shield, label: "CARB Compliant" },
+                    { icon: Leaf, label: "E1 Standard" },
+                    { icon: Factory, label: "IGBC Partner" },
+                  ].map((item, i) => (
+                    <div
+                      key={`${setIdx}-${i}`}
+                      className="shrink-0 w-44 h-32 bg-card rounded-xl border border-border shadow-sm flex flex-col items-center justify-center gap-3 hover:shadow-md transition-shadow"
+                    >
+                      <item.icon size={32} className="text-primary" />
+                      <span className="font-heading font-semibold text-xs text-muted-foreground text-center px-2">{item.label}</span>
+                    </div>
+                  ))
+                )}
               </div>
-            )}
+            </div>
           </div>
-          <Link to="/media" className="md:hidden inline-flex items-center gap-2 text-primary font-semibold mt-6">
-            View All <ArrowRight size={16} />
-          </Link>
         </div>
       </section>
 
