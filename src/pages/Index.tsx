@@ -321,15 +321,17 @@ const Index = () => {
         <div className="mx-[5%] md:mx-[5%]">
           <div className="rounded-2xl shadow-lg p-8 md:p-12" style={{ backgroundColor: "#BDBDBD" }}>
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground text-center mb-8">Get in Touch</h2>
-            <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input type="text" placeholder="Name" className="w-full px-4 py-3 rounded-md border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" />
-                <input type="tel" placeholder="Phone" className="w-full px-4 py-3 rounded-md border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" />
+            <form onSubmit={(e) => e.preventDefault()}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-[10px] mb-[10px]">
+                <input type="text" placeholder="Name" className="w-full h-12 px-4 rounded-md border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" />
+                <input type="tel" placeholder="Phone" className="w-full h-12 px-4 rounded-md border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" />
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_auto] gap-4">
-                <input type="email" placeholder="Email Address" className="w-full px-4 py-3 rounded-md border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" />
-                <input type="text" placeholder="City" className="w-full px-4 py-3 rounded-md border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" />
-                <button type="submit" className="px-8 py-3 rounded-md text-white font-semibold hover:opacity-90 transition-opacity whitespace-nowrap" style={{ backgroundColor: "#555555" }}>Submit</button>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-[10px]">
+                <input type="email" placeholder="Email Address" className="w-full h-12 px-4 rounded-md border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" />
+                <input type="text" placeholder="City" className="w-full h-12 px-4 rounded-md border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" />
+              </div>
+              <div className="flex justify-center mt-[15px]">
+                <button type="submit" className="px-10 py-3 rounded-md text-white font-semibold hover:opacity-90 transition-opacity" style={{ backgroundColor: "#555555" }}>Submit</button>
               </div>
             </form>
           </div>
