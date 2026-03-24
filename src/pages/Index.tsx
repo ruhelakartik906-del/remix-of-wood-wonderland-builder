@@ -18,9 +18,13 @@ import appOffice2 from "@/assets/app-office-2.jpg";
 import appWall from "@/assets/app-wall.jpg";
 import appBedroom from "@/assets/app-bedroom.jpg";
 import appExterior from "@/assets/app-exterior.jpg";
-import news1 from "@/assets/news-1.jpg";
-import news2 from "@/assets/news-2.jpg";
-import news3 from "@/assets/news-3.jpg";
+import partnerOyo from "@/assets/partner-oyo.webp";
+import partnerDlf from "@/assets/partner-dlf.jpg";
+import partnerEmaar from "@/assets/partner-emaar.jpg";
+import partnerGodrej from "@/assets/partner-godrej.jpg";
+import partnerIndiabulls from "@/assets/partner-indiabulls.jpg";
+import partnerLemontree from "@/assets/partner-lemontree.jpg";
+import partnerTata from "@/assets/partner-tata.jpg";
 
 
 
