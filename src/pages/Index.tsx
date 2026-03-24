@@ -316,6 +316,26 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Get in Touch */}
+      <section className="bg-white py-16 pb-5">
+        <div className="mx-[5%] md:mx-[5%]">
+          <div className="rounded-2xl shadow-lg p-8 md:p-12" style={{ backgroundColor: "#BDBDBD" }}>
+            <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground text-center mb-8">Get in Touch</h2>
+            <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="text" placeholder="Name" className="w-full px-4 py-3 rounded-md border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" />
+                <input type="tel" placeholder="Phone" className="w-full px-4 py-3 rounded-md border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_auto] gap-4">
+                <input type="email" placeholder="Email Address" className="w-full px-4 py-3 rounded-md border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" />
+                <input type="text" placeholder="City" className="w-full px-4 py-3 rounded-md border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" />
+                <button type="submit" className="px-8 py-3 rounded-md text-white font-semibold hover:opacity-90 transition-opacity whitespace-nowrap" style={{ backgroundColor: "#555555" }}>Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
       {/* Partner Logo Slider */}
       <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-14 overflow-hidden mb-0" style={{ backgroundColor: "#dfedde" }}>
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-10">Our Clients & Partners</h2>
