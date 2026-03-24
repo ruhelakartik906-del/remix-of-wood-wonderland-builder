@@ -317,20 +317,20 @@ const Index = () => {
       </section>
 
       {/* Partner Logo Slider */}
-      <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-14 overflow-hidden mb-[30px]" style={{ backgroundColor: "#dfedde" }}>
-        <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-10">Our Clients & Partners</h2>
-        <div className="relative group">
-          <button className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+      <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] pt-[15px] pb-14 overflow-hidden" style={{ backgroundColor: "#dfedde" }}>
+        <h2 className="text-3xl md:text-4xl font-heading font-bold text-center text-white mb-[20px]">Our Clients & Partners</h2>
+        <div className="relative group mx-auto" style={{ maxWidth: "90%" }}>
+          <button className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
             <ChevronLeft size={18} className="text-foreground" />
           </button>
-          <div className="flex animate-[marquee_25s_linear_infinite] gap-8 px-8">
+          <div className="flex animate-[marquee_25s_linear_infinite] gap-8">
             {[...partnerLogos, ...partnerLogos].map((logo, i) =>
-              <div key={i} className="shrink-0 w-48 h-28 bg-white rounded-lg shadow-md flex items-center justify-center p-4">
+              <div key={i} className="shrink-0 w-44 h-24 bg-white rounded-lg shadow-sm flex items-center justify-center p-4">
                 <img src={logo.image} alt={logo.name} className="max-w-full max-h-full object-contain" />
               </div>
             )}
           </div>
-          <button className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+          <button className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
             <ChevronRight size={18} className="text-foreground" />
           </button>
         </div>
