@@ -1,22 +1,24 @@
-import { Award, Target, Eye } from "lucide-react";
+import { Award, Target, Eye, Leaf, ShieldCheck, Timer, Bug, Sparkles } from "lucide-react";
 import Layout from "@/components/Layout";
 import factory from "@/assets/factory.jpg";
 import pageHeaderBg from "@/assets/page-header-bg-2.jpg";
+import factoryAerial from "@/assets/factory-aerial.png";
+import warehouseInterior from "@/assets/warehouse-interior.png";
 
-const milestones = [
-{ year: "2005", title: "Company Founded", desc: "Established with a vision to revolutionize the engineered wood industry in India." },
-{ year: "2008", title: "First Factory", desc: "Commissioned our first state-of-the-art manufacturing plant with European machinery." },
-{ year: "2012", title: "ISO Certification", desc: "Received ISO 9001:2008 certification for quality management systems." },
-{ year: "2016", title: "Product Expansion", desc: "Launched HDHMR and Frame Guard Board product lines to meet growing demand." },
-{ year: "2020", title: "Green Certification", desc: "Achieved Green Building certification for sustainable manufacturing practices." },
-{ year: "2024", title: "Pan-India Presence", desc: "Expanded distribution to 500+ dealers across all major cities in India." }];
-
+const features = [
+  { icon: Leaf, title: "Eco-Friendly" },
+  { icon: ShieldCheck, title: "Superior Quality" },
+  { icon: Timer, title: "Durability" },
+  { icon: Bug, title: "Termite Resistant" },
+  { icon: Sparkles, title: "Premium Finish" },
+];
 
 const certifications = [
-{ title: "ISO 9001:2015", desc: "Quality Management" },
-{ title: "ISI Certified", desc: "Indian Standards" },
-{ title: "Green Building", desc: "Sustainable Manufacturing" },
-{ title: "FSC Certified", desc: "Responsible Forestry" }];
+  { title: "ISO 9001:2015", desc: "Quality Management" },
+  { title: "ISI Certified", desc: "Indian Standards" },
+  { title: "Green Building", desc: "Sustainable Manufacturing" },
+  { title: "FSC Certified", desc: "Responsible Forestry" },
+];
 
 
 const About = () =>
@@ -61,23 +63,45 @@ const About = () =>
       </div>
     </section>
 
-    {/* Timeline */}
-    <section className="section-padding section-alt">
-      <div className="container mx-auto max-w-3xl">
-        <h2 className="text-3xl font-heading font-bold text-center mb-12">Our Journey</h2>
-        <div className="relative">
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border md:left-1/2 md:-translate-x-px" />
-          {milestones.map((m, i) =>
-        <div key={i} className={`relative flex items-start gap-6 mb-10 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-              <div className="hidden md:block md:w-1/2" />
-              <div className="absolute left-6 md:left-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background -translate-x-1/2 mt-1.5 z-10" />
-              <div className="ml-14 md:ml-0 md:w-1/2 bg-card border border-border rounded-lg p-5 shadow-sm">
-                <span className="text-primary font-bold text-sm">{m.year}</span>
-                <h3 className="font-heading font-semibold mt-1">{m.title}</h3>
-                <p className="text-muted-foreground text-sm mt-1">{m.desc}</p>
+    {/* Why Choose Infinity Panels */}
+    <section className="section-padding">
+      <div className="container mx-auto">
+        <h2 className="text-3xl font-heading font-bold text-center mb-4">Why Choose Infinity Panels</h2>
+        <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">Engineered for excellence, built to last</p>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+          {features.map((f, i) => (
+            <div key={i} className="flex flex-col items-center text-center p-6 bg-card rounded-lg shadow-sm border border-border hover:shadow-md transition-shadow">
+              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <f.icon size={28} className="text-primary" />
               </div>
+              <h3 className="font-heading font-semibold text-sm">{f.title}</h3>
             </div>
-        )}
+          ))}
+        </div>
+        <div className="mt-12 rounded-lg overflow-hidden shadow-lg">
+          <img src={factoryAerial} alt="Infinity Panels manufacturing facility" className="w-full h-64 md:h-80 object-cover" />
+        </div>
+      </div>
+    </section>
+
+    {/* Customer Success Stats */}
+    <section className="relative py-20 overflow-hidden">
+      <div className="absolute inset-0">
+        <img src={warehouseInterior} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-foreground/75" />
+      </div>
+      <div className="container mx-auto relative z-10 text-center">
+        <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-12">50,000+ Happy Customers</h2>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24">
+          <div>
+            <p className="text-3xl md:text-4xl font-bold text-white">100+</p>
+            <p className="text-white/70 mt-2 text-sm">Dealers Nationwide</p>
+          </div>
+          <div className="w-px h-12 bg-white/20 hidden md:block" />
+          <div>
+            <p className="text-3xl md:text-4xl font-bold text-white">20+</p>
+            <p className="text-white/70 mt-2 text-sm">Years of Excellence</p>
+          </div>
         </div>
       </div>
     </section>
