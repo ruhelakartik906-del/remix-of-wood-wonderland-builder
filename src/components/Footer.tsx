@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Youtube, Mail, MapPin, Phone } from "lucide-react";
+import infinityLogo from "@/assets/infinity-logo.jpeg";
 
 const Footer = () =>
   <footer className="bg-white border-t border-border">
