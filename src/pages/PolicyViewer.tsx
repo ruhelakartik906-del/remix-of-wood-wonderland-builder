@@ -172,7 +172,7 @@ const csrContent = (
     </section>
 
     <section className="mb-8">
-      <h2 className="text-lg font-bold mb-3">2.0 &nbsp; PROJECT IDENTIFICATION</h2>
+      <h2 className="text-lg font-bold mb-3">2.0 &nbsp; PROJECT IDENTIFICATION AND IMPLEMENTATION</h2>
       <p className="mb-3 text-sm">
         2.1 &nbsp; The Company shall undertake CSR activities in the following focus areas, as specified in Schedule VII of the Companies Act, 2013:
       </p>
@@ -190,54 +190,28 @@ const csrContent = (
         <li>Undertaking afforestation and tree plantation drives;</li>
         <li>Promoting renewable energy sources and energy-efficient technologies.</li>
       </ul>
-      <p className="mb-2 text-sm font-semibold">2.1.3 &nbsp; Rural Development:</p>
+      <p className="mb-2 text-sm font-semibold">2.1.3 &nbsp; Rural Development and Healthcare:</p>
       <ul className="list-disc pl-8 space-y-1 text-sm mb-3">
         <li>Supporting rural development projects, including infrastructure improvement;</li>
         <li>Promoting sanitation, clean drinking water, and healthcare facilities;</li>
         <li>Empowering women and economically weaker sections of society;</li>
-        <li>Contributing to the development of rural sports and cultural activities.</li>
+        <li>Organising health camps and awareness programmes in rural and semi-urban areas.</li>
       </ul>
-      <p className="mb-2 text-sm font-semibold">2.1.4 &nbsp; Healthcare:</p>
-      <ul className="list-disc pl-8 space-y-1 text-sm mb-3">
-        <li>Promoting healthcare, including preventive healthcare and sanitation;</li>
-        <li>Organising health camps and awareness programmes in rural and semi-urban areas;</li>
-        <li>Supporting hospitals and health centres serving underprivileged communities.</li>
-      </ul>
-    </section>
-
-    <section className="mb-8">
-      <h2 className="text-lg font-bold mb-3">3.0 &nbsp; IMPLEMENTATION</h2>
       <p className="mb-3 text-sm">
-        3.1 &nbsp; The Company may implement its CSR activities through any of the following modes:
+        2.2 &nbsp; The Company may implement its CSR activities directly or through registered trusts, societies, Section 8 companies, or partnerships with NGOs having an established track record of at least three years.
       </p>
-      <ul className="list-disc pl-8 space-y-2 text-sm mb-3">
-        <li>Directly by the Company through its own CSR team or department;</li>
-        <li>Through a registered trust, society, or Section 8 company established by the Company or its holding, subsidiary, or associate company;</li>
-        <li>Through collaboration with other companies or organisations, provided such entities have an established track record of at least three years in undertaking similar activities;</li>
-        <li>Through partnerships with non-governmental organisations (NGOs) registered under applicable law.</li>
-      </ul>
       <p className="mb-3 text-sm">
-        3.2 &nbsp; The CSR Committee shall identify and recommend specific projects and programmes to the Board of Directors for approval. Each project proposal shall include:
-      </p>
-      <ul className="list-disc pl-8 space-y-1 text-sm mb-3">
-        <li>A detailed description of the project and its objectives;</li>
-        <li>The estimated budget and timeline for implementation;</li>
-        <li>The expected social or environmental impact;</li>
-        <li>The implementation partner, if any, along with their credentials;</li>
-        <li>Measurable outcomes and key performance indicators.</li>
-      </ul>
-      <p className="mb-3 text-sm">
-        3.3 &nbsp; The Company shall give preference to local areas and areas around which it operates for spending the amount earmarked for CSR activities. However, the Company may also undertake CSR activities in other parts of India as recommended by the CSR Committee.
+        2.3 &nbsp; The CSR Committee shall identify and recommend specific projects and programmes to the Board of Directors for approval. Each project proposal shall include a detailed description, estimated budget, timeline, expected impact, and measurable outcomes.
       </p>
       <p className="text-sm">
-        3.4 &nbsp; Any surplus arising out of CSR activities shall not form part of the business profit of the Company and shall be ploughed back into CSR projects.
+        2.4 &nbsp; The Company shall give preference to local areas and areas around which it operates for spending the amount earmarked for CSR activities. Any surplus arising out of CSR activities shall not form part of the business profit of the Company and shall be ploughed back into CSR projects.
       </p>
     </section>
 
     <section className="mb-8">
-      <h2 className="text-lg font-bold mb-3">4.0 &nbsp; ROLES AND RESPONSIBILITIES</h2>
+      <h2 className="text-lg font-bold mb-3">3.0 &nbsp; ROLE AND RESPONSIBILITIES OF THE BOARD</h2>
       <p className="mb-3 text-sm">
-        4.1 &nbsp; <strong>Board of Directors:</strong>
+        3.1 &nbsp; <strong>Board of Directors:</strong>
       </p>
       <ul className="list-disc pl-8 space-y-1 text-sm mb-3">
         <li>The Board of Directors shall approve the CSR Policy and any amendments thereto;</li>
@@ -246,7 +220,7 @@ const csrContent = (
         <li>The Board shall ensure that the Company spends the required amount on CSR activities in each financial year.</li>
       </ul>
       <p className="mb-3 text-sm">
-        4.2 &nbsp; <strong>CSR Committee:</strong>
+        3.2 &nbsp; <strong>CSR Committee:</strong>
       </p>
       <ul className="list-disc pl-8 space-y-1 text-sm mb-3">
         <li>The CSR Committee shall formulate and recommend the CSR Policy to the Board;</li>
@@ -256,15 +230,10 @@ const csrContent = (
         <li>The Committee shall prepare and submit an annual report on CSR activities to the Board.</li>
       </ul>
       <p className="mb-3 text-sm">
-        4.3 &nbsp; <strong>Managing Director / Chief Executive Officer:</strong>
+        3.3 &nbsp; <strong>Managing Director / Chief Executive Officer:</strong> The Managing Director shall ensure the day-to-day implementation of CSR activities, coordinate with implementation partners, ensure timely execution of projects, and maintain proper records of CSR expenditure and activities undertaken.
       </p>
-      <ul className="list-disc pl-8 space-y-1 text-sm mb-3">
-        <li>The Managing Director shall ensure the day-to-day implementation of CSR activities;</li>
-        <li>Shall coordinate with implementation partners and ensure timely execution of projects;</li>
-        <li>Shall maintain proper records of CSR expenditure and activities undertaken.</li>
-      </ul>
       <p className="text-sm">
-        4.4 &nbsp; <strong>Chief Financial Officer:</strong> The Chief Financial Officer shall ensure that CSR expenditure is properly accounted for in the Company's financial statements and that the required disclosures are made in accordance with applicable accounting standards.
+        3.4 &nbsp; <strong>Chief Financial Officer:</strong> The Chief Financial Officer shall ensure that CSR expenditure is properly accounted for in the Company's financial statements and that the required disclosures are made in accordance with applicable accounting standards.
       </p>
     </section>
 
