@@ -16,10 +16,10 @@ const Footer = () =>
           <div>
             <h3 className="font-heading font-bold text-lg mb-4 text-foreground">Quick Links</h3>
             <ul className="space-y-2 text-sm">
-              {["Home", "About Us", "Products", "Media", "Contact Us"].map((item) =>
+              {["Home", "About Us", "Products", "Privacy & Policy", "Media", "Contact Us"].map((item) =>
                 <li key={item}>
                   <Link
-                    to={item === "Home" ? "/" : `/${item.toLowerCase().replace(/\s/g, "")}`}
+                    to={item === "Home" ? "/" : item === "Privacy & Policy" ? "/privacy-policy" : `/${item.toLowerCase().replace(/\s/g, "")}`}
                     className="text-muted-foreground hover:text-foreground transition-colors">
                     {item}
                   </Link>
