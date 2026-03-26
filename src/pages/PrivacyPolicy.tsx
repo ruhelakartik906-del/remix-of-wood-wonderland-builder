@@ -22,7 +22,7 @@ const PrivacyPolicy = () => {
           <div className="bg-white rounded-lg shadow-md p-8 md:p-12">
             {/* Company Header */}
             <div className="text-center border-b border-border pb-6 mb-8">
-              <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+              <h1 className="text-2xl font-bold text-foreground mb-2 md:text-4xl">
                 INFINITY BOARD
               </h1>
               <p className="text-sm text-muted-foreground mb-1">
