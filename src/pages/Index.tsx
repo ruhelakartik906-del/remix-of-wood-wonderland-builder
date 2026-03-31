@@ -230,24 +230,27 @@ const Index = () => {
           <div className="absolute inset-0 bg-background/60" />
         </div>
         <div className="relative z-10 container mx-auto px-4">
-          <div className="flex flex-col md:flex-row gap-12 items-center">
-            <div className="w-full md:w-[55%] pl-2 md:pl-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0">
+            <div className="w-full md:w-[40%] pl-2 md:pl-6">
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Exclusive Supply Partner Offer</h2>
               <p className="text-muted-foreground leading-relaxed">
                 Explore a special overview from our premium supply partner showcasing our shared commitment to quality and innovation. Discover exclusive insights.
               </p>
             </div>
-            <div className="w-full md:w-[45%] flex justify-center">
-              <div className="w-3/4 h-[550px] rounded-2xl overflow-hidden shadow-md bg-black">
-                <video
-                  src="/videos/partner-offer.mp4"
-                  className="w-full h-full object-contain"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  controls
-                />
+            <div className="w-full md:w-[45%] flex justify-end">
+              <div className="relative">
+                <div className="absolute -left-6 -top-4 -bottom-4 w-[calc(100%+12px)] rounded-3xl bg-muted/40" />
+                <div className="relative w-[240px] h-[550px] rounded-2xl overflow-hidden shadow-md bg-black">
+                  <video
+                    src="/videos/partner-offer.mp4"
+                    className="w-full h-full object-contain"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    controls
+                  />
+                </div>
               </div>
             </div>
           </div>
