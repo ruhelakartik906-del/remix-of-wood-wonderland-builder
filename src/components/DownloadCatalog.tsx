@@ -51,7 +51,7 @@ const DownloadCatalog = () => {
 
   return (
     <>
-      <section className="py-16">
+      <section className="py-16" style={{ backgroundColor: '#F5F5F5', width: '100vw', marginLeft: 'calc(-50vw + 50%)' }}>
         <div className="container mx-auto max-w-4xl px-4">
           <div className="rounded-2xl border-2 border-border p-8 sm:p-10">
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-2 text-foreground">
