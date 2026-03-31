@@ -9,6 +9,7 @@ import TechnicalData from "@/components/product/TechnicalData";
 import MaintenanceSection from "@/components/product/MaintenanceSection";
 import InstallationGuide from "@/components/product/InstallationGuide";
 import RelatedProducts from "@/components/product/RelatedProducts";
+import DownloadCatalog from "@/components/DownloadCatalog";
 
 const ProductPage = () => {
   const { slug } = useParams<{ slug: string }>();
