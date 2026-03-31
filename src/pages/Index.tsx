@@ -230,8 +230,8 @@ const Index = () => {
           <div className="absolute inset-0 bg-background/60" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row gap-8 items-start">
-            <div className="w-full md:w-[55%] pl-2 md:pl-6 pt-0">
+          <div className="flex flex-col md:flex-row gap-8 items-center">
+            <div className="w-full md:w-[55%] pl-2 md:pl-6">
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6 leading-tight">
                 Exclusive Partner Opportunity: Unlock Shared Value
               </h2>
