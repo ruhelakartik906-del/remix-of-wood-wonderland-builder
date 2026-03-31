@@ -6,6 +6,7 @@ import Layout from "@/components/Layout";
 import DownloadCatalog from "@/components/DownloadCatalog";
 import heroBanner from "@/assets/hero-banner.png";
 import factory from "@/assets/crafting-excellence.png";
+import woodGrainBg from "@/assets/wood-grain-bg.jpg";
 import factoryWide from "@/assets/factory-wide.jpg";
 import mdfBoard from "@/assets/mdf-board.jpg";
 import hdhmrBoard from "@/assets/hdhmr-board.jpg";
@@ -219,6 +220,35 @@ const Index = () => {
               </TabsContent>
             )}
           </Tabs>
+        </div>
+      </section>
+
+      {/* Exclusive Partner Offer */}
+      <section className="relative py-16 md:py-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={woodGrainBg} alt="" className="w-full h-full object-cover" loading="lazy" width={1024} height={768} />
+          <div className="absolute inset-0 bg-background/60" />
+        </div>
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="pl-2 md:pl-6">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Exclusive Partner Offer</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Explore this special video overview from our premium supply partner showcasing our shared commitment to quality and innovation. Discover exclusive insights and upcoming collaboration details.
+              </p>
+            </div>
+            <div className="aspect-video rounded-2xl overflow-hidden shadow-md">
+              <video
+                src="/videos/partner-offer.mp4"
+                className="w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls
+              />
+            </div>
+          </div>
         </div>
       </section>
 
