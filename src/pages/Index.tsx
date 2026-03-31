@@ -100,8 +100,18 @@ const partnerLogos = [
   { name: "EMAAR", image: partnerEmaar },
 ];
 
+const corporateVideos = [
+  { id: "eIkQxRty31M", title: "Corporate Video 1" },
+  { id: "BOqIpNlPwBg", title: "Corporate Video 2" },
+  { id: "si05K7XhoV4", title: "Corporate Video 3" },
+  { id: "v4xPPnzYFNw", title: "Corporate Video 4" },
+  { id: "kW-cxcoCqP4", title: "Corporate Video 5" },
+  { id: "kW-cxcoCqP4", title: "Corporate Video 6" },
+];
+
 const Index = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [activeVideoId, setActiveVideoId] = useState(corporateVideos[0].id);
 
   return (
     <Layout>
