@@ -11,7 +11,7 @@ const products = [
 { name: "MDF Board", image: mdfBoard, slug: "mdf-board", desc: "Medium Density Fibreboard for smooth finishes and versatile applications" },
 { name: "HDHMR Board", image: hdhmrBoard, slug: "hdhmr-board", desc: "High Density High Moisture Resistant boards for demanding environments" },
 { name: "Particle Board", image: particleBoard, slug: "particle-board", desc: "Cost-effective engineered wood for furniture and interiors" },
-{ name: "Frame Guard Board", image: frameguardBoard, slug: "frame-guard-board", desc: "Specially engineered boards for durable door frames" }];
+{ name: "Flame Guard Board", image: frameguardBoard, slug: "flame-guard-board", desc: "Fire-retardant MDF engineered for maximum safety in public spaces" }];
 
 
 const Products = () =>
