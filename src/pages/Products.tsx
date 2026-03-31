@@ -52,6 +52,10 @@ const Products = () =>
         </div>
       </div>
     </section>
+
+    <div style={{ marginTop: '80px', marginBottom: '40px' }}>
+      <DownloadCatalog />
+    </div>
   </Layout>;
 
 
