@@ -13,8 +13,8 @@ import {
 import { toast } from "sonner";
 
 const DOWNLOADS = {
-  profile: "https://drive.google.com/uc?export=download&id=17g8QmRpCMVmYtxey0pCNUgwGKR27nV6g",
-  catalog: "https://drive.google.com/uc?export=download&id=14Gp0ARje-aLd-N11VhNPKJUy_whj3W9H",
+  profile: "https://drive.google.com/file/d/17g8QmRpCMVmYtxey0pCNUgwGKR27nV6g/view?usp=sharing",
+  catalog: "https://drive.google.com/file/d/14Gp0ARje-aLd-N11VhNPKJUy_whj3W9H/view?usp=sharing",
 };
 
 const DownloadCatalog = () => {
@@ -28,18 +28,8 @@ const DownloadCatalog = () => {
 
     setSubmitting(true);
 
-    // Trigger both downloads
-    const a1 = document.createElement("a");
-    a1.href = DOWNLOADS.profile;
-    a1.target = "_blank";
-    a1.rel = "noopener noreferrer";
-    a1.click();
-
-    const a2 = document.createElement("a");
-    a2.href = DOWNLOADS.catalog;
-    a2.target = "_blank";
-    a2.rel = "noopener noreferrer";
-    a2.click();
+    window.open(DOWNLOADS.profile, "_blank");
+    window.open(DOWNLOADS.catalog, "_blank");
 
     setTimeout(() => {
       setOpen(false);
