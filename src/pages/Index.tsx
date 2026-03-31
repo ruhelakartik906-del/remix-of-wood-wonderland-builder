@@ -6,6 +6,7 @@ import Layout from "@/components/Layout";
 import DownloadCatalog from "@/components/DownloadCatalog";
 import heroBanner from "@/assets/hero-banner.png";
 import factory from "@/assets/crafting-excellence.png";
+import woodGrainBg from "@/assets/wood-grain-bg.jpg";
 import factoryWide from "@/assets/factory-wide.jpg";
 import mdfBoard from "@/assets/mdf-board.jpg";
 import hdhmrBoard from "@/assets/hdhmr-board.jpg";
