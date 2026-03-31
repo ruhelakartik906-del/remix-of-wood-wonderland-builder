@@ -238,8 +238,8 @@ const Index = () => {
 
       {/* Corporate Videos */}
       <section className="section-padding">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="rounded-3xl border border-white/50 p-6 sm:p-10 lg:p-16" style={{ backgroundColor: 'rgb(255, 240, 245)' }}>
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="rounded-2xl border-2 border-[#FFB6C1] bg-background p-6 sm:p-8">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-4 text-[#1a5c2a]">Corporate Videos</h2>
             <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">Explore our brand journey, manufacturing process, and product innovations</p>
 
