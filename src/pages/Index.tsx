@@ -76,7 +76,7 @@ const comparisonData = [
 { property: "Density", ours: "850-950 kg/m³", ordinary: "400-550 kg/m³", better: true },
 { property: "Termite Resistance", ours: "100% Protected", ordinary: "Vulnerable", better: true },
 { property: "Surface Smoothness", ours: "Ultra Smooth", ordinary: "Rough & Uneven", better: true },
-{ property: "Moisture Resistance", ours: "High (HDHMR)", ordinary: "Low", better: true },
+{ property: "Moisture Resistance", ours: "High (HDSMR)", ordinary: "Low", better: true },
 { property: "Screw Holding", ours: "Excellent", ordinary: "Poor", better: true },
 { property: "Lifespan", ours: "25+ Years", ordinary: "8-10 Years", better: true }];
 
