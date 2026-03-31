@@ -236,9 +236,9 @@ const Index = () => {
                 Exclusive Partner Opportunity: Unlock Shared Value
               </h2>
               <ul className="text-muted-foreground leading-relaxed mb-8 space-y-3 list-disc list-inside">
-                <li className="text-lg">Gain Priority Access to New HDSMR &amp; MDF Board Collections.</li>
-                <li className="text-lg">Sneak Peek at Emerging International Furniture &amp; Panel Trends.</li>
-                <li className="text-lg">Co-marketing Opportunities to Reach New Builder Networks.</li>
+                <li className="text-xl">Gain Priority Access to New HDSMR &amp; MDF Board Collections.</li>
+                <li className="text-xl">Sneak Peek at Emerging International Furniture &amp; Panel Trends.</li>
+                <li className="text-xl">Co-marketing Opportunities to Reach New Builder Networks.</li>
               </ul>
               <div className="grid grid-cols-2 gap-x-8 gap-y-2 text-base font-semibold text-foreground">
                 <span>HDSMR Board</span>
