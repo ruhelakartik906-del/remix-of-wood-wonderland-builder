@@ -73,7 +73,7 @@ const DownloadCatalog = () => {
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
                   <FileText size={26} className="text-primary group-hover:text-primary-foreground transition-colors" />
                 </div>
-                <span className="font-heading font-semibold text-sm">Infinity Catelogue</span>
+                <span className="font-heading font-semibold text-sm">Infinity Catalogue</span>
                 <span className="inline-flex items-center gap-1 text-xs text-primary font-medium">
                   <Download size={14} /> Download
                 </span>
