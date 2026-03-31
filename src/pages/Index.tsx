@@ -229,16 +229,23 @@ const Index = () => {
           <img src={woodGrainBg} alt="" className="w-full h-full object-cover" loading="lazy" width={1024} height={768} />
           <div className="absolute inset-0 bg-background/60" />
         </div>
-        <div className="relative z-10 container mx-auto px-4">
-          <div className="flex flex-col md:flex-row gap-12 items-center">
-            <div className="w-full md:w-[55%] pl-2 md:pl-6">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Exclusive Supply Partner Offer</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Explore a special overview from our premium supply partner showcasing our shared commitment to quality and innovation. Discover exclusive insights.
-              </p>
-              <p className="text-sm font-semibold text-foreground tracking-wide">
-                HDSMR Board &nbsp;|&nbsp; MDF Board &nbsp;|&nbsp; Flame Guard Board
-              </p>
+        <div className="relative z-10 max-w-7xl mx-auto px-4">
+          <div className="flex flex-col md:flex-row gap-8 items-center">
+            <div className="w-full md:w-[55%] md:min-h-[550px] flex flex-col justify-center pl-2 md:pl-6">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-6 leading-tight">
+                Exclusive Partner Opportunity: Unlock Shared Value
+              </h2>
+              <ul className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 space-y-3 list-disc list-inside">
+                <li>Gain Priority Access to New HDSMR &amp; MDF Board Collections.</li>
+                <li>Sneak Peek at Emerging International Furniture &amp; Panel Trends.</li>
+                <li>Co-marketing Opportunities to Reach New Builder Networks.</li>
+              </ul>
+              <div className="grid grid-cols-2 gap-x-8 gap-y-2 text-base font-semibold text-foreground">
+                <span>HDSMR Board</span>
+                <span>MDF Board</span>
+                <span>Flame Guard Board</span>
+                <span>Charcoal Teak Panel</span>
+              </div>
             </div>
             <div className="w-full md:w-[45%] flex justify-center">
               <div className="w-3/4 h-[550px] rounded-2xl overflow-hidden shadow-md bg-black">
