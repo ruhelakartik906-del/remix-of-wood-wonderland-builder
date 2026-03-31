@@ -31,7 +31,7 @@ import partnerTata from "@/assets/partner-tata.jpg";
 
 const products = [
 { name: "MDF Board", image: mdfBoard, slug: "mdf-board", desc: "Medium Density Fibreboard for smooth finishes and versatile applications", features: ["Smooth surface finish", "Easy to paint & laminate", "Eco-friendly manufacturing"] },
-{ name: "HDHMR Board", image: hdhmrBoard, slug: "hdhmr-board", desc: "High Density High Moisture Resistant boards for demanding environments", features: ["Superior moisture resistance", "Ultra-high density core", "Kitchen & bathroom ready"] },
+{ name: "HDSMR Board", image: hdhmrBoard, slug: "hdhmr-board", desc: "High Density High Moisture Resistant boards for demanding environments", features: ["Superior moisture resistance", "Ultra-high density core", "Kitchen & bathroom ready"] },
 { name: "Particle Board", image: particleBoard, slug: "particle-board", desc: "Cost-effective solution for furniture and interior fit-outs", features: ["Uniform structure", "Budget-friendly option", "Laminate-ready surface"] },
 { name: "Flame Guard Board", image: frameguardBoard, slug: "flame-guard-board", desc: "Fire-retardant MDF engineered for maximum safety in public spaces", features: ["Low smoke emission", "High fire resistance", "Easily processable"] }];
 
@@ -45,7 +45,7 @@ const features = [
 
 const testimonials = [
 { name: "Rajesh Kumar", role: "Interior Designer", quote: "WoodCraft boards have become our go-to for premium projects. The consistency and quality are unmatched." },
-{ name: "Priya Sharma", role: "Architect", quote: "The HDHMR boards offer incredible moisture resistance. Perfect for kitchen and bathroom cabinetry." },
+{ name: "Priya Sharma", role: "Architect", quote: "The HDSMR boards offer incredible moisture resistance. Perfect for kitchen and bathroom cabinetry." },
 { name: "Amit Patel", role: "Furniture Manufacturer", quote: "We've been sourcing from WoodCraft for 5 years. Reliable quality, timely delivery every time." }];
 
 
@@ -76,7 +76,7 @@ const comparisonData = [
 { property: "Density", ours: "850-950 kg/m³", ordinary: "400-550 kg/m³", better: true },
 { property: "Termite Resistance", ours: "100% Protected", ordinary: "Vulnerable", better: true },
 { property: "Surface Smoothness", ours: "Ultra Smooth", ordinary: "Rough & Uneven", better: true },
-{ property: "Moisture Resistance", ours: "High (HDHMR)", ordinary: "Low", better: true },
+{ property: "Moisture Resistance", ours: "High (HDSMR)", ordinary: "Low", better: true },
 { property: "Screw Holding", ours: "Excellent", ordinary: "Poor", better: true },
 { property: "Lifespan", ours: "25+ Years", ordinary: "8-10 Years", better: true }];
 
@@ -128,8 +128,8 @@ const Index = () => {
         <div className="py-3 overflow-hidden bg-secondary-foreground font-medium">
           <div className="animate-[marquee_20s_linear_infinite] whitespace-nowrap flex gap-16">
             {[...Array(4)].map((_, i) =>
-            <span key={i} className="text-primary-foreground font-heading font-semibold text-sm md:text-base tracking-widest uppercase">
-                India's Leading Manufacturer of HDHMR & MDF &nbsp;•&nbsp; Premium Engineered Wood Panels &nbsp;•&nbsp; Trusted by 500+ Dealers &nbsp;•&nbsp;
+<span key={i} className="text-primary-foreground font-heading font-semibold text-sm md:text-base tracking-widest uppercase">
+                India's Leading Manufacturer of HDSMR & MDF &nbsp;•&nbsp; Premium Engineered Wood Panels &nbsp;•&nbsp; Trusted by 500+ Dealers &nbsp;•&nbsp;
               </span>
             )}
           </div>
