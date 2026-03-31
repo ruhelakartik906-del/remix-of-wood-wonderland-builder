@@ -48,7 +48,7 @@ const DownloadCatalog = () => {
               Download Catalog
             </h2>
             <p className="text-muted-foreground text-center mb-8 text-sm">
-              Get our complete company profile and product catalog
+              Get our complete Infinity Board and Infinity  catalogue
             </p>
             <div className="grid sm:grid-cols-2 gap-6 max-w-lg mx-auto">
               {/* Company Profile */}
