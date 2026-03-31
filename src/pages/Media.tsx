@@ -1,24 +1,28 @@
 import { useState } from "react";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import pageHeaderBg from "@/assets/page-header-bg-2.jpg";
-import factory from "@/assets/factory.jpg";
-import hero1 from "@/assets/hero-1.jpg";
-import hero2 from "@/assets/hero-2.jpg";
-import appKitchen from "@/assets/app-kitchen.jpg";
-import appWardrobe from "@/assets/app-wardrobe.jpg";
-import appOffice from "@/assets/app-office.jpg";
-import appWall from "@/assets/app-wall.jpg";
+import gallery1 from "@/assets/gallery-1-kitchen-light.jpg";
+import gallery2 from "@/assets/gallery-2-wardrobe-white.jpg";
+import gallery3 from "@/assets/gallery-3-office-desk.jpg";
+import gallery4 from "@/assets/gallery-4-tv-unit.jpg";
+import gallery5 from "@/assets/gallery-5-bedroom-wardrobe.jpg";
+import gallery6 from "@/assets/gallery-6-retail-counter.jpg";
+import gallery7 from "@/assets/gallery-7-kitchen-gray.jpg";
+import gallery8 from "@/assets/gallery-8-wall-panel.jpg";
+import gallery9 from "@/assets/gallery-9-conference.jpg";
 
 const galleryImages = [
-  { src: factory, title: "Gloss Up Your Lifestyle", subtitle: "8077 - Graphite" },
-  { src: hero1, title: "Modern Elegance", subtitle: "9012 - Alpine White" },
-  { src: hero2, title: "Contemporary Living", subtitle: "7045 - Smoky Oak" },
-  { src: appKitchen, title: "Kitchen Perfection", subtitle: "6034 - Tuscan Walnut" },
-  { src: appWardrobe, title: "Premium Wardrobes", subtitle: "5021 - Charcoal Teak" },
-  { src: appOffice, title: "Workspace Redefined", subtitle: "4018 - Nordic Ash" },
-  { src: appWall, title: "Statement Walls", subtitle: "3055 - Sahara Stone" },
+  { src: gallery1, title: "Gloss Up Your Lifestyle", subtitle: "8077 - Graphite" },
+  { src: gallery2, title: "Own Your Magnanimity", subtitle: "8070 - Magma Grey" },
+  { src: gallery3, title: "Live Around an Elegant Dove", subtitle: "8074 - Dove Grey" },
+  { src: gallery4, title: "Feel the Fluorescence Emotions", subtitle: "8011 - Quartz Grey" },
+  { src: gallery5, title: "Brush Up Your Life", subtitle: "8022 - Brushed Grey" },
+  { src: gallery6, title: "Write Happiness with Graphite", subtitle: "8018 - Graphite Grey" },
+  { src: gallery7, title: "Give A Feather Touch", subtitle: "8017 - Feather" },
+  { src: gallery8, title: "Add Eternal Golden Bliss", subtitle: "9003 - White Oak" },
+  { src: gallery9, title: "Create a Legacy", subtitle: "9021 - Smoked Oak" },
 ];
 
 const Media = () => {
