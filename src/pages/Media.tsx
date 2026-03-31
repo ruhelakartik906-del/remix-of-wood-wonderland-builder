@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { ChevronLeft, ChevronRight, X, Play } from "lucide-react";
 import Layout from "@/components/Layout";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import pageHeaderBg from "@/assets/page-header-bg-2.jpg";
@@ -25,8 +25,19 @@ const galleryImages = [
   { src: gallery9, title: "Create a Legacy", subtitle: "9021 - Smoked Oak" },
 ];
 
+const videoSources = [
+  "/__l5e/assets-v1/31b5d62d-5d04-4c17-b0a6-d1a3936cc3c0/media-video-1.mp4",
+  "/__l5e/assets-v1/acedcc76-7f3b-4813-8ff3-073515ff55f6/media-video-2.mp4",
+  "/__l5e/assets-v1/bd675604-9f5a-4282-9169-754338850ed7/media-video-3.mp4",
+  "/__l5e/assets-v1/bdf309c4-8095-447d-a278-31e0a61a3c98/media-video-4.mp4",
+  "/__l5e/assets-v1/562aae5f-17ff-493e-b1c1-d49d86f61fa1/media-video-5.mp4",
+  "/__l5e/assets-v1/5af23aec-719b-4c1e-a0c6-9b7faaab44b4/media-video-6.mp4",
+];
+
 const Media = () => {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [activeVideoIndex, setActiveVideoIndex] = useState<number | null>(null);
+  const modalVideoRef = useRef<HTMLVideoElement>(null);
 
   const openLightbox = (i: number) => setLightboxIndex(i);
   const closeLightbox = () => setLightboxIndex(null);
@@ -40,6 +51,15 @@ const Media = () => {
     if (lightboxIndex === null) return;
     setLightboxIndex(lightboxIndex === galleryImages.length - 1 ? 0 : lightboxIndex + 1);
   };
+
+  const openVideoModal = (i: number) => setActiveVideoIndex(i);
+  const closeVideoModal = () => setActiveVideoIndex(null);
+
+  useEffect(() => {
+    if (activeVideoIndex !== null && modalVideoRef.current) {
+      modalVideoRef.current.play();
+    }
+  }, [activeVideoIndex]);
 
   return (
     <Layout>
@@ -90,24 +110,31 @@ const Media = () => {
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="font-heading font-bold text-center mb-10 text-3xl">Video Gallery</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-6 justify-items-center">
-            {[
-              "/__l5e/assets-v1/31b5d62d-5d04-4c17-b0a6-d1a3936cc3c0/media-video-1.mp4",
-              "/__l5e/assets-v1/acedcc76-7f3b-4813-8ff3-073515ff55f6/media-video-2.mp4",
-              "/__l5e/assets-v1/bd675604-9f5a-4282-9169-754338850ed7/media-video-3.mp4",
-              "/__l5e/assets-v1/bdf309c4-8095-447d-a278-31e0a61a3c98/media-video-4.mp4",
-              "/__l5e/assets-v1/562aae5f-17ff-493e-b1c1-d49d86f61fa1/media-video-5.mp4",
-              "/__l5e/assets-v1/5af23aec-719b-4c1e-a0c6-9b7faaab44b4/media-video-6.mp4",
-            ].map((src, i) => (
-              <div key={i} className="overflow-hidden rounded-2xl border border-border shadow-lg transition-all duration-300 hover:shadow-xl w-full max-w-[240px] aspect-[9/16]">
-                <video src={src} controls className="block h-full w-full object-cover" preload="metadata" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-6 justify-items-center">
+            {videoSources.map((src, i) => (
+              <div
+                key={i}
+                onClick={() => openVideoModal(i)}
+                className="relative overflow-hidden rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 w-full max-w-[240px] aspect-[9/16] cursor-pointer group"
+              >
+                <video
+                  src={src}
+                  className="block h-full w-full object-cover"
+                  preload="metadata"
+                  muted
+                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                  <div className="bg-white/90 rounded-full p-3 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Play className="h-6 w-6 text-foreground fill-foreground" />
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Lightbox Modal */}
+      {/* Image Lightbox Modal */}
       <Dialog open={lightboxIndex !== null} onOpenChange={closeLightbox}>
         <DialogContent className="max-w-4xl w-[95vw] p-0 border-none bg-black/95 overflow-hidden">
           {lightboxIndex !== null && (
@@ -144,6 +171,33 @@ const Media = () => {
           )}
         </DialogContent>
       </Dialog>
+
+      {/* Video Popup Modal */}
+      {activeVideoIndex !== null && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
+          onClick={closeVideoModal}
+        >
+          <button
+            onClick={closeVideoModal}
+            className="absolute top-4 right-4 z-50 bg-white/20 hover:bg-white/40 rounded-full p-2 transition-colors"
+          >
+            <X className="h-7 w-7 text-white" />
+          </button>
+          <div
+            className="relative w-[85vw] max-w-[360px] aspect-[9/16] rounded-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <video
+              ref={modalVideoRef}
+              src={videoSources[activeVideoIndex]}
+              controls
+              autoPlay
+              className="block h-full w-full object-cover"
+            />
+          </div>
+        </div>
+      )}
     </Layout>
   );
 };
