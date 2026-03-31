@@ -36,8 +36,8 @@ const ProductPage = () => {
       <TechnicalData specs={product.specs} />
       <MaintenanceSection tips={product.maintenance} />
       <InstallationGuide steps={product.installation} />
-      <DownloadCatalog />
       <RelatedProducts products={relatedProducts} />
+      <DownloadCatalog />
     </Layout>
   );
 };
