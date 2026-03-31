@@ -224,29 +224,46 @@ const Index = () => {
       </section>
 
       {/* Exclusive Partner Offer */}
-      <section className="relative py-16 md:py-20 overflow-hidden">
+      <section className="relative py-20 md:py-24 overflow-hidden">
         <div className="absolute inset-0">
           <img src={woodGrainBg} alt="" className="w-full h-full object-cover" loading="lazy" width={1024} height={768} />
           <div className="absolute inset-0 bg-background/60" />
         </div>
         <div className="relative z-10 container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="pl-2 md:pl-6">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Exclusive Partner Offer</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Explore this special video overview from our premium supply partner showcasing our shared commitment to quality and innovation. Discover exclusive insights and upcoming collaboration details.
+          <div className="flex flex-col md:flex-row gap-10 md:gap-12 items-center">
+            <div className="w-full md:w-[40%] md:pl-6 flex flex-col justify-center">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-5 leading-tight">
+                Maximize Your Interiors: Explore Our Supply Partner's Special Proposition
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Dive into a unique opportunity from our premium supply partner to discover innovations in wood paneling and exclusive offers. Check out how this collaboration can benefit your upcoming projects:
               </p>
+              <ul className="space-y-2.5">
+                {[
+                  "Special Volume Pricing on HDSMR & MDF.",
+                  "Sneak Peeks at New Wood Grain & Texture Collections.",
+                  "Priority Project Consultations.",
+                  "Discover the Shared Commitment to Carbon-Neutral Manufacturing.",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-foreground">
+                    <Check size={16} className="text-primary mt-0.5 shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="aspect-video rounded-2xl overflow-hidden shadow-md">
-              <video
-                src="/videos/partner-offer.mp4"
-                className="w-full h-full object-cover"
-                autoPlay
-                loop
-                muted
-                playsInline
-                controls
-              />
+            <div className="w-full md:w-[60%]">
+              <div className="aspect-video rounded-2xl overflow-hidden shadow-md w-full">
+                <video
+                  src="/videos/partner-offer.mp4"
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  controls
+                />
+              </div>
             </div>
           </div>
         </div>
