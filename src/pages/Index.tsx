@@ -223,6 +223,24 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Why Choose Us */}
+      <section className="section-padding section-alt">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">Why Choose Us</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((f, i) =>
+            <div key={i} className="text-center group">
+                <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary transition-colors">
+                  <f.icon size={28} className="text-primary group-hover:text-primary-foreground transition-colors" />
+                </div>
+                <h3 className="font-heading font-semibold text-lg mb-2">{f.title}</h3>
+                <p className="text-muted-foreground text-sm">{f.desc}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
       {/* Exclusive Supply Partner Offer */}
       <section className="relative py-10 md:py-14 overflow-hidden">
         <div className="absolute inset-0">
@@ -263,26 +281,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Why Choose Us */}
-      <section className="section-padding section-alt">
-        <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">Why Choose Us</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((f, i) =>
-            <div key={i} className="text-center group">
-                <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary transition-colors">
-                  <f.icon size={28} className="text-primary group-hover:text-primary-foreground transition-colors" />
-                </div>
-                <h3 className="font-heading font-semibold text-lg mb-2">{f.title}</h3>
-                <p className="text-muted-foreground text-sm">{f.desc}</p>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
-
 
       {/* Comparison Table */}
       <section className="section-padding">
