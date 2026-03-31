@@ -28,8 +28,8 @@ const DownloadCatalog = () => {
 
     setSubmitting(true);
 
-    window.open(DOWNLOADS.profile, "_blank");
-    window.open(DOWNLOADS.catalog, "_blank");
+    window.open(DOWNLOADS.particleBoard, "_blank");
+    window.open(DOWNLOADS.mdfHdhmr, "_blank");
 
     setTimeout(() => {
       setOpen(false);
