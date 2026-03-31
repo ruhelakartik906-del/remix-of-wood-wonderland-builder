@@ -128,8 +128,8 @@ const Index = () => {
         <div className="py-3 overflow-hidden bg-secondary-foreground font-medium">
           <div className="animate-[marquee_20s_linear_infinite] whitespace-nowrap flex gap-16">
             {[...Array(4)].map((_, i) =>
-            <span key={i} className="text-primary-foreground font-heading font-semibold text-sm md:text-base tracking-widest uppercase">
-                India's Leading Manufacturer of HDHMR & MDF &nbsp;•&nbsp; Premium Engineered Wood Panels &nbsp;•&nbsp; Trusted by 500+ Dealers &nbsp;•&nbsp;
+<span key={i} className="text-primary-foreground font-heading font-semibold text-sm md:text-base tracking-widest uppercase">
+                India's Leading Manufacturer of HDSMR & MDF &nbsp;•&nbsp; Premium Engineered Wood Panels &nbsp;•&nbsp; Trusted by 500+ Dealers &nbsp;•&nbsp;
               </span>
             )}
           </div>
