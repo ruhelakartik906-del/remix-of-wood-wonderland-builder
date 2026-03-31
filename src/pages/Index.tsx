@@ -373,7 +373,7 @@ const Index = () => {
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-10">Infinity Goods Video</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-6 justify-items-center">
-            {["/videos/video-1.mp4", "/videos/video-2.mp4", "/videos/video-3.mp4"].map((src, i) =>
+            {["/videos/video-1.mp4", "/__l5e/assets-v1/ce210418-49da-4ffe-855e-71b08de3256c/video-luxury-living.mp4", "/videos/video-3.mp4"].map((src, i) =>
               <div key={i} className="overflow-hidden rounded-2xl border border-border shadow-lg transition-all duration-300 hover:shadow-xl w-full max-w-[300px] aspect-[9/16]">
                 <video src={src} controls className="block h-full w-full object-cover" preload="metadata" />
               </div>
