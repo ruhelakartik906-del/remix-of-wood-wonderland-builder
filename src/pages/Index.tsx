@@ -224,31 +224,30 @@ const Index = () => {
       </section>
 
       {/* Exclusive Supply Partner Offer */}
-      <section className="relative py-10 md:py-14 overflow-hidden">
+      <section className="relative py-16 md:py-20 overflow-hidden">
         <div className="absolute inset-0">
           <img src={woodGrainBg} alt="" className="w-full h-full object-cover" loading="lazy" width={1024} height={768} />
           <div className="absolute inset-0 bg-background/60" />
         </div>
         <div className="relative z-10 container mx-auto px-4">
-          <div className="flex flex-col md:flex-row gap-12 items-center">
-            <div className="w-full md:w-[55%] pl-2 md:pl-6">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Exclusive Supply Partner Offer</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Explore a special overview from our premium supply partner showcasing our shared commitment to quality and innovation. Discover exclusive insights.
-              </p>
-            </div>
-            <div className="w-full md:w-[45%] flex justify-center">
-              <div className="w-3/4 h-[550px] rounded-2xl overflow-hidden shadow-md bg-black">
-                <video
-                  src="/videos/partner-offer.mp4"
-                  className="w-full h-full object-contain"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  controls
-                />
-              </div>
+          <div className="flex flex-col items-center text-center space-y-6">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">Exclusive Supply Partner Offer</h2>
+            <p className="text-muted-foreground leading-relaxed max-w-2xl">
+              Explore a special overview from our premium supply partner showcasing our shared commitment to quality and innovation. Discover exclusive insights.
+            </p>
+            <p className="text-sm md:text-base font-semibold text-foreground tracking-wide">
+              Premium HDSMR Boards &nbsp;|&nbsp; High-Gloss MDF &nbsp;|&nbsp; Flame Guard Panels
+            </p>
+            <div className="w-[400px] max-w-full aspect-[9/16] rounded-2xl overflow-hidden shadow-md bg-black">
+              <video
+                src="/videos/partner-offer.mp4"
+                className="w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls
+              />
             </div>
           </div>
         </div>
