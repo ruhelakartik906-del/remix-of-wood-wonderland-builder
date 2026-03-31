@@ -224,21 +224,21 @@ const Index = () => {
       </section>
 
       {/* Exclusive Supply Partner Offer */}
-      <section className="relative py-20 md:py-24 overflow-hidden">
+      <section className="relative py-10 md:py-14 overflow-hidden">
         <div className="absolute inset-0">
           <img src={woodGrainBg} alt="" className="w-full h-full object-cover" loading="lazy" width={1024} height={768} />
           <div className="absolute inset-0 bg-background/60" />
         </div>
         <div className="relative z-10 container mx-auto px-4">
           <div className="flex flex-col md:flex-row gap-12 items-center">
-            <div className="w-full md:w-[40%] pl-2 md:pl-6">
+            <div className="w-full md:w-[55%] pl-2 md:pl-6">
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Exclusive Supply Partner Offer</h2>
               <p className="text-muted-foreground leading-relaxed">
                 Explore a special overview from our premium supply partner showcasing our shared commitment to quality and innovation. Discover exclusive insights.
               </p>
             </div>
-            <div className="w-full md:w-[60%]">
-              <div className="aspect-[9/16] rounded-2xl overflow-hidden shadow-md">
+            <div className="w-full md:w-[45%] flex justify-center">
+              <div className="w-3/4 aspect-[9/16] max-h-[400px] rounded-2xl overflow-hidden shadow-md">
                 <video
                   src="/videos/partner-offer.mp4"
                   className="w-full h-full object-cover"
