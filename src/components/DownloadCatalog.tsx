@@ -54,7 +54,7 @@ const DownloadCatalog = () => {
       <section className="py-16">
         <div className="container mx-auto max-w-4xl px-4">
           <div className="rounded-2xl border-2 border-border p-8 sm:p-10">
-            <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-2 text-foreground">
+            <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-2 text-[#1a5c2a]">
               Download Catalog
             </h2>
             <p className="text-muted-foreground text-center mb-8 text-sm">

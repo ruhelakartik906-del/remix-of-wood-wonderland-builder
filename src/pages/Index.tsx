@@ -27,14 +27,11 @@ import partnerIndiabulls from "@/assets/partner-indiabulls.jpg";
 import partnerLemontree from "@/assets/partner-lemontree.jpg";
 import partnerTata from "@/assets/partner-tata.jpg";
 
-
-
 const products = [
 { name: "MDF Board", image: mdfBoard, slug: "mdf-board", desc: "Medium Density Fibreboard for smooth finishes and versatile applications", features: ["Smooth surface finish", "Easy to paint & laminate", "Eco-friendly manufacturing"] },
 { name: "HDHMR Board", image: hdhmrBoard, slug: "hdhmr-board", desc: "High Density High Moisture Resistant boards for demanding environments", features: ["Superior moisture resistance", "Ultra-high density core", "Kitchen & bathroom ready"] },
 { name: "Particle Board", image: particleBoard, slug: "particle-board", desc: "Cost-effective solution for furniture and interior fit-outs", features: ["Uniform structure", "Budget-friendly option", "Laminate-ready surface"] },
 { name: "Flame Guard Board", image: frameguardBoard, slug: "flame-guard-board", desc: "Fire-retardant MDF engineered for maximum safety in public spaces", features: ["Low smoke emission", "High fire resistance", "Easily processable"] }];
-
 
 const features = [
 { icon: Shield, title: "Superior Quality", desc: "Manufactured with precision using world-class technology" },
@@ -42,34 +39,28 @@ const features = [
 { icon: Bug, title: "Termite Resistant", desc: "Advanced treatment ensures complete termite protection" },
 { icon: Hammer, title: "Durability", desc: "Built to last with exceptional structural integrity" }];
 
-
 const testimonials = [
 { name: "Rajesh Kumar", role: "Interior Designer", quote: "WoodCraft boards have become our go-to for premium projects. The consistency and quality are unmatched." },
 { name: "Priya Sharma", role: "Architect", quote: "The HDHMR boards offer incredible moisture resistance. Perfect for kitchen and bathroom cabinetry." },
 { name: "Amit Patel", role: "Furniture Manufacturer", quote: "We've been sourcing from WoodCraft for 5 years. Reliable quality, timely delivery every time." }];
-
 
 const applicationTabs: Record<string, {name: string;image: string;}[]> = {
   Kitchen: [
   { name: "Modular Kitchen", image: appKitchen },
   { name: "Kitchen Cabinets", image: appKitchen2 },
   { name: "Kitchen Island", image: appWall }],
-
   Bedroom: [
   { name: "Wardrobes", image: appWardrobe },
   { name: "Bed Frames", image: appBedroom },
   { name: "Dressing Units", image: appOffice }],
-
   Office: [
   { name: "Workstations", image: appOffice2 },
   { name: "Conference Rooms", image: appOffice },
   { name: "Reception Desks", image: appWall }],
-
   Exterior: [
   { name: "Wall Cladding", image: appExterior },
   { name: "Facade Panels", image: appWall },
   { name: "Outdoor Furniture", image: appBedroom }]
-
 };
 
 const comparisonData = [
@@ -80,13 +71,11 @@ const comparisonData = [
 { property: "Screw Holding", ours: "Excellent", ordinary: "Poor", better: true },
 { property: "Lifespan", ours: "25+ Years", ordinary: "8-10 Years", better: true }];
 
-
 const stats = [
 { icon: MapPin, value: "100+", label: "Dealers Nationwide" },
 { icon: Factory, value: "20+", label: "Years Experience" },
 { icon: Users, value: "50,000+", label: "Happy Customers" },
 { icon: Award, value: "10M+", label: "Sq. Ft. Produced" }];
-
 
 const partnerLogos = [
   { name: "OYO", image: partnerOyo },
@@ -188,14 +177,17 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Download Catalog */}
+      <div className="mt-20">
+        <DownloadCatalog />
+      </div>
+
       {/* Corporate Videos */}
-      <section className="py-[60px]">
+      <section className="my-20">
         <div className="max-w-6xl mx-auto px-4">
           <div className="rounded-2xl border-2 border-[#FFB6C1] bg-background p-6 sm:p-8">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-4 text-[#1a5c2a]">Corporate Videos</h2>
             <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">Explore our brand journey, manufacturing process, and product innovations</p>
-
-            {/* Main Player */}
             <div className="max-w-4xl mx-auto mb-8">
               <div className="aspect-video rounded-lg overflow-hidden shadow-xl border border-border">
                 <iframe
@@ -208,8 +200,6 @@ const Index = () => {
                 />
               </div>
             </div>
-
-            {/* Thumbnail Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 max-w-4xl mx-auto">
               {corporateVideos.map((video, i) => (
                 <button
@@ -240,12 +230,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Download Catalog */}
-      <div className="py-[60px]">
-        <DownloadCatalog />
-      </div>
-
-      {/* Applications Gallery */}
+      {/* Applications Gallery - Infinity Possibilities */}
       <section className="section-padding">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-4">Infinity Possibilities</h2>
@@ -276,9 +261,6 @@ const Index = () => {
         </div>
       </section>
 
-
-
-
       {/* Why Choose Us */}
       <section className="section-padding section-alt">
         <div className="container mx-auto">
@@ -296,8 +278,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-
 
       {/* Comparison Table */}
       <section className="section-padding">
@@ -331,7 +311,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Manufacturing Excellence - Parallax Stats */}
+      {/* Manufacturing Excellence */}
       <section className="relative py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0">
           <img src={factoryWide} alt="Manufacturing facility" className="w-full h-full object-cover" style={{ transform: "translateZ(0)" }} />
@@ -352,8 +332,7 @@ const Index = () => {
         </div>
       </section>
 
-
-
+      {/* Testimonials */}
       <section className="section-padding section-alt">
         <div className="container mx-auto max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-12">What Our Clients Say</h2>
