@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, Mail, MapPin, Building2, Factory, Send } from "lucide-react";
+import { Phone, Mail, Building2, Factory, Send } from "lucide-react";
 import Layout from "@/components/Layout";
 import pageHeaderBg from "@/assets/page-header-bg.jpg";
 
@@ -138,14 +138,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map */}
-      <section className="w-full h-80 bg-section-alt flex items-center justify-center border-t border-border">
-        <div className="text-center">
-          <MapPin size={40} className="mx-auto text-muted-foreground mb-3" />
-          <p className="text-muted-foreground font-medium">Google Map Placeholder</p>
-          <p className="text-muted-foreground text-sm">Embed your Google Map here</p>
-        </div>
-      </section>
     </Layout>);
 
 };
