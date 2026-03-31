@@ -233,8 +233,11 @@ const Index = () => {
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="w-full md:w-[55%] pl-2 md:pl-6">
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Exclusive Supply Partner Offer</h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed mb-4">
                 Explore a special overview from our premium supply partner showcasing our shared commitment to quality and innovation. Discover exclusive insights.
+              </p>
+              <p className="text-sm font-semibold text-foreground tracking-wide">
+                HDSMR Board &nbsp;|&nbsp; MDF Board &nbsp;|&nbsp; Flame Guard Board
               </p>
             </div>
             <div className="w-full md:w-[45%] flex justify-center">
