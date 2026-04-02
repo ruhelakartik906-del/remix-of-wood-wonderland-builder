@@ -118,6 +118,16 @@ const corporateVideos = [
 const Index = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [activeVideoId, setActiveVideoId] = useState(corporateVideos[0].id);
+  const [thumbStart, setThumbStart] = useState(0);
+  const visibleThumbs = 4;
+  const maxThumbStart = Math.max(0, corporateVideos.length - visibleThumbs);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setThumbStart((prev) => (prev >= maxThumbStart ? 0 : prev + 1));
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [maxThumbStart]);
 
   return (
     <Layout>
