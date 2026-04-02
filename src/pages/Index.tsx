@@ -392,21 +392,60 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="section-padding section-alt">
-        <div className="container mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-12">What Our Clients Say</h2>
-          <div className="relative">
-            <Quote size={40} className="text-primary/20 mx-auto mb-4" />
-            <p className="text-lg text-foreground italic leading-relaxed mb-6">"{testimonials[currentTestimonial].quote}"</p>
-            <p className="font-heading font-semibold">{testimonials[currentTestimonial].name}</p>
-            <p className="text-muted-foreground text-sm">{testimonials[currentTestimonial].role}</p>
-            <div className="flex justify-center gap-4 mt-8">
-              <button onClick={() => setCurrentTestimonial((t) => (t - 1 + testimonials.length) % testimonials.length)} className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors">
-                <ChevronLeft size={18} />
-              </button>
-              <button onClick={() => setCurrentTestimonial((t) => (t + 1) % testimonials.length)} className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors">
-                <ChevronRight size={18} />
-              </button>
+      <section className="py-16 md:py-24 bg-[#f8f8f8]">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-3">What Our Customers Say</h2>
+            <div className="w-16 h-1 bg-primary mx-auto mb-4 rounded-full" />
+            <p className="text-muted-foreground max-w-xl mx-auto">Hear from our trusted partners and clients about their experience with our premium board solutions.</p>
+          </div>
+
+          <div className="relative max-w-6xl mx-auto">
+            {/* Navigation Arrows */}
+            <button
+              onClick={() => setCurrentTestimonial((t) => (t - 1 + Math.ceil(testimonials.length / 3)) % Math.ceil(testimonials.length / 3))}
+              className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              onClick={() => setCurrentTestimonial((t) => (t + 1) % Math.ceil(testimonials.length / 3))}
+              className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+            >
+              <ChevronRight size={20} />
+            </button>
+
+            {/* Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {testimonials.slice(currentTestimonial * 3, currentTestimonial * 3 + 3).map((t, i) => (
+                <div key={i} className="bg-white rounded-xl shadow-lg p-8 flex flex-col justify-between">
+                  {/* Stars */}
+                  <div>
+                    <div className="flex gap-1 mb-4">
+                      {[...Array(5)].map((_, s) => (
+                        <Star key={s} size={18} className="fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    <p className="text-foreground leading-relaxed mb-6">"{t.quote}"</p>
+                  </div>
+                  {/* Footer */}
+                  <div className="flex items-center justify-between border-t border-gray-100 pt-4">
+                    <p className="font-heading font-semibold text-sm">{t.name}</p>
+                    <Quote size={28} className="text-primary/30" />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Pagination Dots */}
+            <div className="flex justify-center gap-2 mt-8">
+              {Array.from({ length: Math.ceil(testimonials.length / 3) }).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentTestimonial(i)}
+                  className={`w-3 h-3 rounded-full transition-colors ${i === currentTestimonial ? 'bg-primary' : 'bg-gray-300'}`}
+                />
+              ))}
             </div>
           </div>
         </div>
