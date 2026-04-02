@@ -1,6 +1,6 @@
 import { Award, Target, Eye } from "lucide-react";
 import Layout from "@/components/Layout";
-import factory from "@/assets/factory.jpg";
+import visionFactory from "@/assets/vision-factory.jpg";
 import pageHeaderBg from "@/assets/page-header-bg-2.jpg";
 
 const milestones = [
