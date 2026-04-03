@@ -31,7 +31,7 @@ const Footer = () =>
           <div>
             <h3 className="font-heading font-bold text-lg mb-4 text-foreground">Product Categories</h3>
             <ul className="space-y-2 text-sm">
-              {["MDF Board", "HDHMR Board", "Particle Board", "Frame Guard Board"].map((item) =>
+              {["MDF Board", "HDHMR Board", "Particle Board", "Flame Guard Board"].map((item) =>
                 <li key={item}>
                   <Link to={`/products/${item.toLowerCase().replace(/\s/g, "-")}`} className="text-muted-foreground hover:text-foreground transition-colors">
                     {item}
