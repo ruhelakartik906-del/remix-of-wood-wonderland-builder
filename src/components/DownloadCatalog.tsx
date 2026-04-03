@@ -13,14 +13,20 @@ import {
 import { toast } from "sonner";
 
 const DOWNLOADS = {
-  particleBoard: "https://drive.google.com/file/d/17g8QmRpCMVmYtxey0pCNUgwGKR27nV6g/view?usp=sharing",
-  mdfHdhmr: "https://drive.google.com/file/d/14Gp0ARje-aLd-N11VhNPKJUy_whj3W9H/view?usp=sharing",
+  particleBoard: "https://drive.google.com/uc?export=download&id=14Gp0ARje-aLd-N11VhNPKJUy_whj3W9H",
+  mdfHdhmr: "https://drive.google.com/uc?export=download&id=17g8QmRpCMVmYtxey0pCNUgwGKR27nV6g",
 };
 
 const DownloadCatalog = () => {
   const [open, setOpen] = useState(false);
+  const [selectedCatalog, setSelectedCatalog] = useState<"particleBoard" | "mdfHdhmr">("particleBoard");
   const [formData, setFormData] = useState({ name: "", company: "", whatsapp: "" });
   const [submitting, setSubmitting] = useState(false);
+
+  const openDialog = (catalog: "particleBoard" | "mdfHdhmr") => {
+    setSelectedCatalog(catalog);
+    setOpen(true);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,8 +34,12 @@ const DownloadCatalog = () => {
 
     setSubmitting(true);
 
-    window.open(DOWNLOADS.particleBoard, "_blank");
-    window.open(DOWNLOADS.mdfHdhmr, "_blank");
+    const link = document.createElement("a");
+    link.href = DOWNLOADS[selectedCatalog];
+    link.setAttribute("download", "");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 
     setTimeout(() => {
       setOpen(false);
@@ -53,7 +63,7 @@ const DownloadCatalog = () => {
             <div className="grid sm:grid-cols-2 gap-6 max-w-lg mx-auto">
               {/* Company Profile */}
               <button
-                onClick={() => setOpen(true)}
+                onClick={() => openDialog("particleBoard")}
                 className="flex flex-col items-center gap-3 p-6 rounded-xl border border-border bg-card hover:shadow-md transition-shadow group cursor-pointer"
               >
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
@@ -65,9 +75,8 @@ const DownloadCatalog = () => {
                 </span>
               </button>
 
-              {/* Product Catalog */}
               <button
-                onClick={() => setOpen(true)}
+                onClick={() => openDialog("mdfHdhmr")}
                 className="flex flex-col items-center gap-3 p-6 rounded-xl border border-border bg-card hover:shadow-md transition-shadow group cursor-pointer"
               >
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
