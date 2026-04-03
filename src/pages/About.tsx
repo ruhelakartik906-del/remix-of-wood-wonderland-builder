@@ -20,8 +20,20 @@ const certifications = [
 { title: "FSC Certified", desc: "Responsible Forestry" }];
 
 
-const About = () =>
-<Layout>
+const testimonials = [
+  { name: "Rajesh Kumar", quote: "I was very impressed with the quality of Infinity Boards. The finish, durability, and consistency are top-notch. Our clients love the results every single time." },
+  { name: "Priya Sharma", quote: "The HDSMR boards offer incredible moisture resistance. Perfect for kitchen and bathroom cabinetry. Highly recommend for premium interior projects." },
+  { name: "Amit Patel", quote: "We've been sourcing from Infinity for 5 years now. Reliable quality, timely delivery, and outstanding customer support every time." },
+  { name: "Sneha Reddy", quote: "The product range is fantastic. From MDF to particle boards, everything meets international standards. A truly dependable manufacturing partner." },
+  { name: "Vikram Singh", quote: "Exceptional boards with great screw-holding capacity. Our furniture production quality has improved significantly since switching to Infinity." },
+  { name: "Neha Gupta", quote: "Outstanding surface quality and dimensional accuracy. These boards make our lamination process seamless and the end result is always premium." },
+];
+
+const About = () => {
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  return (
+    <Layout>
     <section className="relative h-48 md:h-64 flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <img src={pageHeaderBg} alt="" className="w-full h-full object-cover" style={{ filter: 'blur(2px)' }} />
