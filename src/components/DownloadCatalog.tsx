@@ -63,7 +63,7 @@ const DownloadCatalog = () => {
             <div className="grid sm:grid-cols-2 gap-6 max-w-lg mx-auto">
               {/* Company Profile */}
               <button
-                onClick={() => setOpen(true)}
+                onClick={() => openDialog("particleBoard")}
                 className="flex flex-col items-center gap-3 p-6 rounded-xl border border-border bg-card hover:shadow-md transition-shadow group cursor-pointer"
               >
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
@@ -75,9 +75,8 @@ const DownloadCatalog = () => {
                 </span>
               </button>
 
-              {/* Product Catalog */}
               <button
-                onClick={() => setOpen(true)}
+                onClick={() => openDialog("mdfHdhmr")}
                 className="flex flex-col items-center gap-3 p-6 rounded-xl border border-border bg-card hover:shadow-md transition-shadow group cursor-pointer"
               >
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
