@@ -13,8 +13,8 @@ import {
 import { toast } from "sonner";
 
 const DOWNLOADS = {
-  particleBoard: "https://drive.google.com/file/d/17g8QmRpCMVmYtxey0pCNUgwGKR27nV6g/view?usp=sharing",
-  mdfHdhmr: "https://drive.google.com/file/d/14Gp0ARje-aLd-N11VhNPKJUy_whj3W9H/view?usp=sharing",
+  particleBoard: "/catalogs/Particle_Board_Catalog.pdf",
+  mdfHdhmr: "/catalogs/MDF_Catalog.pdf",
 };
 
 const DownloadCatalog = () => {
