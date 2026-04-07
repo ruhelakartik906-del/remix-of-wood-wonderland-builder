@@ -95,7 +95,7 @@ const PrivacyPolicy = () => {
               </ArrowBullet>
               <ArrowBullet>
                 Issues related to the quality and manufacturing standards of the Company's product range, including
-                <strong> MDF Board, HDHMR Board, Particle Board, and Flame Guard Board</strong>, ensuring compliance
+                <strong> MDF Board, HDSMR Board, Particle Board, and Flame Guard Board</strong>, ensuring compliance
                 with established quality benchmarks and regulatory standards.
               </ArrowBullet>
               <ArrowBullet>

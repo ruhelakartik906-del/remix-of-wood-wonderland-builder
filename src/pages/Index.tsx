@@ -307,7 +307,7 @@ const Index = () => {
               <thead>
                 <tr className="bg-primary text-primary-foreground">
                   <th className="px-6 py-4 text-left text-sm font-semibold">Property</th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold">Our HDHMR / MDF</th>
+                  <th className="px-6 py-4 text-center text-sm font-semibold"><th className="px-6 py-4 text-center text-sm font-semibold">Our HDSMR / MDF</th></th>
                   <th className="px-6 py-4 text-center text-sm font-semibold">Ordinary Plywood</th>
                 </tr>
               </thead>

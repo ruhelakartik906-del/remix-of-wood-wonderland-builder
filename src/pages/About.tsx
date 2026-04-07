@@ -8,7 +8,7 @@ const milestones = [
 { year: "2005", title: "Company Founded", desc: "Established with a vision to revolutionize the engineered wood industry in India." },
 { year: "2008", title: "First Factory", desc: "Commissioned our first state-of-the-art manufacturing plant with European machinery." },
 { year: "2012", title: "ISO Certification", desc: "Received ISO 9001:2008 certification for quality management systems." },
-{ year: "2016", title: "Product Expansion", desc: "Launched HDHMR and Frame Guard Board product lines to meet growing demand." },
+{ year: "2016", title: "Product Expansion", desc: "Launched HDSMR and Flame Guard Board product lines to meet growing demand." },
 { year: "2020", title: "Green Certification", desc: "Achieved Green Building certification for sustainable manufacturing practices." },
 { year: "2024", title: "Pan-India Presence", desc: "Expanded distribution to 500+ dealers across all major cities in India." }];
 
