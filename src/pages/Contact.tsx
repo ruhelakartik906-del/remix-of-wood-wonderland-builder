@@ -114,7 +114,7 @@ const Contact = () => {
                   
                     <option value="">Select Product Interest</option>
                     <option>MDF Board</option>
-                    <option>HDHMR Board</option>
+                    <option>HDSMR Board</option>
                     <option>Particle Board</option>
                     <option>Frame Guard Board</option>
                   </select>

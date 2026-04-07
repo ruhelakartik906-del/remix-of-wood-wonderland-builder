@@ -81,10 +81,10 @@ export const productData: Record<string, ProductInfo> = {
   },
 
   "hdhmr-board": {
-    name: "HDHMR Board",
+    name: "HDSMR Board",
     image: hdhmrBoard,
-    tagline: "High Density, High Moisture Resistance",
-    intro: "HDHMR (High Density High Moisture Resistant) boards represent the pinnacle of engineered wood technology. With superior density and exceptional moisture resistance, they are the ideal choice for kitchen cabinets, bathroom vanities, and areas exposed to humidity.",
+    tagline: "High Density, Super Moisture Resistance",
+    intro: "HDSMR (High Density Super Moisture Resistant) boards represent the pinnacle of engineered wood technology. With superior density and exceptional moisture resistance, they are the ideal choice for kitchen cabinets, bathroom vanities, and areas exposed to humidity.",
     features: [
       { icon: Droplets, title: "Superior Moisture Resistance" },
       { icon: Layers, title: "Ultra-High Density Core" },
@@ -203,7 +203,7 @@ productData["frame-guard-board"] = productData["flame-guard-board"];
 
 export const allProducts = [
   { name: "MDF Board", slug: "mdf-board", image: mdfBoard },
-  { name: "HDHMR Board", slug: "hdhmr-board", image: hdhmrBoard },
+  { name: "HDSMR Board", slug: "hdhmr-board", image: hdhmrBoard },
   { name: "Pre-Laminated Particle Board", slug: "particle-board", image: particleBoard },
   { name: "Flame Guard Board", slug: "flame-guard-board", image: frameguardBoard },
 ];
