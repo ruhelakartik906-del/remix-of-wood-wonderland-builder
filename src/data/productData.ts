@@ -114,7 +114,7 @@ export const productData: Record<string, ProductInfo> = {
     ],
     installation: [
       { step: "Acclimatize", desc: "Allow boards to adjust to room temperature for 24–48 hours before use." },
-      { step: "Precision Cutting", desc: "Use carbide-tipped blades for clean cuts. HDHMR's density requires sharp tools." },
+      { step: "Precision Cutting", desc: "Use carbide-tipped blades for clean cuts. { step: "Precision Cutting", desc: "Use carbide-tipped blades for clean cuts. HDSMR's density requires sharp tools." }," },
       { step: "Assembly", desc: "Pre-drill all holes. Use high-quality wood screws and waterproof adhesive for lasting joints." },
     ],
   },
