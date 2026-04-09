@@ -26,12 +26,12 @@ const galleryImages = [
 ];
 
 const videoSources = [
-  "/__l5e/assets-v1/31b5d62d-5d04-4c17-b0a6-d1a3936cc3c0/media-video-1.mp4",
-  "/__l5e/assets-v1/acedcc76-7f3b-4813-8ff3-073515ff55f6/media-video-2.mp4",
-  "/__l5e/assets-v1/bd675604-9f5a-4282-9169-754338850ed7/media-video-3.mp4",
-  "/__l5e/assets-v1/bdf309c4-8095-447d-a278-31e0a61a3c98/media-video-4.mp4",
-  "/__l5e/assets-v1/562aae5f-17ff-493e-b1c1-d49d86f61fa1/media-video-5.mp4",
-  "/__l5e/assets-v1/5af23aec-719b-4c1e-a0c6-9b7faaab44b4/media-video-6.mp4",
+  "/videos/media-video-1.mp4",
+  "/videos/media-video-2.mp4",
+  "/videos/media-video-3.mp4",
+  "/videos/media-video-4.mp4",
+  "/videos/media-video-5.mp4",
+  "/videos/media-video-6.mp4",
 ];
 
 const Media = () => {
