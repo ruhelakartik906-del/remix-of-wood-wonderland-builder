@@ -3,26 +3,26 @@ import { ChevronLeft, ChevronRight, X, Play } from "lucide-react";
 import Layout from "@/components/Layout";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import pageHeaderBg from "@/assets/page-header-bg-2.jpg";
-import gallery1 from "@/assets/gallery-1-kitchen-light.jpg";
-import gallery2 from "@/assets/gallery-2-wardrobe-white.jpg";
-import gallery3 from "@/assets/gallery-3-office-desk.jpg";
-import gallery4 from "@/assets/gallery-4-tv-unit.jpg";
-import gallery5 from "@/assets/gallery-5-bedroom-wardrobe.jpg";
-import gallery6 from "@/assets/gallery-6-retail-counter.jpg";
-import gallery7 from "@/assets/gallery-7-kitchen-gray.jpg";
-import gallery8 from "@/assets/gallery-8-wall-panel.jpg";
-import gallery9 from "@/assets/gallery-9-conference.jpg";
+import gallery1 from "@/assets/gallery-new-1.jpg";
+import gallery2 from "@/assets/gallery-new-2.jpg";
+import gallery3 from "@/assets/gallery-new-3.jpg";
+import gallery4 from "@/assets/gallery-new-4.jpg";
+import gallery5 from "@/assets/gallery-new-5.jpg";
+import gallery6 from "@/assets/gallery-new-6.jpg";
+import gallery7 from "@/assets/gallery-new-7.jpg";
+import gallery8 from "@/assets/gallery-new-8.jpg";
+import gallery9 from "@/assets/gallery-new-9.jpg";
 
 const galleryImages = [
-  { src: gallery1, title: "Gloss Up Your Lifestyle", subtitle: "8077 - Graphite" },
-  { src: gallery2, title: "Own Your Magnanimity", subtitle: "8070 - Magma Grey" },
-  { src: gallery3, title: "Live Around an Elegant Dove", subtitle: "8074 - Dove Grey" },
-  { src: gallery4, title: "Feel the Fluorescence Emotions", subtitle: "8011 - Quartz Grey" },
-  { src: gallery5, title: "Brush Up Your Life", subtitle: "8022 - Brushed Grey" },
-  { src: gallery6, title: "Write Happiness with Graphite", subtitle: "8018 - Graphite Grey" },
-  { src: gallery7, title: "Give A Feather Touch", subtitle: "8017 - Feather" },
-  { src: gallery8, title: "Add Eternal Golden Bliss", subtitle: "9003 - White Oak" },
-  { src: gallery9, title: "Create a Legacy", subtitle: "9021 - Smoked Oak" },
+  { src: gallery1, title: "Team at Infinity Boards Exhibition", subtitle: "Exhibition Highlights" },
+  { src: gallery2, title: "Craftsmanship & Innovation", subtitle: "CNC Jali & Panel Design" },
+  { src: gallery3, title: "Infinity Boards Cafeteria Setup", subtitle: "Exhibition Lounge" },
+  { src: gallery4, title: "Client Interactions", subtitle: "Business Meetings" },
+  { src: gallery5, title: "Industry Partners", subtitle: "Networking at Exhibition" },
+  { src: gallery6, title: "Building Connections", subtitle: "Partner Collaborations" },
+  { src: gallery7, title: "Women Power at Infinity", subtitle: "Team Excellence" },
+  { src: gallery8, title: "Leading with Vision", subtitle: "Brand Ambassador" },
+  { src: gallery9, title: "Product Showcase", subtitle: "HDSMR Board Samples" },
 ];
 
 const videoSources = [
