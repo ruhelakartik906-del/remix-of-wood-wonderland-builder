@@ -135,7 +135,7 @@ const Index = () => {
       {/* Hero */}
       <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
         <Link to="/products" className="block" aria-label="Explore Products">
-          <img src={heroBanner} alt="Infinity Goods - Har ghar ke liye" className="w-full h-auto block" />
+          <img src={heroBanner} alt="Infinity Goods - Har ghar ke liye" className="w-full h-auto block" fetchPriority="high" />
         </Link>
       </section>
 
@@ -156,7 +156,7 @@ const Index = () => {
       <section className="section-padding">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <img src={factory} alt="Manufacturing facility" className="rounded-lg shadow-lg w-full h-80 object-cover" />
+            <img src={factory} alt="Manufacturing facility" className="rounded-lg shadow-lg w-full h-80 object-cover" loading="lazy" />
             <div>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Crafting Excellence Since 2005</h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
@@ -181,7 +181,7 @@ const Index = () => {
             <div key={p.slug} className="group bg-card rounded-xl overflow-hidden border border-border hover:shadow-2xl transition-all duration-500">
                 <div className="grid sm:grid-cols-2">
                   <div className="aspect-square sm:aspect-auto overflow-hidden">
-                    <img src={p.image} alt={p.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <img src={p.image} alt={p.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                   </div>
                   <div className="p-6 flex flex-col justify-center">
                     <h3 className="font-heading font-bold text-xl mb-2">{p.name}</h3>
@@ -224,7 +224,7 @@ const Index = () => {
                   {images.map((img, i) =>
                 <div key={i} className="group rounded-xl overflow-hidden shadow-md">
                       <div className="aspect-[4/3] overflow-hidden">
-                        <img src={img.image} alt={img.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <img src={img.image} alt={img.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                       </div>
                       <div className="p-4 bg-card text-center">
                         <h3 className="font-heading font-semibold text-sm">{img.name}</h3>
@@ -290,6 +290,7 @@ const Index = () => {
                   muted
                   playsInline
                   controls
+                  preload="none"
                 />
               </div>
             </div>
@@ -332,7 +333,7 @@ const Index = () => {
       {/* Manufacturing Excellence - Parallax Stats */}
       <section className="relative py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={factoryWide} alt="Manufacturing facility" className="w-full h-full object-cover" style={{ transform: "translateZ(0)" }} />
+          <img src={factoryWide} alt="Manufacturing facility" className="w-full h-full object-cover" style={{ transform: "translateZ(0)" }} loading="lazy" />
           <div className="absolute inset-0 bg-foreground/80" />
         </div>
         <div className="relative z-10 container mx-auto px-4">
@@ -367,6 +368,7 @@ const Index = () => {
                   className="w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -405,6 +407,7 @@ const Index = () => {
                         <img
                           src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`}
                           alt={video.title}
+                          loading="lazy"
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                         <div className="absolute inset-0 bg-foreground/30 group-hover:bg-foreground/10 transition-colors flex items-center justify-center">
@@ -517,7 +520,7 @@ const Index = () => {
           <div className="flex animate-[marquee_25s_linear_infinite] gap-8">
             {[...partnerLogos, ...partnerLogos].map((logo, i) =>
               <div key={i} className="shrink-0 w-48 h-28 bg-white rounded-lg shadow-md flex items-center justify-center p-4">
-                <img src={logo.image} alt={logo.name} className="max-w-full max-h-full object-contain" />
+                <img src={logo.image} alt={logo.name} className="max-w-full max-h-full object-contain" loading="lazy" />
               </div>
             )}
           </div>
