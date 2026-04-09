@@ -39,7 +39,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-heading font-semibold">Phone</h3>
-                    <p className="text-muted-foreground text-sm">91+ ​96545 91696   </p>
+                    <p className="text-muted-foreground text-sm">91+ ​63933 31922<br />91+ 98112 86902</p>
                     
                   </div>
                 </div>
@@ -59,7 +59,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-heading font-semibold">Head Office</h3>
-                    <p className="text-muted-foreground text-sm">E-503, Dilbagh Rose Garden, Fazalganj,<br />Kanpur, Uttar Pradesh - 208012</p>
+                    <p className="text-muted-foreground text-sm">261135</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
