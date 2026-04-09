@@ -1,5 +1,6 @@
 import { useEffect, useCallback, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import meet1 from "@/assets/company-meet-1.jpg";
 import meet2 from "@/assets/company-meet-2.jpg";
