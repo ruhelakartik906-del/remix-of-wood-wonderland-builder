@@ -45,7 +45,7 @@ const CompanyMeetSlider = () => {
   return (
     <section className="py-16 px-4" style={{ backgroundColor: "#F8F9FA" }}>
       <div className="max-w-5xl mx-auto">
-        <h2 className="font-heading font-bold text-center mb-10 text-3xl">Company Meet</h2>
+        <h2 className="font-heading font-bold text-center mb-10 text-3xl">Companies Meet</h2>
         <div className="relative">
           <div className="overflow-hidden rounded-2xl" ref={emblaRef}>
             <div className="flex">
