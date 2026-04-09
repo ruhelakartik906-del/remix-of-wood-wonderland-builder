@@ -19,7 +19,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-[#e9e9e9] border-b border-[#d0d0d0]">
       <div className="container mx-auto relative flex items-center h-16 px-4">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="Infinity - Strong | Reliable | Beautiful" className="h-12 w-auto" />
+          <img src={logo} alt="Infinity - Strong | Reliable | Beautiful" className="h-12 w-auto" fetchPriority="high" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
