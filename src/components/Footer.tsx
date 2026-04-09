@@ -62,10 +62,17 @@ const Footer = () =>
           <div>
             <h3 className="font-heading font-bold text-lg mb-4 text-foreground">Follow Us</h3>
             <div className="flex gap-3">
-              {[Facebook, Instagram, Linkedin, Youtube].map((Icon, i) =>
+              {[
+                { Icon: Facebook, url: "https://www.facebook.com/share/185SXyTnyU/?mibextid=wwXIfr" },
+                { Icon: Instagram, url: "https://www.instagram.com/infinityboards_/" },
+                { Icon: Linkedin, url: "https://www.linkedin.com/in/infinity-boards-2a61a5391?" },
+                { Icon: Youtube, url: "https://youtube.com/@infinityboards_srb?si=E2-zlXRFPb7cMS94" },
+              ].map(({ Icon, url }) =>
                 <a
-                  key={i}
-                  href="#"
+                  key={url}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full border border-border text-foreground flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors">
                   <Icon size={18} />
                 </a>
