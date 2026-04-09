@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight, X, Play } from "lucide-react";
 import Layout from "@/components/Layout";
+import CompanyMeetSlider from "@/components/CompanyMeetSlider";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import pageHeaderBg from "@/assets/page-header-bg-2.jpg";
 import gallery1 from "@/assets/gallery-new-1.jpg";
@@ -109,6 +110,8 @@ const Media = () => {
           </div>
         </div>
       </section>
+
+      <CompanyMeetSlider />
 
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto px-4">
