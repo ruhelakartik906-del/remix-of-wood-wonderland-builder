@@ -1,15 +1,17 @@
 import Layout from "@/components/Layout";
 import { ArrowRight } from "lucide-react";
+import privacyBanner from "@/assets/privacy-banner.jpg";
+import infinityLogo from "@/assets/infinity-logo.jpeg";
 
 const ArrowBullet = ({ children }: { children: React.ReactNode }) => (
   <li className="flex items-start gap-2 mb-2">
-    <ArrowRight size={18} className="shrink-0 mt-1 text-blue-600" />
+    <ArrowRight size={18} className="shrink-0 mt-1 text-[#2A58C0]" />
     <span>{children}</span>
   </li>
 );
 
 const SectionHeading = ({ number, title }: { number: string; title: string }) => (
-  <h2 className="text-xl font-bold text-blue-700 mt-8 mb-4">
+  <h2 className="text-xl font-bold text-[#2A58C0] mt-8 mb-4">
     {number}. {title}
   </h2>
 );
@@ -17,14 +19,37 @@ const SectionHeading = ({ number, title }: { number: string; title: string }) =>
 const PrivacyPolicy = () => {
   return (
     <Layout>
-      <div className="bg-muted/30 min-h-screen py-12">
+      {/* Section 1: Premium Banner */}
+      <div className="relative w-full h-[340px] md:h-[420px] overflow-hidden">
+        <img
+          src={privacyBanner}
+          alt="Infinity Boards Team"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 h-full flex flex-col justify-between p-6 md:p-12">
+          <div className="flex justify-between items-start">
+            <h1 className="text-3xl md:text-5xl font-bold text-white tracking-wide leading-tight max-w-md">
+              PRIVACY<br />POLICY
+            </h1>
+            <img
+              src={infinityLogo}
+              alt="Infinity Boards Logo"
+              className="h-12 md:h-16 w-auto object-contain brightness-0 invert opacity-90"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Section 2: Content Body */}
+      <div className="bg-muted/30 py-12">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="bg-white rounded-lg shadow-md p-8 md:p-12">
-            {/* Company Header */}
-            <div className="text-center border-b border-border pb-6 mb-8">
-              <h1 className="text-2xl font-bold text-foreground mb-2 md:text-4xl">
+            {/* Company Header - Left aligned */}
+            <div className="border-b border-border pb-6 mb-8">
+              <h2 className="text-2xl font-bold text-foreground mb-2">
                 INFINITY BOARD
-              </h1>
+              </h2>
               <p className="text-sm text-muted-foreground mb-1">
                 Regd. Off.: E-503, Dilbagh Rose Garden, Fazalganj, Kanpur, Uttar Pradesh - 208012
               </p>
@@ -33,9 +58,9 @@ const PrivacyPolicy = () => {
               </p>
             </div>
 
-            <h1 className="text-2xl md:text-3xl font-bold text-center text-blue-700 mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#2A58C0] mb-8">
               VIGIL MECHANISM / WHISTLE BLOWER POLICY
-            </h1>
+            </h2>
 
             {/* 1. PREAMBLE */}
             <SectionHeading number="1" title="PREAMBLE" />
