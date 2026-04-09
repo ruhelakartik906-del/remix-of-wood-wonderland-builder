@@ -111,6 +111,8 @@ const Media = () => {
         </div>
       </section>
 
+      <CompanyMeetSlider />
+
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="font-heading font-bold text-center mb-10 text-3xl">Video Gallery</h2>
