@@ -46,11 +46,11 @@ const Footer = () =>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="shrink-0 mt-0.5 text-foreground" />
-                <span>E-503, Dilbagh Rose Garden, Fazalganj, Kanpur, Uttar Pradesh - 208012</span>
+                <span>Khasara no 774, Ramana Farms,<br />Bhadfar Road, Leharpur,<br />Sitapur-261125</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={16} className="shrink-0 text-foreground" />
-                <span>91+ ​96545 91696</span>
+                <span>91+ 9811286902<br />91+ 6393331922</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={16} className="shrink-0 text-foreground" />
