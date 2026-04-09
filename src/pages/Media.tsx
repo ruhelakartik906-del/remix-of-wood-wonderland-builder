@@ -91,6 +91,7 @@ const Media = () => {
                   <img
                     src={img.src}
                     alt={img.title}
+                    loading="lazy"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -120,7 +121,7 @@ const Media = () => {
                 <video
                   src={src}
                   className="block h-full w-full object-cover"
-                  preload="metadata"
+                  preload="none"
                   muted
                 />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">

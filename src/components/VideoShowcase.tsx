@@ -1,4 +1,4 @@
-import { useRef, useCallback } from "react";
+import { useRef, useCallback, useState, useEffect } from "react";
 
 const videos = ["/videos/video-1.mp4", null, "/videos/video-3.mp4"] as const;
 
@@ -7,6 +7,19 @@ const YT_SRC = "https://www.youtube.com/embed/v4xPPnzYFNw?controls=1&modestbrand
 export default function VideoShowcase() {
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setIsVisible(true); observer.disconnect(); } },
+      { rootMargin: "200px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const pauseOthers = useCallback((activeIndex: number) => {
     videos.forEach((src, i) => {
@@ -14,7 +27,6 @@ export default function VideoShowcase() {
       if (src) {
         videoRefs.current[i]?.pause();
       } else {
-        // Pause YouTube via postMessage
         iframeRef.current?.contentWindow?.postMessage(
           JSON.stringify({ event: "command", func: "pauseVideo", args: [] }),
           "*"
@@ -24,7 +36,7 @@ export default function VideoShowcase() {
   }, []);
 
   return (
-    <section className="section-padding pb-10">
+    <section className="section-padding pb-10" ref={sectionRef}>
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-heading font-bold mb-10">Infinity Goods Video</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-6 justify-items-center">
@@ -33,23 +45,26 @@ export default function VideoShowcase() {
               {src ? (
                 <video
                   ref={(el) => { videoRefs.current[i] = el; }}
-                  src={src}
+                  src={isVisible ? src : undefined}
                   controls
                   className="block h-full w-full object-cover"
-                  preload="metadata"
+                  preload="none"
                   onPlay={() => pauseOthers(i)}
                 />
               ) : (
                 <div className="relative w-full h-full overflow-hidden">
-                  <iframe
-                    ref={iframeRef}
-                    src={YT_SRC}
-                    allow="encrypted-media"
-                    allowFullScreen
-                    className="absolute border-0"
-                    style={{ top: '-60px', left: 0, width: '100%', height: 'calc(100% + 120px)' }}
-                    title="Infinity Goods Video"
-                  />
+                  {isVisible && (
+                    <iframe
+                      ref={iframeRef}
+                      src={YT_SRC}
+                      allow="encrypted-media"
+                      allowFullScreen
+                      loading="lazy"
+                      className="absolute border-0"
+                      style={{ top: '-60px', left: 0, width: '100%', height: 'calc(100% + 120px)' }}
+                      title="Infinity Goods Video"
+                    />
+                  )}
                 </div>
               )}
             </div>
