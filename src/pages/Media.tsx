@@ -14,14 +14,14 @@ import gallery8 from "@/assets/gallery-new-8.jpg";
 import gallery9 from "@/assets/gallery-new-9.jpg";
 
 const galleryImages = [
-  { src: gallery1, title: "Team at Infinity Boards Exhibition", subtitle: "Exhibition Highlights" },
+  { src: gallery8, title: "Leading with Vision", subtitle: "Brand Ambassador" },
   { src: gallery2, title: "Craftsmanship & Innovation", subtitle: "CNC Jali & Panel Design" },
   { src: gallery3, title: "Infinity Boards Cafeteria Setup", subtitle: "Exhibition Lounge" },
   { src: gallery4, title: "Client Interactions", subtitle: "Business Meetings" },
   { src: gallery5, title: "Industry Partners", subtitle: "Networking at Exhibition" },
   { src: gallery6, title: "Building Connections", subtitle: "Partner Collaborations" },
   { src: gallery7, title: "Women Power at Infinity", subtitle: "Team Excellence" },
-  { src: gallery8, title: "Leading with Vision", subtitle: "Brand Ambassador" },
+  { src: gallery1, title: "Team at Infinity Boards Exhibition", subtitle: "Exhibition Highlights" },
   { src: gallery9, title: "Product Showcase", subtitle: "HDSMR Board Samples" },
 ];
 
