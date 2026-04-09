@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight, X, Play } from "lucide-react";
 import Layout from "@/components/Layout";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
@@ -33,6 +33,81 @@ const videoSources = [
   "/videos/media-video-5.mp4",
   "/videos/media-video-6.mp4",
 ];
+
+/** Lazy-loaded video card: loads metadata only when in viewport, extracts first frame as thumbnail */
+const LazyVideoCard = ({ src, index, onPlay }: { src: string; index: number; onPlay: (i: number) => void }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [thumbnail, setThumbnail] = useState<string | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Observe visibility
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setIsVisible(true); observer.disconnect(); } },
+      { rootMargin: "200px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  // Extract first frame once metadata loads
+  const handleLoadedData = useCallback(() => {
+    const video = videoRef.current;
+    const canvas = canvasRef.current;
+    if (!video || !canvas) return;
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    const ctx = canvas.getContext("2d");
+    if (ctx) {
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      setThumbnail(canvas.toDataURL("image/jpeg", 0.8));
+    }
+  }, []);
+
+  return (
+    <div
+      ref={containerRef}
+      onClick={() => onPlay(index)}
+      className="relative overflow-hidden rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 w-full max-w-[240px] aspect-[9/16] cursor-pointer group bg-muted"
+    >
+      {/* Hidden canvas for frame extraction */}
+      <canvas ref={canvasRef} className="hidden" />
+
+      {/* Hidden video to extract first frame */}
+      {isVisible && (
+        <video
+          ref={videoRef}
+          src={src}
+          className="hidden"
+          preload="metadata"
+          muted
+          playsInline
+          onLoadedData={handleLoadedData}
+        />
+      )}
+
+      {/* Thumbnail or gradient placeholder */}
+      {thumbnail ? (
+        <img src={thumbnail} alt={`Video ${index + 1}`} className="block h-full w-full object-cover" />
+      ) : (
+        <div className="h-full w-full bg-gradient-to-br from-muted to-muted-foreground/20 flex items-center justify-center">
+          <Play className="h-10 w-10 text-muted-foreground/40" />
+        </div>
+      )}
+
+      {/* Play overlay */}
+      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+        <div className="bg-white/90 rounded-full p-3 shadow-lg group-hover:scale-110 transition-transform duration-300">
+          <Play className="h-6 w-6 text-foreground fill-foreground" />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Media = () => {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -113,23 +188,7 @@ const Media = () => {
           <h2 className="font-heading font-bold text-center mb-10 text-3xl">Video Gallery</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-6 justify-items-center">
             {videoSources.map((src, i) => (
-              <div
-                key={i}
-                onClick={() => openVideoModal(i)}
-                className="relative overflow-hidden rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 w-full max-w-[240px] aspect-[9/16] cursor-pointer group"
-              >
-                <video
-                  src={src}
-                  className="block h-full w-full object-cover"
-                  preload="none"
-                  muted
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
-                  <div className="bg-white/90 rounded-full p-3 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <Play className="h-6 w-6 text-foreground fill-foreground" />
-                  </div>
-                </div>
-              </div>
+              <LazyVideoCard key={i} src={src} index={i} onPlay={openVideoModal} />
             ))}
           </div>
         </div>
