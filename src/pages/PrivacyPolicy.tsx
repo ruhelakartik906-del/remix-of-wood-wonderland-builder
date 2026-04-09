@@ -24,18 +24,18 @@ const PrivacyPolicy = () => {
         <img
           src={privacyBanner}
           alt="Infinity Boards Team"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-[130%] object-cover object-[center_15%]"
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 h-full flex flex-col justify-between p-6 md:p-12">
           <div className="flex justify-between items-start">
-            <h1 className="text-3xl text-white tracking-wide leading-tight max-w-md font-medium md:text-4xl">
-              PRIVACY<br />POLICY
+            <h1 className="text-3xl text-white tracking-wide leading-tight font-medium md:text-4xl whitespace-nowrap">
+              PRIVACY POLICY
             </h1>
             <img
               src={infinityLogo}
               alt="Infinity Boards Logo"
-              className="h-12 md:h-16 w-auto object-contain brightness-0 invert opacity-90"
+              className="h-12 md:h-16 w-auto object-contain"
             />
           </div>
         </div>
