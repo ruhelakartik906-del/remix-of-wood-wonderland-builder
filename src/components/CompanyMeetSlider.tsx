@@ -71,9 +71,9 @@ const CompanyMeetSlider = () => {
   };
 
   return (
-    <section className="py-16 px-4" style={{ backgroundColor: "#F8F9FA" }}>
+    <section className="py-16 px-4 bg-muted/50">
       <div className="max-w-5xl mx-auto">
-        <h2 className="font-heading font-bold text-center mb-10 text-3xl">Companies Meet</h2>
+        <h2 className="font-heading font-bold text-center mb-10 text-3xl">Company Meet</h2>
         <div className="relative">
           <div className="overflow-hidden rounded-2xl" ref={emblaRef}>
             <div className="flex">
@@ -83,7 +83,7 @@ const CompanyMeetSlider = () => {
                   className="flex-[0_0_100%] min-w-0 sm:flex-[0_0_50%] lg:flex-[0_0_33.333%] pl-4 first:pl-0"
                 >
                   <div
-                    className="bg-white rounded-2xl shadow-sm overflow-hidden mx-1 cursor-pointer hover:shadow-md transition-shadow duration-300"
+                    className="bg-card rounded-2xl shadow-sm overflow-hidden mx-1 cursor-pointer hover:shadow-md transition-shadow duration-300"
                     onClick={() => setLightboxIndex(i)}
                   >
                     <div className="aspect-video overflow-hidden">
@@ -105,18 +105,53 @@ const CompanyMeetSlider = () => {
 
           <button
             onClick={scrollPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 bg-white/90 hover:bg-white rounded-full p-2 shadow-md transition-colors disabled:opacity-40"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 bg-card/90 hover:bg-card rounded-full p-2 shadow-md transition-colors disabled:opacity-40"
             disabled={!canScrollPrev}
           >
             <ChevronLeft className="h-5 w-5 text-foreground" />
           </button>
           <button
             onClick={scrollNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 bg-white/90 hover:bg-white rounded-full p-2 shadow-md transition-colors disabled:opacity-40"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 bg-card/90 hover:bg-card rounded-full p-2 shadow-md transition-colors disabled:opacity-40"
             disabled={!canScrollNext}
           >
             <ChevronRight className="h-5 w-5 text-foreground" />
           </button>
+        </div>
+
+        {/* Event Summary Card */}
+        <div className="mt-10 bg-card rounded-2xl shadow-md p-6 md:p-10 border border-border/50">
+          <h3 className="font-heading font-bold text-xl md:text-2xl text-foreground mb-4">
+            Carpenter Meet Success: Ghaziabad Chapter
+          </h3>
+          <p className="text-muted-foreground leading-relaxed mb-5">
+            A successful event was held at <strong className="text-foreground">Raptos Impex Private Limited</strong>, Ghaziabad, organized by Regional Managers{" "}
+            <strong className="text-foreground">Mr. Mohit</strong> and{" "}
+            <strong className="text-foreground">Mr. Manish Mani</strong>. With 30+ carpenters in attendance, the session focused on the premium quality and applications of{" "}
+            <strong className="text-foreground">Infinity HDHMR</strong> boards.
+          </p>
+          <h4 className="font-heading font-semibold text-foreground mb-3">Key Highlights</h4>
+          <ul className="space-y-3 text-muted-foreground">
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
+              <span>
+                <strong className="text-foreground">Cash Prizes:</strong>{" "}
+                <strong className="text-foreground">Mr. Asish Mittal</strong> (Owner, Raptos Impex) rewarded the top 3 regular <strong className="text-foreground">Infinity</strong> board users with cash prizes.
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
+              <span>
+                <strong className="text-foreground">Technical Training:</strong> Interactive sessions on QR code schemes and technical specs.
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
+              <span>
+                <strong className="text-foreground">Refreshments:</strong> Gifts and refreshments were provided to all participants as a token of appreciation.
+              </span>
+            </li>
+          </ul>
         </div>
       </div>
 
