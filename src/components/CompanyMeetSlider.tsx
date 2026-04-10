@@ -121,8 +121,8 @@ const CompanyMeetSlider = () => {
 
         {/* Event Summary Card */}
         <div className="mt-10 bg-card rounded-2xl shadow-md p-6 md:p-10 border border-border/50">
-          <h3 className="font-heading font-bold text-xl md:text-2xl text-foreground mb-4">
-            Carpenter Meet Success: Ghaziabad Chapter
+          <h3 className="font-heading font-bold text-xl md:text-2xl text-foreground mb-4 text-center">
+            Carpenter Meet Success: Ghaziabad 
           </h3>
           <p className="text-muted-foreground leading-relaxed mb-5">
             A successful event was held at <strong className="text-foreground">Raptos Impex Private Limited</strong>, Ghaziabad, organized by Regional Managers{" "}
@@ -130,24 +130,24 @@ const CompanyMeetSlider = () => {
             <strong className="text-foreground">Mr. Manish Mani</strong>. With 30+ carpenters in attendance, the session focused on the premium quality and applications of{" "}
             <strong className="text-foreground">Infinity HDHMR</strong> boards.
           </p>
-          <h4 className="font-heading font-semibold text-foreground mb-3">Key Highlights</h4>
+          <h4 className="font-heading text-foreground mb-3 text-center text-xl font-bold">Key Highlights</h4>
           <ul className="space-y-3 text-muted-foreground">
             <li className="flex items-start gap-2">
               <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
-              <span>
+              <span className="text-left">
                 <strong className="text-foreground">Cash Prizes:</strong>{" "}
                 <strong className="text-foreground">Mr. Asish Mittal</strong> (Owner, Raptos Impex) rewarded the top 3 regular <strong className="text-foreground">Infinity</strong> board users with cash prizes.
               </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
-              <span>
+              <span className="text-center">
                 <strong className="text-foreground">Technical Training:</strong> Interactive sessions on QR code schemes and technical specs.
               </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
-              <span>
+              <span className="text-left">
                 <strong className="text-foreground">Refreshments:</strong> Gifts and refreshments were provided to all participants as a token of appreciation.
               </span>
             </li>
