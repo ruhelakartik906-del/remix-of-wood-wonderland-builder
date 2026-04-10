@@ -24,7 +24,7 @@ const DownloadCatalog = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name.trim() || !formData.whatsapp.trim()) return;
+    if (!formData.name.trim() || !formData.phone.trim()) return;
 
     setSubmitting(true);
 
