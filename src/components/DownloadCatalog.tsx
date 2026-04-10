@@ -19,12 +19,12 @@ const DOWNLOADS = {
 
 const DownloadCatalog = () => {
   const [open, setOpen] = useState(false);
-  const [formData, setFormData] = useState({ name: "", company: "", whatsapp: "" });
+  const [formData, setFormData] = useState({ name: "", phone: "" });
   const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name.trim() || !formData.whatsapp.trim()) return;
+    if (!formData.name.trim() || !formData.phone.trim()) return;
 
     setSubmitting(true);
 
@@ -43,7 +43,7 @@ const DownloadCatalog = () => {
     setTimeout(() => {
       setOpen(false);
       setSubmitting(false);
-      setFormData({ name: "", company: "", whatsapp: "" });
+      setFormData({ name: "", phone: "" });
       toast.success("Thank you! Your download has started.");
     }, 600);
   };
@@ -113,22 +113,12 @@ const DownloadCatalog = () => {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="dl-company">Business / Company Name</Label>
+              <Label htmlFor="dl-phone">Phone Number *</Label>
               <Input
-                id="dl-company"
-                placeholder="Enter your company name"
-                value={formData.company}
-                onChange={(e) => setFormData((p) => ({ ...p, company: e.target.value }))}
-                maxLength={100}
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="dl-whatsapp">WhatsApp Number *</Label>
-              <Input
-                id="dl-whatsapp"
-                placeholder="+91 XXXXX XXXXX"
-                value={formData.whatsapp}
-                onChange={(e) => setFormData((p) => ({ ...p, whatsapp: e.target.value }))}
+                id="dl-phone"
+                placeholder="Enter your phone number"
+                value={formData.phone}
+                onChange={(e) => setFormData((p) => ({ ...p, phone: e.target.value }))}
                 required
                 maxLength={20}
               />
