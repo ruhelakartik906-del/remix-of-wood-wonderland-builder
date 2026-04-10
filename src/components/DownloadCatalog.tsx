@@ -43,7 +43,7 @@ const DownloadCatalog = () => {
     setTimeout(() => {
       setOpen(false);
       setSubmitting(false);
-      setFormData({ name: "", company: "", whatsapp: "" });
+      setFormData({ name: "", phone: "" });
       toast.success("Thank you! Your download has started.");
     }, 600);
   };
