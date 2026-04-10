@@ -120,18 +120,18 @@ const CompanyMeetSlider = () => {
         </div>
 
         {/* Event Summary Card */}
-        <div className="mt-10 bg-card rounded-2xl shadow-md p-6 md:p-10 border border-border/50">
-          <h3 className="font-heading font-bold text-xl md:text-2xl text-foreground mb-4">
+        <div className="mt-12 bg-card rounded-2xl shadow-md p-8 md:p-12 border border-border/50 flex flex-col items-center">
+          <h3 className="font-heading font-bold text-xl md:text-2xl text-foreground text-center mb-6">
             Carpenter Meet Success: Ghaziabad Chapter
           </h3>
-          <p className="text-muted-foreground leading-relaxed mb-5">
+          <p className="text-muted-foreground leading-relaxed text-center max-w-[800px] mb-8">
             A successful event was held at <strong className="text-foreground">Raptos Impex Private Limited</strong>, Ghaziabad, organized by Regional Managers{" "}
             <strong className="text-foreground">Mr. Mohit</strong> and{" "}
             <strong className="text-foreground">Mr. Manish Mani</strong>. With 30+ carpenters in attendance, the session focused on the premium quality and applications of{" "}
             <strong className="text-foreground">Infinity HDHMR</strong> boards.
           </p>
-          <h4 className="font-heading font-semibold text-foreground mb-3">Key Highlights</h4>
-          <ul className="space-y-3 text-muted-foreground">
+          <h4 className="font-heading font-semibold text-foreground text-center mb-5">Key Highlights</h4>
+          <ul className="space-y-4 text-muted-foreground max-w-[60%] w-full">
             <li className="flex items-start gap-2">
               <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
               <span>
