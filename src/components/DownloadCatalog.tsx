@@ -19,7 +19,7 @@ const DOWNLOADS = {
 
 const DownloadCatalog = () => {
   const [open, setOpen] = useState(false);
-  const [formData, setFormData] = useState({ name: "", company: "", whatsapp: "" });
+  const [formData, setFormData] = useState({ name: "", phone: "" });
   const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
