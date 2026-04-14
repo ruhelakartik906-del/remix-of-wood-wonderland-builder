@@ -38,7 +38,7 @@ export default function VideoShowcase() {
   return (
     <section className="section-padding pb-10" ref={sectionRef}>
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-heading font-bold mb-10">Infinity Goods Video</h2>
+        <h2 className="md:text-4xl font-heading font-bold mb-10 text-center text-3xl">Infinity Goods Video</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-6 justify-items-center">
           {videos.map((src, i) => (
             <div key={i} className="relative overflow-hidden rounded-2xl border border-border shadow-lg transition-all duration-300 hover:shadow-xl w-full max-w-[300px] aspect-[9/16]">
