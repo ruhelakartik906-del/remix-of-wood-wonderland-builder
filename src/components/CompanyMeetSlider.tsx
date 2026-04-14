@@ -124,7 +124,7 @@ const CompanyMeetSlider = () => {
           <h3 className="font-heading font-bold text-xl md:text-2xl text-foreground mb-4 text-center">
             Carpenter Meet Success: Ghaziabad 
           </h3>
-          <p className="text-muted-foreground leading-relaxed mb-5">
+          <p className="text-muted-foreground leading-relaxed mb-5 text-sm">
             A successful event was held at <strong className="text-foreground">Raptos Impex Private Limited</strong>, Ghaziabad, organized by Regional Managers{" "}
             <strong className="text-foreground">Mr. Mohit</strong> and{" "}
             <strong className="text-foreground">Mr. Manish Mani</strong>. With 30+ carpenters in attendance, the session focused on the premium quality and applications of{" "}
@@ -134,20 +134,20 @@ const CompanyMeetSlider = () => {
           <ul className="space-y-3 text-muted-foreground">
             <li className="flex items-start gap-2">
               <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
-              <span className="text-left">
+              <span className="text-left text-sm">
                 <strong className="text-foreground">Cash Prizes:</strong>{" "}
                 <strong className="text-foreground">Mr. Asish Mittal</strong> (Owner, Raptos Impex) rewarded the top 3 regular <strong className="text-foreground">Infinity</strong> board users with cash prizes.
               </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
-              <span className="text-center">
+              <span className="text-center text-sm">
                 <strong className="text-foreground">Technical Training:</strong> Interactive sessions on QR code schemes and technical specs.
               </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
-              <span className="text-left">
+              <span className="text-left text-sm">
                 <strong className="text-foreground">Refreshments:</strong> Gifts and refreshments were provided to all participants as a token of appreciation.
               </span>
             </li>
