@@ -43,20 +43,20 @@ const Footer = () =>
         </div>
 
         {/* Contact Info - full width on mobile */}
-        <div className="col-span-2 lg:col-span-1 text-center">
+        <div className="col-span-2 lg:col-span-1 text-left">
           <h3 className="font-heading font-bold text-sm md:text-lg mb-2 md:mb-4 text-foreground text-center">Contact Info</h3>
-          <ul className="space-y-2 text-xs md:text-sm text-muted-foreground">
-            <li className="flex flex-col items-center justify-center gap-1">
-              <MapPin size={14} className="shrink-0 text-foreground" />
-              <span className="text-center">Khasara no 774, Ramana Farms, Bhadfar Road, Leharpur, Sitapur-261125</span>
+          <ul className="space-y-2 text-xs md:text-sm text-muted-foreground text-center">
+            <li className="flex items-start gap-2">
+              <MapPin size={14} className="shrink-0 mt-0.5 text-foreground text-center" />
+              <span className="text-left">Khasara no 774, Ramana Farms, Bhadfar Road, Leharpur, Sitapur-261125</span>
             </li>
-            <li className="flex flex-col items-center justify-center gap-1">
+            <li className="flex items-center gap-2">
               <Phone size={14} className="shrink-0 text-foreground" />
-              <span className="text-center">91+ 9811286902 / 91+ 6393331922</span>
+              <span className="text-left">91+ 9811286902 / 91+ 6393331922</span>
             </li>
-            <li className="flex flex-col items-center justify-center gap-1">
+            <li className="flex items-center gap-2">
               <Mail size={14} className="shrink-0 text-foreground" />
-              <span className="text-center">Info@infinityboards.in</span>
+              <span className="text-left">Info@infinityboards.in</span>
             </li>
           </ul>
         </div>
