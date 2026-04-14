@@ -221,7 +221,8 @@ const Index = () => {
             </TabsList>
             {Object.entries(applicationTabs).map(([tab, images]) =>
             <TabsContent key={tab} value={tab}>
-                <div className="grid sm:grid-cols-3 gap-6">
+                {/* Desktop: Grid */}
+                <div className="hidden sm:grid sm:grid-cols-3 gap-6">
                   {images.map((img, i) =>
                 <div key={i} className="group rounded-xl overflow-hidden shadow-md">
                       <div className="aspect-[4/3] overflow-hidden">
@@ -233,6 +234,8 @@ const Index = () => {
                     </div>
                 )}
                 </div>
+                {/* Mobile: Slider */}
+                <ApplicationTabSlider images={images} />
               </TabsContent>
             )}
           </Tabs>
