@@ -249,7 +249,7 @@ const Index = () => {
                 <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary transition-colors">
                   <f.icon size={28} className="text-primary group-hover:text-primary-foreground transition-colors" />
                 </div>
-                <h3 className="font-heading font-semibold text-lg mb-2">{f.title}</h3>
+                <h3 className="font-heading font-semibold text-xs md:text-lg mb-2 whitespace-nowrap">{f.title}</h3>
                 <p className="text-muted-foreground text-sm">{f.desc}</p>
               </div>
             )}
