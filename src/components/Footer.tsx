@@ -52,9 +52,9 @@ const Footer = () =>
               <MapPin size={14} className="shrink-0 mt-0.5 text-foreground" />
               <span>Khasara no 774, Ramana Farms, Bhadfar Road, Leharpur, Sitapur-261125</span>
             </li>
-            <li className="flex items-center gap-2">
-              <Phone size={14} className="shrink-0 text-foreground" />
-              <span>91+ 9811286902 / 91+ 6393331922</span>
+            <li className="flex items-start gap-2">
+              <Phone size={14} className="shrink-0 mt-0.5 text-foreground" />
+              <span>91+ 9811286902 <br /> 91+ 6393331922</span>
             </li>
             <li className="flex items-center gap-2">
               <Mail size={14} className="shrink-0 text-foreground" />
