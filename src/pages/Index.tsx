@@ -238,18 +238,21 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding section-alt">
-        <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">Why Choose Us</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Why Choose Us - Parallax Style like Manufacturing Excellence */}
+      <section className="relative py-12 md:py-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={factoryWide} alt="Manufacturing facility" className="w-full h-full object-cover" style={{ transform: "translateZ(0)" }} loading="lazy" />
+          <div className="absolute inset-0 bg-foreground/80" />
+        </div>
+        <div className="relative z-10 container mx-auto px-4">
+          <h2 className="text-2xl md:text-4xl font-heading font-bold text-primary-foreground text-center mb-2 md:mb-4">Why Choose Us</h2>
+          <p className="text-primary-foreground/70 text-center max-w-xl mx-auto mb-8 md:mb-14 text-sm md:text-base">What sets Infinity Boards apart from the rest</p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {features.map((f, i) =>
-            <div key={i} className="text-center group">
-                <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary transition-colors">
-                  <f.icon size={28} className="text-primary group-hover:text-primary-foreground transition-colors" />
-                </div>
-                <h3 className="font-heading font-semibold text-lg mb-2">{f.title}</h3>
-                <p className="text-muted-foreground text-sm">{f.desc}</p>
+            <div key={i} className="text-center">
+                <f.icon size={24} className="mx-auto mb-2 md:mb-3 text-primary md:[&]:w-8 md:[&]:h-8" />
+                <h3 className="font-heading font-semibold text-lg mb-1 text-primary-foreground">{f.title}</h3>
+                <p className="text-primary-foreground/70 text-xs md:text-sm">{f.desc}</p>
               </div>
             )}
           </div>
