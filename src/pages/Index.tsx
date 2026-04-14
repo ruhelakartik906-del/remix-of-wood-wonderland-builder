@@ -93,6 +93,61 @@ const stats = [
 { icon: Users, value: "50,000+", label: "Happy Customers" },
 { icon: Award, value: "10M+", label: "Sq. Ft. Produced" }];
 
+function InfinitySlider({ images }: { images: { image: string; name: string }[] }) {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((c) => (c + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  return (
+    <div className="sm:hidden relative">
+      <button
+        onClick={() => setCurrent((c) => (c - 1 + images.length) % images.length)}
+        className="absolute -left-1 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+      >
+        <ChevronLeft size={18} />
+      </button>
+      <button
+        onClick={() => setCurrent((c) => (c + 1) % images.length)}
+        className="absolute -right-1 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+      >
+        <ChevronRight size={18} />
+      </button>
+      <div className="overflow-hidden mx-6 rounded-xl">
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${current * 100}%)` }}
+        >
+          {images.map((img, i) => (
+            <div key={i} className="w-full flex-shrink-0">
+              <div className="rounded-xl overflow-hidden shadow-md">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img src={img.image} alt={img.name} className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <div className="p-3 bg-card text-center">
+                  <h3 className="font-heading font-semibold text-xs">{img.name}</h3>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="flex justify-center gap-2 mt-4">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-2.5 h-2.5 rounded-full transition-colors ${i === current ? 'bg-primary' : 'bg-gray-300'}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 const partnerLogos = [
   { name: "OYO", image: partnerOyo },
