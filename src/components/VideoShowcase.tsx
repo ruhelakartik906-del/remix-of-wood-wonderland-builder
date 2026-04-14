@@ -50,16 +50,46 @@ export default function VideoShowcase() {
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [activeSlide, setActiveSlide] = useState(0);
 
+  // Mobile Embla
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center" });
+  const [selectedSnap, setSelectedSnap] = useState(0);
+  const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const onEmblaSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedSnap(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
 
   useEffect(() => {
     if (!emblaApi) return;
-    const onSelect = () => setActiveSlide(emblaApi.selectedScrollSnap());
-    emblaApi.on("select", onSelect);
-    return () => { emblaApi.off("select", onSelect); };
-  }, [emblaApi]);
+    onEmblaSelect();
+    emblaApi.on("select", onEmblaSelect);
+    emblaApi.on("reInit", onEmblaSelect);
+
+    autoplayRef.current = setInterval(() => {
+      emblaApi.scrollNext();
+    }, 3000);
+
+    const onPointerDown = () => {
+      if (autoplayRef.current) clearInterval(autoplayRef.current);
+    };
+    const onPointerUp = () => {
+      autoplayRef.current = setInterval(() => {
+        emblaApi.scrollNext();
+      }, 3000);
+    };
+
+    emblaApi.on("pointerDown", onPointerDown);
+    emblaApi.on("pointerUp", onPointerUp);
+
+    return () => {
+      if (autoplayRef.current) clearInterval(autoplayRef.current);
+      emblaApi.off("select", onEmblaSelect);
+      emblaApi.off("pointerDown", onPointerDown);
+      emblaApi.off("pointerUp", onPointerUp);
+    };
+  }, [emblaApi, onEmblaSelect]);
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -91,46 +121,48 @@ export default function VideoShowcase() {
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-heading font-bold mb-10 text-center">Infinity Goods Video</h2>
 
-        {/* Mobile: Slider */}
-        <div className="md:hidden relative">
-          <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex gap-3">
-              {videos.map((src, i) => (
-                <div key={i} className="flex-[0_0_55%] min-w-0 flex justify-center">
-                  <div className="w-full max-w-[180px]">
-                    <VideoCard
-                      src={src}
-                      index={i}
-                      isVisible={isVisible}
-                      videoRefs={videoRefs}
-                      iframeRef={iframeRef}
-                      pauseOthers={pauseOthers}
-                    />
+        {/* Mobile: Slider like Testimonials */}
+        <div className="md:hidden">
+          <div className="relative">
+            <button
+              onClick={() => emblaApi?.scrollPrev()}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/90 shadow flex items-center justify-center"
+            >
+              <ChevronLeft size={16} />
+            </button>
+            <button
+              onClick={() => emblaApi?.scrollNext()}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/90 shadow flex items-center justify-center"
+            >
+              <ChevronRight size={16} />
+            </button>
+
+            <div className="overflow-hidden mx-6" ref={emblaRef}>
+              <div className="flex">
+                {videos.map((src, i) => (
+                  <div key={i} className="flex-[0_0_100%] min-w-0 px-2 flex justify-center">
+                    <div className="w-full max-w-[220px]">
+                      <VideoCard
+                        src={src}
+                        index={i}
+                        isVisible={isVisible}
+                        videoRefs={videoRefs}
+                        iframeRef={iframeRef}
+                        pauseOthers={pauseOthers}
+                      />
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
-          {/* Nav arrows */}
-          <button
-            onClick={() => emblaApi?.scrollPrev()}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-background/80 border border-border rounded-full p-1 shadow"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-          <button
-            onClick={() => emblaApi?.scrollNext()}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-background/80 border border-border rounded-full p-1 shadow"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
-          {/* Dots */}
+          {/* Pagination Dots */}
           <div className="flex justify-center gap-2 mt-4">
             {videos.map((_, i) => (
               <button
                 key={i}
                 onClick={() => emblaApi?.scrollTo(i)}
-                className={`w-2 h-2 rounded-full transition-all ${activeSlide === i ? "bg-primary w-5" : "bg-muted-foreground/30"}`}
+                className={`w-2.5 h-2.5 rounded-full transition-colors ${i === selectedSnap ? "bg-primary" : "bg-gray-300"}`}
               />
             ))}
           </div>
