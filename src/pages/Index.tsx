@@ -1,6 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from "react";
-import useEmblaCarousel from "embla-carousel-react";
-import TestimonialSlider from "@/components/TestimonialSlider";
+import { useState, useEffect } from "react";
 import VideoShowcase from "@/components/VideoShowcase";
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Leaf, Bug, Hammer, ChevronLeft, ChevronRight, Quote, Factory, Users, Award, MapPin, Check, X, Play, Star } from "lucide-react";
@@ -118,83 +116,6 @@ const corporateVideos = [
   { id: "kW-cxcoCqP4", title: "Corporate Video 6" },
 ];
 
-// Mobile slider for application tabs
-const ApplicationTabSlider = ({ images }: { images: { name: string; image: string }[] }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center" });
-  const [selected, setSelected] = useState(0);
-  const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setSelected(emblaApi.selectedScrollSnap());
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", onSelect);
-
-    autoplayRef.current = setInterval(() => emblaApi.scrollNext(), 3000);
-
-    const onPointerDown = () => {
-      if (autoplayRef.current) clearInterval(autoplayRef.current);
-    };
-    const onPointerUp = () => {
-      autoplayRef.current = setInterval(() => emblaApi.scrollNext(), 3000);
-    };
-    emblaApi.on("pointerDown", onPointerDown);
-    emblaApi.on("pointerUp", onPointerUp);
-
-    return () => {
-      if (autoplayRef.current) clearInterval(autoplayRef.current);
-      emblaApi.off("select", onSelect);
-      emblaApi.off("pointerDown", onPointerDown);
-      emblaApi.off("pointerUp", onPointerUp);
-    };
-  }, [emblaApi, onSelect]);
-
-  return (
-    <div className="sm:hidden">
-      <div className="relative">
-        <button
-          onClick={() => emblaApi?.scrollPrev()}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/90 shadow flex items-center justify-center"
-        >
-          <ChevronLeft size={16} />
-        </button>
-        <button
-          onClick={() => emblaApi?.scrollNext()}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/90 shadow flex items-center justify-center"
-        >
-          <ChevronRight size={16} />
-        </button>
-        <div className="overflow-hidden mx-6" ref={emblaRef}>
-          <div className="flex">
-            {images.map((img, i) => (
-              <div key={i} className="flex-[0_0_100%] min-w-0 px-2">
-                <div className="rounded-xl overflow-hidden shadow-lg">
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img src={img.image} alt={img.name} className="w-full h-full object-cover" loading="lazy" />
-                  </div>
-                  <div className="p-4 bg-card text-center">
-                    <h3 className="font-heading font-semibold text-sm">{img.name}</h3>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div className="flex justify-center gap-2 mt-4">
-        {images.map((_, i) => (
-          <button key={i} onClick={() => emblaApi?.scrollTo(i)} className={`w-2.5 h-2.5 rounded-full transition-colors ${i === selected ? "bg-primary" : "bg-gray-300"}`} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
 const Index = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [activeVideoId, setActiveVideoId] = useState(corporateVideos[0].id);
@@ -299,8 +220,7 @@ const Index = () => {
             </TabsList>
             {Object.entries(applicationTabs).map(([tab, images]) =>
             <TabsContent key={tab} value={tab}>
-                {/* Desktop: Grid */}
-                <div className="hidden sm:grid sm:grid-cols-3 gap-6">
+                <div className="grid sm:grid-cols-3 gap-6">
                   {images.map((img, i) =>
                 <div key={i} className="group rounded-xl overflow-hidden shadow-md">
                       <div className="aspect-[4/3] overflow-hidden">
@@ -312,8 +232,6 @@ const Index = () => {
                     </div>
                 )}
                 </div>
-                {/* Mobile: Slider */}
-                <ApplicationTabSlider images={images} />
               </TabsContent>
             )}
           </Tabs>
@@ -324,13 +242,13 @@ const Index = () => {
       <section className="section-padding section-alt">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">Why Choose Us</h2>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((f, i) =>
             <div key={i} className="text-center group">
                 <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary transition-colors">
                   <f.icon size={28} className="text-primary group-hover:text-primary-foreground transition-colors" />
                 </div>
-                <h3 className="font-heading font-semibold text-xs md:text-lg mb-2 whitespace-nowrap">{f.title}</h3>
+                <h3 className="font-heading font-semibold text-lg mb-2">{f.title}</h3>
                 <p className="text-muted-foreground text-sm">{f.desc}</p>
               </div>
             )}
@@ -345,17 +263,17 @@ const Index = () => {
           <div className="absolute inset-0 bg-background/60" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center">
-            <div className="w-full md:w-[55%] pl-2 md:pl-6 text-left">
-              <h2 className="text-xl md:text-4xl font-heading font-bold text-foreground mb-3 md:mb-6 leading-tight">
+          <div className="flex flex-col md:flex-row gap-8 items-center">
+            <div className="w-full md:w-[55%] pl-2 md:pl-6">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6 leading-tight">
                 Exclusive Partner Opportunity: Unlock Shared Value
               </h2>
-              <ul className="text-muted-foreground leading-relaxed mb-4 md:mb-8 space-y-2 md:space-y-3 list-disc list-inside">
+              <ul className="text-muted-foreground leading-relaxed mb-8 space-y-3 list-disc list-inside">
                 <li className="text-sm md:text-xl">Gain Priority Access to New HDSMR &amp; MDF Board Collections.</li>
                 <li className="text-sm md:text-xl">Sneak Peek at Emerging International Furniture &amp; Panel Trends.</li>
                 <li className="text-sm md:text-xl">Co-marketing Opportunities to Reach New Builder Networks.</li>
               </ul>
-              <div className="grid grid-cols-2 gap-x-6 gap-y-1.5 md:gap-x-8 md:gap-y-2 text-sm md:text-base font-semibold text-foreground">
+              <div className="grid grid-cols-2 gap-x-8 gap-y-2 text-base font-semibold text-foreground">
                 <span>HDSMR Board</span>
                 <span>MDF Board</span>
                 <span>Flame Guard Board</span>
@@ -363,7 +281,7 @@ const Index = () => {
               </div>
             </div>
             <div className="w-full md:w-[45%] flex justify-center">
-              <div className="w-1/2 md:w-3/4 aspect-[9/16] rounded-2xl overflow-hidden shadow-md bg-black">
+              <div className="w-3/4 h-[550px] rounded-2xl overflow-hidden shadow-md bg-black">
                 <video
                   src="/videos/partner-offer.mp4"
                   className="w-full h-full object-contain"
@@ -508,7 +426,64 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <TestimonialSlider testimonials={testimonials} />
+      <section className="py-8 md:py-24 bg-[#f8f8f8]">
+        <div className="container mx-auto px-4 md:px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-3">What Our Customers Say</h2>
+            <div className="w-16 h-1 bg-primary mx-auto mb-4 rounded-full" />
+            <p className="text-muted-foreground max-w-xl mx-auto">Hear from our trusted partners and clients about their experience with our premium board solutions.</p>
+          </div>
+
+          <div className="relative max-w-6xl mx-auto">
+            {/* Navigation Arrows */}
+            <button
+              onClick={() => setCurrentTestimonial((t) => (t - 1 + Math.ceil(testimonials.length / 3)) % Math.ceil(testimonials.length / 3))}
+              className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              onClick={() => setCurrentTestimonial((t) => (t + 1) % Math.ceil(testimonials.length / 3))}
+              className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+            >
+              <ChevronRight size={20} />
+            </button>
+
+            {/* Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {testimonials.slice(currentTestimonial * 3, currentTestimonial * 3 + 3).map((t, i) => (
+                <div key={i} className="bg-white rounded-xl shadow-lg p-4 md:p-8 flex flex-col justify-between">
+                  {/* Stars */}
+                  <div>
+                    <div className="flex gap-1 mb-4">
+                      {[...Array(5)].map((_, s) => (
+                        <Star key={s} size={18} className="fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    <p className="text-foreground leading-relaxed mb-6">"{t.quote}"</p>
+                  </div>
+                  {/* Footer */}
+                  <div className="flex items-center justify-between border-t border-gray-100 pt-4">
+                    <p className="font-heading font-semibold text-sm">{t.name}</p>
+                    <Quote size={28} className="text-primary/30" />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Pagination Dots */}
+            <div className="flex justify-center gap-2 mt-8">
+              {Array.from({ length: Math.ceil(testimonials.length / 3) }).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentTestimonial(i)}
+                  className={`w-3 h-3 rounded-full transition-colors ${i === currentTestimonial ? 'bg-primary' : 'bg-gray-300'}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Video Showcase */}
       <VideoShowcase />
