@@ -99,12 +99,12 @@ const About = () => {
     <section className="section-padding">
       <div className="container mx-auto">
         <h2 className="text-3xl font-heading font-bold text-center mb-12">Certifications</h2>
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-2 gap-3">
           {certifications.map((c, i) =>
-        <div key={i} className="text-center p-8 border border-border rounded-lg hover:shadow-md transition-shadow">
-              <Award size={40} className="mx-auto text-primary mb-4" />
-              <h3 className="font-heading font-bold text-lg">{c.title}</h3>
-              <p className="text-muted-foreground text-sm mt-1">{c.desc}</p>
+        <div key={i} className="text-center p-4 border border-border rounded-lg hover:shadow-md transition-shadow">
+              <Award size={28} className="mx-auto text-primary mb-2" />
+              <h3 className="font-heading font-bold text-xs">{c.title}</h3>
+              <p className="text-muted-foreground text-[11px] mt-0.5">{c.desc}</p>
             </div>
         )}
         </div>
