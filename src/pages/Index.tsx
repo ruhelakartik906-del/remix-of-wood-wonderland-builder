@@ -257,7 +257,7 @@ const Index = () => {
       </section>
 
       {/* Exclusive Supply Partner Offer */}
-      <section className="relative py-10 md:py-14 overflow-hidden">
+      <section className="relative py-6 md:py-14 overflow-hidden">
         <div className="absolute inset-0">
           <img src={woodGrainBg} alt="" className="w-full h-full object-cover" loading="lazy" width={1024} height={768} />
           <div className="absolute inset-0 bg-background/60" />
@@ -269,9 +269,9 @@ const Index = () => {
                 Exclusive Partner Opportunity: Unlock Shared Value
               </h2>
               <ul className="text-muted-foreground leading-relaxed mb-8 space-y-3 list-disc list-inside">
-                <li className="text-xl">Gain Priority Access to New HDSMR &amp; MDF Board Collections.</li>
-                <li className="text-xl">Sneak Peek at Emerging International Furniture &amp; Panel Trends.</li>
-                <li className="text-xl">Co-marketing Opportunities to Reach New Builder Networks.</li>
+                <li className="text-sm md:text-xl">Gain Priority Access to New HDSMR &amp; MDF Board Collections.</li>
+                <li className="text-sm md:text-xl">Sneak Peek at Emerging International Furniture &amp; Panel Trends.</li>
+                <li className="text-sm md:text-xl">Co-marketing Opportunities to Reach New Builder Networks.</li>
               </ul>
               <div className="grid grid-cols-2 gap-x-8 gap-y-2 text-base font-semibold text-foreground">
                 <span>HDSMR Board</span>
@@ -331,20 +331,20 @@ const Index = () => {
       </section>
 
       {/* Manufacturing Excellence - Parallax Stats */}
-      <section className="relative py-20 md:py-28 overflow-hidden">
+      <section className="relative py-12 md:py-28 overflow-hidden">
         <div className="absolute inset-0">
           <img src={factoryWide} alt="Manufacturing facility" className="w-full h-full object-cover" style={{ transform: "translateZ(0)" }} loading="lazy" />
           <div className="absolute inset-0 bg-foreground/80" />
         </div>
         <div className="relative z-10 container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground text-center mb-4">Manufacturing Excellence</h2>
-          <p className="text-primary-foreground/70 text-center max-w-xl mx-auto mb-14">State-of-the-art facilities powered by European technology</p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <h2 className="text-2xl md:text-4xl font-heading font-bold text-primary-foreground text-center mb-2 md:mb-4">Manufacturing Excellence</h2>
+          <p className="text-primary-foreground/70 text-center max-w-xl mx-auto mb-8 md:mb-14 text-sm md:text-base">State-of-the-art facilities powered by European technology</p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {stats.map((s, i) =>
             <div key={i} className="text-center">
-                <s.icon size={32} className="mx-auto mb-3 text-primary" />
-                <div className="text-4xl md:text-5xl font-heading font-bold text-primary-foreground mb-1">{s.value}</div>
-                <p className="text-primary-foreground/70 text-sm">{s.label}</p>
+                <s.icon size={24} className="mx-auto mb-2 md:mb-3 text-primary md:[&]:w-8 md:[&]:h-8" />
+                <div className="text-2xl md:text-5xl font-heading font-bold text-primary-foreground mb-1">{s.value}</div>
+                <p className="text-primary-foreground/70 text-xs md:text-sm">{s.label}</p>
               </div>
             )}
           </div>
@@ -352,7 +352,7 @@ const Index = () => {
       </section>
 
       {/* Corporate Videos */}
-      <section className="my-20">
+      <section className="my-10 md:my-20">
         <div className="max-w-6xl mx-auto px-4">
           <div className="rounded-2xl border-2 border-[#FFB6C1] bg-background p-6 sm:p-8">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-4 text-[#1a5c2a]">Event Video</h2>
@@ -426,8 +426,8 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 md:py-24 bg-[#f8f8f8]">
-        <div className="container mx-auto px-4">
+      <section className="py-8 md:py-24 bg-[#f8f8f8]">
+        <div className="container mx-auto px-4 md:px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-3">What Our Customers Say</h2>
             <div className="w-16 h-1 bg-primary mx-auto mb-4 rounded-full" />
@@ -452,7 +452,7 @@ const Index = () => {
             {/* Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {testimonials.slice(currentTestimonial * 3, currentTestimonial * 3 + 3).map((t, i) => (
-                <div key={i} className="bg-white rounded-xl shadow-lg p-8 flex flex-col justify-between">
+                <div key={i} className="bg-white rounded-xl shadow-lg p-4 md:p-8 flex flex-col justify-between">
                   {/* Stars */}
                   <div>
                     <div className="flex gap-1 mb-4">
@@ -489,7 +489,7 @@ const Index = () => {
       <VideoShowcase />
 
       {/* Get in Touch */}
-      <section className="bg-white py-16 pb-5">
+      <section className="bg-white py-8 md:py-16 pb-5">
         <div className="mx-[5%] md:mx-[5%]">
           <div className="rounded-2xl shadow-lg p-8 md:p-12" style={{ backgroundColor: "#BDBDBD" }}>
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground text-center mb-8">Get in Touch</h2>
@@ -511,15 +511,15 @@ const Index = () => {
       </section>
 
       {/* Partner Logo Slider */}
-      <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-14 overflow-hidden mb-0" style={{ backgroundColor: "#dfedde" }}>
-        <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-10">Our Clients & Partners</h2>
+      <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-8 md:py-14 overflow-hidden mb-0" style={{ backgroundColor: "#dfedde" }}>
+        <h2 className="text-xl md:text-4xl font-heading font-bold text-center mb-6 md:mb-10">Our Clients & Partners</h2>
         <div className="relative group w-[90%] mx-auto overflow-hidden">
           <button className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
             <ChevronLeft size={18} className="text-foreground" />
           </button>
-          <div className="flex animate-[marquee_25s_linear_infinite] gap-8">
+          <div className="flex animate-[marquee_25s_linear_infinite] gap-4 md:gap-8">
             {[...partnerLogos, ...partnerLogos].map((logo, i) =>
-              <div key={i} className="shrink-0 w-48 h-28 bg-white rounded-lg shadow-md flex items-center justify-center p-4">
+              <div key={i} className="shrink-0 w-28 h-20 md:w-48 md:h-28 bg-white rounded-lg shadow-md flex items-center justify-center p-2 md:p-4">
                 <img src={logo.image} alt={logo.name} className="max-w-full max-h-full object-contain" loading="lazy" />
               </div>
             )}
