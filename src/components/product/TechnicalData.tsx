@@ -8,7 +8,7 @@ const TechnicalData = ({ specs }: TechnicalDataProps) => (
   <section className="section-padding section-alt">
     <div className="container mx-auto max-w-3xl">
       <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-12">Technical Data</h2>
-      <div className="overflow-hidden rounded-lg border border-border">
+      <div className="overflow-x-auto rounded-lg border border-border">
         <table className="w-full">
           <thead>
             <tr className="bg-primary text-primary-foreground">
