@@ -316,7 +316,7 @@ const Index = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {features.map((f, i) =>
             <div key={i} className="text-center">
-                <f.icon size={24} className="mx-auto mb-2 md:mb-3 text-primary md:[&]:w-8 md:[&]:h-8" />
+                <f.icon size={24} className="mx-auto mb-2 md:mb-3 md:[&]:w-8 md:[&]:h-8 text-primary-foreground" />
                 <h3 className="font-heading font-semibold text-lg mb-1 text-primary-foreground">{f.title}</h3>
                 <p className="text-primary-foreground/70 text-xs md:text-sm">{f.desc}</p>
               </div>
@@ -411,7 +411,7 @@ const Index = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {stats.map((s, i) =>
             <div key={i} className="text-center">
-                <s.icon size={24} className="mx-auto mb-2 md:mb-3 text-primary md:[&]:w-8 md:[&]:h-8" />
+                <s.icon size={24} className="mx-auto mb-2 md:mb-3 md:[&]:w-8 md:[&]:h-8 text-primary-foreground" />
                 <div className="text-2xl md:text-5xl font-heading font-bold text-primary-foreground mb-1">{s.value}</div>
                 <p className="text-primary-foreground/70 text-xs md:text-sm">{s.label}</p>
               </div>
