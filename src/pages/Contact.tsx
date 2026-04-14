@@ -29,51 +29,6 @@ const Contact = () => {
       <section className="section-padding">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Info */}
-            <div>
-              <h2 className="text-2xl font-heading font-bold mb-8">Get In Touch</h2>
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 shrink-0 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Phone size={20} className="text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-semibold">Phone</h3>
-                    <p className="text-muted-foreground text-sm">91+ ​63933 31922<br />91+ 98112 86902</p>
-                    
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 shrink-0 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Mail size={20} className="text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-semibold">Email</h3>
-                    <p className="text-muted-foreground text-sm">Info@infinityboards.in</p>
-                    <p className="text-muted-foreground text-sm">​</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 shrink-0 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Building2 size={20} className="text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-semibold">Head Office</h3>
-                    <p className="text-muted-foreground text-sm">261135</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 shrink-0 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Factory size={20} className="text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-semibold">Manufacturing Unit:</h3>
-                    <p className="text-muted-foreground text-sm">Village Pardhana, Tehsil Israna,<br />Panipat, Haryana - 132107</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             {/* Inquiry Form */}
             <div>
               <h2 className="text-2xl font-heading font-bold mb-8">Send an Inquiry</h2>
@@ -133,6 +88,51 @@ const Contact = () => {
                   </button>
                 </form>
               }
+            </div>
+
+            {/* Contact Info */}
+            <div>
+              <h2 className="text-2xl font-heading font-bold mb-8">Get In Touch</h2>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 shrink-0 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <Phone size={20} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-heading font-semibold">Phone</h3>
+                    <p className="text-muted-foreground text-sm">91+ ​63933 31922<br />91+ 98112 86902</p>
+                    
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 shrink-0 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <Mail size={20} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-heading font-semibold">Email</h3>
+                    <p className="text-muted-foreground text-sm">Info@infinityboards.in</p>
+                    <p className="text-muted-foreground text-sm">​</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 shrink-0 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <Building2 size={20} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-heading font-semibold">Head Office</h3>
+                    <p className="text-muted-foreground text-sm">261135</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 shrink-0 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <Factory size={20} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-heading font-semibold">Manufacturing Unit:</h3>
+                    <p className="text-muted-foreground text-sm">Village Pardhana, Tehsil Israna,<br />Panipat, Haryana - 132107</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
