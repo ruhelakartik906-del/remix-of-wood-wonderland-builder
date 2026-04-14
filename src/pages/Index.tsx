@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import TestimonialSlider from "@/components/TestimonialSlider";
 import VideoShowcase from "@/components/VideoShowcase";
@@ -122,6 +122,7 @@ const corporateVideos = [
 const ApplicationTabSlider = ({ images }: { images: { name: string; image: string }[] }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center" });
   const [selected, setSelected] = useState(0);
+  const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -133,31 +134,50 @@ const ApplicationTabSlider = ({ images }: { images: { name: string; image: strin
     onSelect();
     emblaApi.on("select", onSelect);
     emblaApi.on("reInit", onSelect);
-    const interval = setInterval(() => emblaApi.scrollNext(), 4000);
+
+    autoplayRef.current = setInterval(() => emblaApi.scrollNext(), 3000);
+
+    const onPointerDown = () => {
+      if (autoplayRef.current) clearInterval(autoplayRef.current);
+    };
+    const onPointerUp = () => {
+      autoplayRef.current = setInterval(() => emblaApi.scrollNext(), 3000);
+    };
+    emblaApi.on("pointerDown", onPointerDown);
+    emblaApi.on("pointerUp", onPointerUp);
+
     return () => {
-      clearInterval(interval);
+      if (autoplayRef.current) clearInterval(autoplayRef.current);
       emblaApi.off("select", onSelect);
+      emblaApi.off("pointerDown", onPointerDown);
+      emblaApi.off("pointerUp", onPointerUp);
     };
   }, [emblaApi, onSelect]);
 
   return (
     <div className="sm:hidden">
       <div className="relative">
-        <button onClick={() => emblaApi?.scrollPrev()} className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/90 shadow flex items-center justify-center">
+        <button
+          onClick={() => emblaApi?.scrollPrev()}
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/90 shadow flex items-center justify-center"
+        >
           <ChevronLeft size={16} />
         </button>
-        <button onClick={() => emblaApi?.scrollNext()} className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/90 shadow flex items-center justify-center">
+        <button
+          onClick={() => emblaApi?.scrollNext()}
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/90 shadow flex items-center justify-center"
+        >
           <ChevronRight size={16} />
         </button>
         <div className="overflow-hidden mx-6" ref={emblaRef}>
           <div className="flex">
             {images.map((img, i) => (
               <div key={i} className="flex-[0_0_100%] min-w-0 px-2">
-                <div className="rounded-xl overflow-hidden shadow-md">
+                <div className="rounded-xl overflow-hidden shadow-lg">
                   <div className="aspect-[4/3] overflow-hidden">
                     <img src={img.image} alt={img.name} className="w-full h-full object-cover" loading="lazy" />
                   </div>
-                  <div className="p-3 bg-card text-center">
+                  <div className="p-4 bg-card text-center">
                     <h3 className="font-heading font-semibold text-sm">{img.name}</h3>
                   </div>
                 </div>
@@ -166,7 +186,7 @@ const ApplicationTabSlider = ({ images }: { images: { name: string; image: strin
           </div>
         </div>
       </div>
-      <div className="flex justify-center gap-2 mt-3">
+      <div className="flex justify-center gap-2 mt-4">
         {images.map((_, i) => (
           <button key={i} onClick={() => emblaApi?.scrollTo(i)} className={`w-2.5 h-2.5 rounded-full transition-colors ${i === selected ? "bg-primary" : "bg-gray-300"}`} />
         ))}
