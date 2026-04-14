@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import TestimonialSlider from "@/components/TestimonialSlider";
 import VideoShowcase from "@/components/VideoShowcase";
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Leaf, Bug, Hammer, ChevronLeft, ChevronRight, Quote, Factory, Users, Award, MapPin, Check, X, Play, Star } from "lucide-react";

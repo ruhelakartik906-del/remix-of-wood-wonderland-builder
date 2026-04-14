@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Award, Target, Eye, Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import { Award, Target, Eye } from "lucide-react";
+import TestimonialSlider from "@/components/TestimonialSlider";
 import Layout from "@/components/Layout";
 import factory from "@/assets/factory.jpg";
 import pageHeaderBg from "@/assets/page-header-bg-2.jpg";
