@@ -64,8 +64,23 @@ const Footer = () =>
         {/* Follow Us - full width on mobile */}
         <div className="col-span-2 lg:col-span-1">
           <h3 className="font-heading font-bold text-sm md:text-lg mb-2 md:mb-4 text-foreground text-center">Follow Us</h3>
-          <div className="flex justify-center lg:justify-start gap-3">
-...
+          <div className="flex justify-center lg:justify-start gap-3 flex-wrap">
+            <a href="https://www.facebook.com/share/19tiVFCFHv/" target="_blank" rel="noopener noreferrer"
+              className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-border text-foreground flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary hover:scale-110 transition-all">
+              <Facebook size={16} />
+            </a>
+            <a href="https://www.instagram.com/infinityboards_/" target="_blank" rel="noopener noreferrer"
+              className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-border text-foreground flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary hover:scale-110 transition-all">
+              <Instagram size={16} />
+            </a>
+            <a href="https://www.linkedin.com/company/infinity-boards/" target="_blank" rel="noopener noreferrer"
+              className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-border text-foreground flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary hover:scale-110 transition-all">
+              <Linkedin size={16} />
+            </a>
+            <a href="https://youtube.com/@infinityboards_srb?si=cxg2hasvufnwkwon" target="_blank" rel="noopener noreferrer"
+              className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-border text-foreground flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary hover:scale-110 transition-all">
+              <Youtube size={16} />
+            </a>
             <a href="https://x.com/infinityboards_?s=21" target="_blank" rel="noopener noreferrer"
               className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-border text-foreground flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary hover:scale-110 transition-all">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
