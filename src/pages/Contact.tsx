@@ -120,7 +120,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-heading font-semibold">Head Office</h3>
-                    <p className="text-muted-foreground text-sm">261135</p>
+                    <p className="text-muted-foreground text-sm">Khasara number 774, Ramana Farms, Bhadfar Road, Leharpur, Sitapur- 261135</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
