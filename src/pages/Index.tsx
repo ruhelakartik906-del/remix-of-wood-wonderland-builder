@@ -343,7 +343,7 @@ const Index = () => {
               </div>
             </div>
             <div className="w-full md:w-[45%] flex justify-center">
-              <div className="w-3/4 h-[550px] rounded-2xl overflow-hidden shadow-md bg-black">
+              <div className="w-1/2 md:w-3/4 aspect-[9/16] rounded-2xl overflow-hidden shadow-md bg-black">
                 <video
                   src="/videos/partner-offer.mp4"
                   className="w-full h-full object-contain"
