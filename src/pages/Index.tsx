@@ -334,7 +334,7 @@ const Index = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <div className="flex flex-col md:flex-row gap-8 items-center">
             <div className="w-full md:w-[55%] pl-2 md:pl-6">
-              <h2 className="md:text-4xl font-heading font-bold text-foreground mb-6 leading-tight text-2xl">
+              <h2 className="md:text-4xl font-heading font-bold text-foreground mb-6 leading-tight text-center text-xl">
                 Exclusive Partner Opportunity: Unlock Shared Value
               </h2>
               <ul className="text-muted-foreground leading-relaxed mb-8 space-y-3 list-disc list-inside">
