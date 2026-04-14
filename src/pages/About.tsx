@@ -56,7 +56,7 @@ const About = () => {
                 <Eye size={24} className="text-primary" />
                 <h2 className="font-heading font-bold text-center text-2xl">Our Vision</h2>
               </div>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed text-sm">
                 To be India's most trusted name in engineered wood solutions, setting global benchmarks in quality, innovation, and sustainability.
               </p>
             </div>
@@ -65,7 +65,7 @@ const About = () => {
                 <Target size={24} className="text-primary" />
                 <h2 className="text-2xl font-heading font-bold">Our Mission</h2>
               </div>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed text-sm">
                 To deliver premium quality wood panels that empower architects, designers, and homeowners to create beautiful, lasting spaces while championing environmental responsibility.
               </p>
             </div>
@@ -77,7 +77,7 @@ const About = () => {
     {/* Timeline */}
     <section className="section-padding section-alt">
       <div className="container mx-auto max-w-3xl px-4">
-        <h2 className="text-xl md:text-3xl font-heading font-bold text-center mb-6 md:mb-12">Our Journey</h2>
+        <h2 className="md:text-3xl font-heading font-bold text-center mb-6 md:mb-12 text-2xl">Our Journey</h2>
         <div className="relative">
           <div className="absolute left-1/2 -translate-x-px top-0 bottom-0 w-0.5 bg-border" />
           {milestones.map((m, i) =>
