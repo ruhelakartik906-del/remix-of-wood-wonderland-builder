@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import TestimonialSlider from "@/components/TestimonialSlider";
 import VideoShowcase from "@/components/VideoShowcase";
 import { Link } from "react-router-dom";
@@ -117,6 +118,63 @@ const corporateVideos = [
   { id: "kW-cxcoCqP4", title: "Corporate Video 6" },
 ];
 
+// Mobile slider for application tabs
+const ApplicationTabSlider = ({ images }: { images: { name: string; image: string }[] }) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center" });
+  const [selected, setSelected] = useState(0);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelected(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+    const interval = setInterval(() => emblaApi.scrollNext(), 4000);
+    return () => {
+      clearInterval(interval);
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi, onSelect]);
+
+  return (
+    <div className="sm:hidden">
+      <div className="relative">
+        <button onClick={() => emblaApi?.scrollPrev()} className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/90 shadow flex items-center justify-center">
+          <ChevronLeft size={16} />
+        </button>
+        <button onClick={() => emblaApi?.scrollNext()} className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/90 shadow flex items-center justify-center">
+          <ChevronRight size={16} />
+        </button>
+        <div className="overflow-hidden mx-6" ref={emblaRef}>
+          <div className="flex">
+            {images.map((img, i) => (
+              <div key={i} className="flex-[0_0_100%] min-w-0 px-2">
+                <div className="rounded-xl overflow-hidden shadow-md">
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img src={img.image} alt={img.name} className="w-full h-full object-cover" loading="lazy" />
+                  </div>
+                  <div className="p-3 bg-card text-center">
+                    <h3 className="font-heading font-semibold text-sm">{img.name}</h3>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-center gap-2 mt-3">
+        {images.map((_, i) => (
+          <button key={i} onClick={() => emblaApi?.scrollTo(i)} className={`w-2.5 h-2.5 rounded-full transition-colors ${i === selected ? "bg-primary" : "bg-gray-300"}`} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const Index = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [activeVideoId, setActiveVideoId] = useState(corporateVideos[0].id);
@@ -221,7 +279,8 @@ const Index = () => {
             </TabsList>
             {Object.entries(applicationTabs).map(([tab, images]) =>
             <TabsContent key={tab} value={tab}>
-                <div className="grid sm:grid-cols-3 gap-6">
+                {/* Desktop: Grid */}
+                <div className="hidden sm:grid sm:grid-cols-3 gap-6">
                   {images.map((img, i) =>
                 <div key={i} className="group rounded-xl overflow-hidden shadow-md">
                       <div className="aspect-[4/3] overflow-hidden">
@@ -233,6 +292,8 @@ const Index = () => {
                     </div>
                 )}
                 </div>
+                {/* Mobile: Slider */}
+                <ApplicationTabSlider images={images} />
               </TabsContent>
             )}
           </Tabs>
