@@ -327,8 +327,10 @@ const Index = () => {
 
       {/* Exclusive Supply Partner Offer */}
       <section className="relative py-6 md:py-14 overflow-visible h-auto">
-        <div className="absolute inset-0">
-          <img src={woodGrainBg} alt="" className="w-full h-full object-none md:object-cover" style={{ objectFit: 'fill' }} loading="lazy" width={1024} height={768} />
+        <div
+          className="absolute inset-0"
+          style={{ backgroundImage: `url(${woodGrainBg})`, backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}
+        >
           <div className="absolute inset-0 bg-background/60" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4">
