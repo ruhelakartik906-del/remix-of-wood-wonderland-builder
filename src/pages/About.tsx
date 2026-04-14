@@ -54,7 +54,7 @@ const About = () => {
             <div className="mb-8">
               <div className="flex items-center gap-3 mb-3">
                 <Eye size={24} className="text-primary" />
-                <h2 className="font-heading font-bold text-center text-6xl">Our Vision</h2>
+                <h2 className="font-heading font-bold text-center text-2xl">Our Vision</h2>
               </div>
               <p className="text-muted-foreground leading-relaxed">
                 To be India's most trusted name in engineered wood solutions, setting global benchmarks in quality, innovation, and sustainability.
