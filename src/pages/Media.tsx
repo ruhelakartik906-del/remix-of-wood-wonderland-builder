@@ -116,7 +116,7 @@ const Media = () => {
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="font-heading font-bold text-center mb-10 text-3xl">Video Gallery</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-6 justify-items-center">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-6 justify-items-center">
             {videoItems.map((video, i) => (
               <div
                 key={i}
