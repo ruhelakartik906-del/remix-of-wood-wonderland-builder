@@ -130,6 +130,14 @@ const Index = () => {
     return () => clearInterval(interval);
   }, [maxThumbStart]);
 
+  // Auto-slide testimonials every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonial((t) => (t + 1) % testimonials.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <Layout>
       {/* Hero */}
