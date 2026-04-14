@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
 
@@ -12,39 +12,73 @@ interface TestimonialSliderProps {
 }
 
 const TestimonialSlider = ({ testimonials }: TestimonialSliderProps) => {
-  const [currentPage, setCurrentPage] = useState(0);
-  const totalPages = Math.ceil(testimonials.length / 3);
-
-  // Embla for mobile swipe
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
+  // Mobile Embla
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center" });
   const [selectedSnap, setSelectedSnap] = useState(0);
+  const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const onEmblaSelect = useCallback(() => {
     if (!emblaApi) return;
     setSelectedSnap(emblaApi.selectedScrollSnap());
   }, [emblaApi]);
 
+  // Auto-slide every 3 seconds
   useEffect(() => {
     if (!emblaApi) return;
     onEmblaSelect();
     emblaApi.on("select", onEmblaSelect);
     emblaApi.on("reInit", onEmblaSelect);
-    return () => { emblaApi.off("select", onEmblaSelect); };
+
+    autoplayRef.current = setInterval(() => {
+      emblaApi.scrollNext();
+    }, 3000);
+
+    // Pause on interaction, resume after
+    const onPointerDown = () => {
+      if (autoplayRef.current) clearInterval(autoplayRef.current);
+    };
+    const onPointerUp = () => {
+      autoplayRef.current = setInterval(() => {
+        emblaApi.scrollNext();
+      }, 3000);
+    };
+
+    emblaApi.on("pointerDown", onPointerDown);
+    emblaApi.on("pointerUp", onPointerUp);
+
+    return () => {
+      if (autoplayRef.current) clearInterval(autoplayRef.current);
+      emblaApi.off("select", onEmblaSelect);
+      emblaApi.off("pointerDown", onPointerDown);
+      emblaApi.off("pointerUp", onPointerUp);
+    };
   }, [emblaApi, onEmblaSelect]);
 
-  const TestimonialCard = ({ t, mobile = false }: { t: Testimonial; mobile?: boolean }) => (
-    <div className={`bg-white rounded-xl shadow-lg flex flex-col justify-between ${mobile ? "p-4" : "p-4 md:p-8"}`}>
+  // Desktop pagination
+  const [currentPage, setCurrentPage] = useState(0);
+  const totalPages = Math.ceil(testimonials.length / 3);
+
+  // Desktop auto-slide every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPage((p) => (p + 1) % totalPages);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [totalPages]);
+
+  const TestimonialCard = ({ t }: { t: Testimonial }) => (
+    <div className="bg-white rounded-xl shadow-lg flex flex-col justify-between p-4 md:p-8 h-full">
       <div>
         <div className="flex gap-1 mb-3 md:mb-4">
           {[...Array(5)].map((_, s) => (
-            <Star key={s} size={mobile ? 14 : 18} className="fill-yellow-400 text-yellow-400" />
+            <Star key={s} size={16} className="fill-yellow-400 text-yellow-400" />
           ))}
         </div>
-        <p className={`text-foreground leading-relaxed mb-4 md:mb-6 ${mobile ? "text-sm" : ""}`}>"{t.quote}"</p>
+        <p className="text-foreground leading-relaxed mb-4 md:mb-6 text-sm md:text-base">"{t.quote}"</p>
       </div>
       <div className="flex items-center justify-between border-t border-gray-100 pt-3 md:pt-4">
-        <p className={`font-heading font-semibold ${mobile ? "text-base" : "text-sm"}`}>{t.name}</p>
-        <Quote size={mobile ? 22 : 28} className="text-primary/30" />
+        <p className="font-heading font-semibold text-sm md:text-base">{t.name}</p>
+        <Quote size={24} className="text-primary/30" />
       </div>
     </div>
   );
@@ -60,15 +94,31 @@ const TestimonialSlider = ({ testimonials }: TestimonialSliderProps) => {
           </p>
         </div>
 
-        {/* Mobile: Embla horizontal swipe */}
+        {/* Mobile: Embla horizontal swipe with arrows */}
         <div className="md:hidden">
-          <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex">
-              {testimonials.map((t, i) => (
-                <div key={i} className="flex-[0_0_85%] min-w-0 pl-3 first:pl-0">
-                  <TestimonialCard t={t} mobile />
-                </div>
-              ))}
+          <div className="relative">
+            {/* Left/Right arrows */}
+            <button
+              onClick={() => emblaApi?.scrollPrev()}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/90 shadow flex items-center justify-center"
+            >
+              <ChevronLeft size={16} />
+            </button>
+            <button
+              onClick={() => emblaApi?.scrollNext()}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/90 shadow flex items-center justify-center"
+            >
+              <ChevronRight size={16} />
+            </button>
+
+            <div className="overflow-hidden mx-6" ref={emblaRef}>
+              <div className="flex">
+                {testimonials.map((t, i) => (
+                  <div key={i} className="flex-[0_0_100%] min-w-0 px-2">
+                    <TestimonialCard t={t} />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
           {/* Pagination Dots */}
