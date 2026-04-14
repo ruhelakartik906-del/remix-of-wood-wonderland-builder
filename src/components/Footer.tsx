@@ -13,14 +13,14 @@ const Footer = () =>
       {/* Main Grid: 2-col on mobile, 4-col on lg */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-5 md:gap-10 mt-4 md:mt-8">
         {/* Quick Links */}
-        <div>
-          <h3 className="font-heading font-bold text-sm md:text-lg mb-2 md:mb-4 text-foreground">Quick Links</h3>
+        <div className="text-center">
+          <h3 className="font-heading font-bold text-sm md:text-lg mb-2 md:mb-4 text-foreground text-center">Quick Links</h3>
           <ul className="space-y-1.5 md:space-y-2 text-xs md:text-sm">
             {["Home", "About Us", "Products", "Privacy & Policy", "Media", "Contact Us"].map((item) =>
               <li key={item}>
                 <Link
                   to={item === "Home" ? "/" : item === "Privacy & Policy" ? "/privacy-policy" : `/${item.toLowerCase().replace(/\s/g, "")}`}
-                  className="text-muted-foreground hover:text-foreground transition-colors">
+                  className="text-muted-foreground hover:text-foreground transition-colors text-left">
                   {item}
                 </Link>
               </li>
@@ -30,11 +30,11 @@ const Footer = () =>
 
         {/* Product Categories */}
         <div>
-          <h3 className="font-heading font-bold text-sm md:text-lg mb-2 md:mb-4 text-foreground">Product Categories</h3>
+          <h3 className="font-heading font-bold text-sm md:text-lg mb-2 md:mb-4 text-foreground text-center">Product Categories</h3>
           <ul className="space-y-1.5 md:space-y-2 text-xs md:text-sm">
             {["MDF Board", "HDSMR Board", "Particle Board", "Flame Guard Board"].map((item) =>
               <li key={item}>
-                <Link to={`/products/${item.toLowerCase().replace(/\s/g, "-")}`} className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link to={`/products/${item.toLowerCase().replace(/\s/g, "-")}`} className="text-muted-foreground hover:text-foreground transition-colors text-left">
                   {item}
                 </Link>
               </li>
@@ -43,39 +43,29 @@ const Footer = () =>
         </div>
 
         {/* Contact Info - full width on mobile */}
-        <div className="col-span-2 lg:col-span-1">
-          <h3 className="font-heading font-bold text-sm md:text-lg mb-2 md:mb-4 text-foreground">Contact Info</h3>
-          <ul className="space-y-2 text-xs md:text-sm text-muted-foreground">
+        <div className="col-span-2 lg:col-span-1 text-left">
+          <h3 className="font-heading font-bold text-sm md:text-lg mb-2 md:mb-4 text-foreground text-center">Contact Info</h3>
+          <ul className="space-y-2 text-xs md:text-sm text-muted-foreground text-center">
             <li className="flex items-start gap-2">
-              <MapPin size={14} className="shrink-0 mt-0.5 text-foreground" />
-              <span>Khasara no 774, Ramana Farms, Bhadfar Road, Leharpur, Sitapur-261125</span>
+              <MapPin size={14} className="shrink-0 mt-0.5 text-foreground text-center" />
+              <span className="text-left">Khasara no 774, Ramana Farms, Bhadfar Road, Leharpur, Sitapur-261125</span>
             </li>
             <li className="flex items-center gap-2">
               <Phone size={14} className="shrink-0 text-foreground" />
-              <span>91+ 9811286902 / 91+ 6393331922</span>
+              <span className="text-left">91+ 9811286902 / 91+ 6393331922</span>
             </li>
             <li className="flex items-center gap-2">
               <Mail size={14} className="shrink-0 text-foreground" />
-              <span>Info@infinityboards.in</span>
+              <span className="text-left">Info@infinityboards.in</span>
             </li>
           </ul>
         </div>
 
         {/* Follow Us - full width on mobile */}
         <div className="col-span-2 lg:col-span-1">
-          <h3 className="font-heading font-bold text-sm md:text-lg mb-2 md:mb-4 text-foreground">Follow Us</h3>
+          <h3 className="font-heading font-bold text-sm md:text-lg mb-2 md:mb-4 text-foreground text-center">Follow Us</h3>
           <div className="flex justify-center lg:justify-start gap-3">
-            {[
-              { Icon: Facebook, url: "https://www.facebook.com/share/1A8sQ2yvRZ/?mibextid=wwXIfr" },
-              { Icon: Instagram, url: "https://www.instagram.com/infinityboards_?igsh=MWh3ZXphYzhtcjU4dA==" },
-              { Icon: Linkedin, url: "https://www.linkedin.com/in/infinity-boards-2a61a5391" },
-              { Icon: Youtube, url: "https://www.youtube.com/@InfinityBoards_SRB" },
-            ].map(({ Icon, url }, i) =>
-              <a key={i} href={url} target="_blank" rel="noopener noreferrer"
-                className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-border text-foreground flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary hover:scale-110 transition-all">
-                <Icon size={16} />
-              </a>
-            )}
+...
             <a href="https://x.com/infinityboards_?s=21" target="_blank" rel="noopener noreferrer"
               className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-border text-foreground flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary hover:scale-110 transition-all">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
