@@ -345,17 +345,17 @@ const Index = () => {
           <div className="absolute inset-0 bg-background/60" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row gap-8 items-center">
-            <div className="w-full md:w-[55%] pl-2 md:pl-6">
-              <h2 className="md:text-4xl font-heading font-bold text-foreground mb-6 leading-tight text-2xl">
+          <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center">
+            <div className="w-full md:w-[55%] pl-2 md:pl-6 text-left">
+              <h2 className="text-xl md:text-4xl font-heading font-bold text-foreground mb-3 md:mb-6 leading-tight">
                 Exclusive Partner Opportunity: Unlock Shared Value
               </h2>
-              <ul className="text-muted-foreground leading-relaxed mb-8 space-y-3 list-disc list-inside">
+              <ul className="text-muted-foreground leading-relaxed mb-4 md:mb-8 space-y-2 md:space-y-3 list-disc list-inside">
                 <li className="text-sm md:text-xl">Gain Priority Access to New HDSMR &amp; MDF Board Collections.</li>
                 <li className="text-sm md:text-xl">Sneak Peek at Emerging International Furniture &amp; Panel Trends.</li>
                 <li className="text-sm md:text-xl">Co-marketing Opportunities to Reach New Builder Networks.</li>
               </ul>
-              <div className="grid grid-cols-2 gap-x-8 gap-y-2 text-base font-semibold text-foreground">
+              <div className="grid grid-cols-2 gap-x-6 gap-y-1.5 md:gap-x-8 md:gap-y-2 text-sm md:text-base font-semibold text-foreground">
                 <span>HDSMR Board</span>
                 <span>MDF Board</span>
                 <span>Flame Guard Board</span>
