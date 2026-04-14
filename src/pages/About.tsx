@@ -99,7 +99,7 @@ const About = () => {
     <section className="section-padding">
       <div className="container mx-auto">
         <h2 className="text-3xl font-heading font-bold text-center mb-12">Certifications</h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 gap-6">
           {certifications.map((c, i) =>
         <div key={i} className="text-center p-8 border border-border rounded-lg hover:shadow-md transition-shadow">
               <Award size={40} className="mx-auto text-primary mb-4" />
