@@ -76,18 +76,18 @@ const About = () => {
 
     {/* Timeline */}
     <section className="section-padding section-alt">
-      <div className="container mx-auto max-w-3xl">
-        <h2 className="text-3xl font-heading font-bold text-center mb-12">Our Journey</h2>
+      <div className="container mx-auto max-w-3xl px-4">
+        <h2 className="text-xl md:text-3xl font-heading font-bold text-center mb-6 md:mb-12">Our Journey</h2>
         <div className="relative">
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border md:left-1/2 md:-translate-x-px" />
+          <div className="absolute left-1/2 -translate-x-px top-0 bottom-0 w-0.5 bg-border" />
           {milestones.map((m, i) =>
-        <div key={i} className={`relative flex items-start gap-6 mb-10 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-              <div className="hidden md:block md:w-1/2" />
-              <div className="absolute left-6 md:left-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background -translate-x-1/2 mt-1.5 z-10" />
-              <div className="ml-14 md:ml-0 md:w-1/2 bg-card border border-border rounded-lg p-5 shadow-sm">
-                <span className="text-primary font-bold text-sm">{m.year}</span>
-                <h3 className="font-heading font-semibold mt-1">{m.title}</h3>
-                <p className="text-muted-foreground text-sm mt-1">{m.desc}</p>
+        <div key={i} className={`relative flex items-start mb-6 md:mb-10 ${i % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}>
+              <div className="w-1/2" />
+              <div className="absolute left-1/2 w-3 h-3 md:w-4 md:h-4 bg-primary rounded-full border-2 md:border-4 border-background -translate-x-1/2 mt-1.5 z-10" />
+              <div className="w-1/2 bg-card border border-border rounded-lg p-3 md:p-5 shadow-sm">
+                <span className="text-primary font-bold text-[10px] md:text-sm">{m.year}</span>
+                <h3 className="font-heading font-semibold mt-0.5 text-xs md:text-base">{m.title}</h3>
+                <p className="text-muted-foreground text-[10px] md:text-sm mt-0.5">{m.desc}</p>
               </div>
             </div>
         )}
