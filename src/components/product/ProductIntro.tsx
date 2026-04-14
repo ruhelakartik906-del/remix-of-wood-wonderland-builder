@@ -23,7 +23,7 @@ const ProductIntro = ({ image, name, intro }: ProductIntroProps) => {
           </div>
           <div>
             <h2 className="text-2xl md:text-3xl font-heading font-bold mb-4">Introduction to {name}</h2>
-            <p className="text-muted-foreground leading-relaxed mb-6">{intro}</p>
+            <p className="text-muted-foreground leading-relaxed mb-6 text-sm">{intro}</p>
             <button
               onClick={() => navigate("/contact")}
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-2.5 rounded font-semibold hover:bg-accent transition-colors"
